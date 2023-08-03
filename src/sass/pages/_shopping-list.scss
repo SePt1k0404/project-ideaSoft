@@ -16,7 +16,11 @@ li {
   width: 100%;
   padding: 20px;
 }
-
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .book-card {
   position: relative;
   width: 100%;
@@ -31,15 +35,13 @@ li {
 .book-card:not:first-child {
   flex-direction: column;
 }
-.book-img-cont {
-  width: 100px;
-}
 
 .book-img {
   max-width: 100px;
 }
 
 .book-text-content {
+  width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -47,23 +49,24 @@ li {
 
 .book-delete-btn {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 14px;
+  right: 14px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #e7e9fc;
-  padding: 8px;
+  padding: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
 }
 
 .book-delete-icon {
-  width: 8px;
-  height: 8px;
+  width: 16px;
+  height: 16px;
   fill: #434455;
 }
 
@@ -82,9 +85,15 @@ li {
 .book-category {
   margin-bottom: 8px;
 }
-.book-author {
+
+.book-copyright {
   margin-top: auto;
+  display: flex;
+  justify-content: space-between;
 }
+// .book-author {
+// //   margin-top: auto;
+// }
 
 @media screen and (min-width: 375px) {
   //   .body-shopping-container {
