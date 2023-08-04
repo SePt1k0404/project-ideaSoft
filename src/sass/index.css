@@ -1,0 +1,206 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local("DM Sans Regular"), local("DMSans-Regular"), url("../fonts/DMSans-Regular.woff2") format("woff2"), url("../fonts/DMSans-Regular.woff") format("woff"), url("../fonts/DMSans-Regular.ttf") format("truetype"), url("../fonts/DMSans-Regular.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: local("DM Sans Medium"), local("DMSans-Medium"), url("../fonts/DMSans-Medium.woff2") format("woff2"), url("../fonts/DMSans-Medium.woff") format("woff"), url("../fonts/DMSans-Medium.ttf") format("truetype"), url("../fonts/DMSans-Medium.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local("DM Sans Bold"), local("DMSans-Bold"), url("../fonts/DMSans-Bold.woff2") format("woff2"), url("../fonts/DMSans-Bold.woff") format("woff"), url("../fonts/DMSans-Bold.ttf") format("truetype"), url("../fonts/DMSans-Bold.eot?#iefix") format("embedded-opentype");
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local("DM Sans Regular"), local("DMSans-Regular"), url("../fonts/DMSans-Regular.woff2") format("woff2"), url("../fonts/DMSans-Regular.woff") format("woff"), url("../fonts/DMSans-Regular.ttf") format("truetype"), url("../fonts/DMSans-Regular.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: local("DM Sans Medium"), local("DMSans-Medium"), url("../fonts/DMSans-Medium.woff2") format("woff2"), url("../fonts/DMSans-Medium.woff") format("woff"), url("../fonts/DMSans-Medium.ttf") format("truetype"), url("../fonts/DMSans-Medium.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local("DM Sans Bold"), local("DMSans-Bold"), url("../fonts/DMSans-Bold.woff2") format("woff2"), url("../fonts/DMSans-Bold.woff") format("woff"), url("../fonts/DMSans-Bold.ttf") format("truetype"), url("../fonts/DMSans-Bold.eot?#iefix") format("embedded-opentype");
+}
+.form-box {
+  position: relative;
+  font-family: DM Sans;
+  font-style: normal;
+  width: 335px;
+  height: 384px;
+  margin: 214px auto;
+  padding: 40px 20px;
+  border-radius: 18px;
+  border: 2px solid;
+}
+.form-box .close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  fill: black;
+  stroke: black;
+}
+.form-box input {
+  height: 50px;
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.125;
+  letter-spacing: -0.16px;
+  border-radius: 40px;
+  border: 2px solid;
+  text-transform: uppercase;
+}
+.form-box .email-wrap,
+.form-box .password-wrap {
+  position: relative;
+  margin: 24px 0;
+}
+.form-box .email-wrap-icon,
+.form-box .password-wrap-icon {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  fill: white;
+  stroke: black;
+}
+.form-box .email-wrap .test-icon,
+.form-box .password-wrap .test-icon {
+  width: 14px;
+  height: 14px;
+}
+.form-box .button {
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  margin-bottom: 14px;
+  border: none;
+  border-radius: 40px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.125;
+  letter-spacing: -0.16px;
+}
+.form-box a {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.125;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.form-box .sign-up {
+  margin-right: 20px;
+}
+.form-box .refs-box {
+  display: inline-block;
+  margin-left: calc(50% - 70px);
+}
+
+@media screen and (min-width: 768px) {
+  .form-box {
+    width: 579px;
+    height: 516px;
+    margin: 127px auto;
+    padding: 80px 40px;
+  }
+  .form-box .close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 28px;
+    height: 28px;
+  }
+  .form-box input {
+    height: 64px;
+    padding: 20px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3333333333;
+    letter-spacing: -0.18px;
+  }
+  .form-box .email-wrap {
+    margin: 28px 0;
+  }
+  .form-box .email-wrap-icon {
+    width: 28px;
+    height: 28px;
+    top: 18px;
+    right: 32px;
+  }
+  .form-box .password-wrap {
+    margin-bottom: 40px;
+  }
+  .form-box .password-wrap-icon {
+    width: 28px;
+    height: 28px;
+    top: 18px;
+    right: 32px;
+  }
+  .form-box .button {
+    height: 64px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3333333333;
+    letter-spacing: -0.18px;
+  }
+  .form-box a {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3333333333;
+    letter-spacing: -0.18px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}/*# sourceMappingURL=index.css.map */
