@@ -65,9 +65,9 @@ li {
 }
 
 .book-delete-icon {
-  width: 16px;
-  height: 16px;
-  fill: #434455;
+  //   width: 16px;
+  //   height: 16px;
+  stroke: #434455;
 }
 
 .book-title {
@@ -94,6 +94,10 @@ li {
 // .book-author {
 // //   margin-top: auto;
 // }
+.buy-links {
+  display: flex;
+  gap: 8px;
+}
 
 @media screen and (min-width: 375px) {
   //   .body-shopping-container {

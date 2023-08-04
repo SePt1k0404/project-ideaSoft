@@ -33,7 +33,7 @@ function renderCards() {
               <div class="book-card">
                  <button type="button" class="book-delete-btn" onclick="OnRemoveClick('${book._id}')">
                     <svg class="book-delete-icon">
-                        <use href="/images/delete-book-icon.svg"></use>
+                        <use href="./images/sprite.svg#icon-trash"></use>
                     </svg>
                 </button>
                 <img src="${book.book_image}" alt="${book.title}" class="book-img">
@@ -41,31 +41,32 @@ function renderCards() {
                   <h3 class="book-title">${book.title}</h3>
                   <p class="book-category">${book.list_name}</p>
                   <p class="book-desc">${book.description}</p>
-                  <div class="book-copyright"> <p class="book-author">${book.author}</p>
-                  <div class="buy-links">
-                    <ul>
+                  <div class="book-copyright">
+                    <p class="book-author">${book.author}</p>
+                        <div >
+                        <ul class="buy-links">
                         <li>
                             <a href="${amazonLink}" class="book-buy-link">
-                                                <svg class="book-buy-icon">
-                    <use href=""></use>
-                </svg>
+                                <svg class="book-buy-icon">
+                                    <use href="/src/images/sprite.svg#icon-amazon"></use>
+                                </svg>
                             </a>
                         </li>
-                               <li>
-            <a href="${appleLink}" class="book-buy-link">
-            <svg class="book-buy-icon">
-                <use href=""></use>
-            </svg>
-            </a>
-        </li>
-        <li>
-            <a href="${barnesLink}" class="book-buy-link">
-                <svg class="book-buy-icon">
-                    <use href=""></use>
-                </svg>
-            </a>
-        </li> 
-                        </ul>
+                        <li>
+                            <a href="${appleLink}" class="book-buy-link">
+                                <svg class="book-buy-icon">
+                                    <use href="/src/images/sprite.svg#icon-amazon"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${barnesLink}" class="book-buy-link">
+                                <svg class="book-buy-icon">
+                                    <use href="/src/images/sprite.svg#icon-amazon"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
                     </div>
                 </div>
                 </div>
