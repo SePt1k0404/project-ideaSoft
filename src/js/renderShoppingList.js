@@ -7,16 +7,15 @@ import apple2x from '../images/trading-platforms/apple-books@2x.png';
 import barnes1x from '../images/trading-platforms/bookshop.png';
 import barnes2x from '../images/trading-platforms/bookshop@2x.png';
 import sprite from '../images/sprite.svg';
-import defultImg from '../images/book-placeholder-mobile.jpg';
+import defaultImg from '../images/book-placeholder-mobile.jpg';
+import refs from './refs';
+// import { onRemoveClick } from './onRemoveClick';
 
-import { onRemoveClick } from './onRemoveClick';
-
-function renderCards() {
+export default function renderCards() {
   const bookListEl = document.querySelector('#bookList');
   const storedBooks = localStorage.getItem('books');
   const books = JSON.parse(storedBooks);
-  console.log(storedBooks);
-  if (!books) {
+  if (!books || !books.length) {
     const emptyListMessage = document.createElement('li');
     emptyListMessage.textContent =
       'This page is empty, add some books and proceed to order.';
@@ -38,19 +37,18 @@ function renderCards() {
 
   const bookListHTML = books
     .map(book => {
-      console.log(book.buy_links);
       const amazonLink = book.buy_links[0].url;
       const appleLink = book.buy_links[1].url;
       const barnesLink = book.buy_links[2].url;
       let bookCover = book.book_image;
       if (!bookCover) {
-        bookCover = defultImg;
+        bookCover = defaultImg;
       }
-      return `<li class="shopping-list-wrap wrap-about-book-remove">
+      return `<li class="wrap-about-book-remove" data-title="${book.title}" data-author="${book.author}">
               <div class="book-card">
                  <button type="button" class="book-delete-btn">
                     <svg class="book-delete-icon">
-                        <use href="${sprite}#icon-trash"></use>
+                        <use class='use-js' href="${sprite}#icon-trash"></use>
                     </svg>
                 </button>
                     <img src="${bookCover}" alt="${book.title}" class="book-img"> 
@@ -97,4 +95,4 @@ function renderCards() {
   bookListEl.innerHTML = bookListHTML;
 }
 
-export { renderCards };
+// export { renderCards };

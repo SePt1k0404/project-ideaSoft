@@ -4,12 +4,13 @@ import Notiflix from 'notiflix';
 // import './js/render-support';
 // import './js/firebase-auth';
 // import './js/modal-auth';
-// import './js/onRemoveClick';
+import './js/onRemoveClick';
 // import './js/tui-pagination';
 // import './js/modal-team';
 // import './js/footer-toggle.js';
 // import './js/window-resize';
-import { renderCards } from './js/renderShoppingList';
+import renderCards from './js/renderShoppingList';
+import refs from './js/refs';
 //const booksData = null;
 const booksData = [
   {
@@ -87,10 +88,11 @@ const booksData = [
 
 localStorage.setItem('books', JSON.stringify(booksData));
 
-document.addEventListener('DOMContentLoaded', async () => {
+window.addEventListener('load', () => {
   try {
     renderCards();
   } catch (error) {
+    console.log(error.message);
     Notiflix.Notify.failure(
       'Oops! Something went wrong! Try reloading the page!'
     );
