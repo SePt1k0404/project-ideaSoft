@@ -4,3 +4,4 @@ export default {
     backdropLoader: document.querySelector('.loader-backdrop'),
  //   onRemoveClick.js
   shoppingListWrapper: document.querySelector('.shopping-list-wrap'),
+}
