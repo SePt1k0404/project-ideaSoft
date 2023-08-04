@@ -1,4 +1,3 @@
-import axios from 'axios';
 import Notiflix from 'notiflix';
 // import './js/theme-toggle';
 // import './js/header';
@@ -11,7 +10,7 @@ import Notiflix from 'notiflix';
 // import './js/footer-toggle.js';
 // import './js/window-resize';
 import { renderCards } from './js/renderShoppingList';
-// const booksData = null;
+//const booksData = null;
 const booksData = [
   {
     list_name: 'Combined Print and E-Book Nonfiction',
@@ -53,11 +52,10 @@ const booksData = [
     list_name: 'Combined Print and E-Book Nonfiction',
     _id: '642fd89ac8cf5ee957f12361',
     title:
-      'WISH 2 Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara',
+      'WISH 2 Barbaraaaaaaaa Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara',
     author: "Barbara O'Connor 2",
     description: 'Це дуже цікава книга про...2',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg',
+    book_image: '',
     buy_links: [
       {
         name: 'Amazon',

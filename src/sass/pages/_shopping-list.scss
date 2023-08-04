@@ -1,3 +1,4 @@
+@import '../utils/main.scss';
 h3,
 p {
   margin: 0;
@@ -37,7 +38,9 @@ li {
 }
 
 .book-img {
-  max-width: 100px;
+  width: 100px;
+  height: 142px;
+  border-radius: 8px;
 }
 
 .book-text-content {
@@ -55,7 +58,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e7e9fc;
+  background-color: $accent-text-color;
   padding: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
@@ -65,13 +68,13 @@ li {
 }
 
 .book-delete-icon {
-  //   width: 16px;
-  //   height: 16px;
-  stroke: #434455;
+  width: 16px;
+  height: 16px;
 }
 
 .book-title {
   margin-bottom: 4px;
+  max-width: calc(100% - 40px);
 }
 
 .book-desc {
@@ -95,16 +98,46 @@ li {
 // //   margin-top: auto;
 // }
 .buy-links {
+  height: 16px;
   display: flex;
   gap: 8px;
+  justify-content: center;
+}
+// .buy-li {
+//   height: 16px;
+// }
+
+.buy-amazon {
+  align-content: flex-end;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-@media screen and (min-width: 375px) {
-  //   .body-shopping-container {
-
-  //   }
-
-  //   .book-card {
-  //      width: 335px;
-  //   }
+.amazon-icon {
+  height: 11px;
 }
+
+.amazon-book-buy-icon {
+  display: flex;
+  align-self: flex-end;
+  width: 32px;
+  height: 11px;
+  filter: grayscale(100%);
+}
+
+.book-buy-icon {
+  height: 16px;
+  width: 16px;
+  display: block;
+  filter: grayscale(100%);
+}
+
+// @media screen and (min-width: 375px) {
+//   //   .body-shopping-container {
+
+//   //   }
+
+//   //   .book-card {
+//   //      width: 335px;
+//   //   }
+// }
