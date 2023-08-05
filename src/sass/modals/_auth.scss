@@ -7,24 +7,94 @@
   letter-spacing: $lspace;
 }
 
-.form-box {
+.backdrop {
   position: relative;
+  height: 100vh;
+  background-color: $main-accent-color;
+}
+
+.form-box {
+  position: absolute;
+  top: calc(50% - 384px / 2);
+  left: calc(50% - 335px / 2);
   font-family: DM Sans;
   font-style: normal;
   width: 335px;
   height: 384px;
-  margin: 214px auto;
+  // margin: 214px auto;
   padding: 40px 20px;
   border-radius: 18px;
-  border: 2px solid;
+  &-dark {
+    background-color: $dt-bg-color;
+    border: 2px solid $black-accent-color;
+    & input {
+      background-color: inherit;
+      border: 2px solid;
+      border-color: $lt-bg-color;
+      color: $lt-bg-color;
+      &::placeholder {
+        color: $lt-bg-color;
+      }
+    }
+    & .email-wrap-icon,
+    .password-wrap-icon {
+      stroke: $lt-bg-color;
+
+    }
+    & .auth-button {
+      background-color: $lt-bg-color;
+      color: $dt-bg-color;
+      transition: background-color $transition;
+      &:hover {
+        color: $lt-bg-color;
+      }
+    }
+    & .auth-ref {
+      color: rgba(246, 246, 246, 0.50);
+    }
+  }
+  &-light {
+    background-color: $lt-bg-color;
+    border: 2px solid $lt-bg-color;
+    & input {
+      background-color: inherit;
+      border: 2px solid $black-accent-color;
+      color: $black-accent-color;
+      &::placeholder {
+        color: $black-accent-color;
+      }
+    }
+    & .email-wrap-icon,
+    .password-wrap-icon {
+      fill: $lt-bg-color;
+      stroke: $black-accent-color;
+
+    }
+    & .auth-button {
+      background-color: $black-accent-color;
+      color: #F3F3F3;
+    }
+    & .auth-ref {
+      color: rgba(17, 17, 17, 0.50);
+    }
+  }
   & .close-btn {
     position: absolute;
     top: 14px;
     right: 14px;
-    // width: 20px;
-    // height: 20px;
-    fill: black;
-    stroke: black;
+    width: 20px;
+    height: 20px;
+    transition: stroke $transition;
+    cursor: pointer;
+    &-dark {
+      stroke: $lt-bg-color;  
+    }
+    &-light {
+      stroke: $black-accent-color;
+    }
+    &:hover {
+      stroke: $main-accent-color;
+    }
   }
   & input {
     height: 50px;
@@ -32,8 +102,11 @@
     padding: 16px 24px;
     @include content-text();
     border-radius: 40px;
-    border: 2px solid;
     text-transform: uppercase;
+    transition: $transition;
+    &:hover {
+        border: 2px solid $main-accent-color;
+    }
   }
   & .email-wrap,
   .password-wrap {
@@ -43,15 +116,16 @@
       position: absolute;
       top: 16px;
       right: 24px;
-      fill: white;
-      stroke: black;
+      transition: stroke $transition;
     }
-    & .test-icon {
-      width: 14px;
-      height: 14px;
+    &:hover {
+      & .email-wrap-icon,
+      .password-wrap-icon {
+        stroke: $main-accent-color;
+      }
     }
   }
-  & .button {
+  & .auth-button {
     cursor: pointer;
     width: 100%;
     height: 50px;
@@ -61,18 +135,33 @@
     border-radius: 40px;
     text-transform: uppercase;
     @include content-text();
+    transition: background-color $transition, color $transition;
+    &:hover {
+      background-color: $main-accent-color;
+    }
   }
   & a {
     @include content-text($lspace: -0.14px);
     text-transform: uppercase;
     text-decoration: none;
+    transition: color $transition;
+    &:hover {
+      color: $main-accent-color;
+    }
+    &:focus {
+      color: $main-accent-color;
+    }
   }
-  & .sign-up {
-    margin-right: 20px;
+  & .active {
+    color: $main-accent-color;
+    text-decoration: underline;
   }
   & .refs-box {
     display: inline-block;
     margin-left: calc((100% / 2) - 70px);
+  }
+  & .auth-ref:first-of-type {
+    margin-right: 20px;
   }
 }
 
@@ -80,8 +169,15 @@
   .form-box {
     width: 579px;
     height: 516px;
-    margin: 127px auto;
+    top: calc(50% - 516px / 2);
+    left: calc(50% - 579px / 2);  
     padding: 80px 40px;
+    &-dark {
+      border: 2px solid $lt-bg-color;
+    }
+    &-light {
+      border: 2px solid $black-accent-color;
+    }
     & .close-btn {
       position: absolute;
       top: 24px;
@@ -112,7 +208,7 @@
         right: 32px;
       }
     }
-    & .button {
+    & .auth-button {
       height: 64px;
       margin-bottom: 20px;
       @include content-text(18px, 700, 24px, -0.18px);
