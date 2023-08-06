@@ -16,14 +16,11 @@ export default function renderCards() {
   const storedBooks = localStorage.getItem('books');
   const books = JSON.parse(storedBooks);
   if (!books || !books.length) {
-    const emptyListMessage = document.createElement('li');
-    emptyListMessage.textContent =
-      'This page is empty, add some books and proceed to order.';
-    bookListEl.insertAdjacentHTML('beforeend', emptyListMessage.innerHTML);
     bookListEl.insertAdjacentHTML(
       'beforeend',
       `
-        <li>
+        <li class="emptyBookshelf">
+        <p class="empty-message">This page is empty, add some books and proceed to order.</p>
           <picture>
                 <source srcset="${emptyImg1x} 1x, ${emptyImg2x} 2x"
                  type="image/png" />
@@ -44,7 +41,7 @@ export default function renderCards() {
       if (!bookCover) {
         bookCover = defaultImg;
       }
-      return `<li class="wrap-about-book-remove" data-title="${book.title}" data-author="${book.author}">
+      return `<li class="wrap-about-book-remove card" data-title="${book.title}" data-author="${book.author}">
               <div class="book-card">
                  <button type="button" class="book-delete-btn">
                     <svg class="book-delete-icon">
