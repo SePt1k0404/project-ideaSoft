@@ -1,57 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Discover a world of captivating stories and enlightening knowledge at our online bookstore. Explore a vast collection of books spanning various genres, from gripping thrillers to thought-provoking non-fiction. Immerse yourself in the pages of literary wonders that will transport you to new realms of imagination and expand your horizons. Find your next literary adventure today and let the power of words ignite your mind."
-    />
-    <title>Bookshelf</title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./favicon/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="./favicon/safari-pinned-tab.svg"
-      color="#4f2ee8"
-    />
-    <meta name="msapplication-TileColor" content="#4f2ee8" />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" href="./sass/index.scss" />
-  </head>
+<html lang="en" data-theme="light">
 
-  <body>
-    <div class="body-home-container">
-      <include src="./partials/header.html"></include>
-      <include src="./partials/main-content.html"></include>
-      <include src="./partials/footer.html"></include>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Discover a world of captivating stories and enlightening knowledge at our online bookstore. Explore a vast collection of books spanning various genres, from gripping thrillers to thought-provoking non-fiction. Immerse yourself in the pages of literary wonders that will transport you to new realms of imagination and expand your horizons. Find your next literary adventure today and let the power of words ignite your mind." />
+  <title>Bookshelf</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./favicon/site.webmanifest" />
+  <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#4f2ee8" />
+  <meta name="msapplication-TileColor" content="#4f2ee8" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="stylesheet" href="./sass/index.scss" />
+</head>
 
-    <!-- scroll to top btn -->
-    <include src="./partials/components/scroll-to-top.html"></include>
+<body>
+  <div class="body-home-container">
+    <include src="./partials/header.html"></include>
+    <include src="./partials/main-content.html"></include>
+    <include src="./partials/footer.html"></include>
+  </div>
 
-    <!-- loader -->
-    <include src="./partials/components/loader.html"></include>
+  <!-- scroll to top btn -->
+  <include src="./partials/components/scroll-to-top.html"></include>
 
-    <!-- auth modal -->
-    <include src="./partials/modals/auth.html"></include>
-    <!-- main script -->
-    <script type="module" src="./index.js"></script>
-  </body>
+  <!-- loader -->
+  <include src="./partials/components/loader.html"></include>
+
+  <!-- auth modal -->
+  <include src="./partials/modals/auth.html"></include>
+  <!-- main script -->
+  <script type="module" src="./index.js"></script>
+</body>
+
 </html>
