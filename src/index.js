@@ -12,3 +12,5 @@ import './js/addToLocalStorage.js';
 import './js/scroll-to-top';
 import './js/modal-team';
 import './js/footer-toggle.js';
+import './js/books-content-by-category.js';
+// import './js/markup-top-books.js';
