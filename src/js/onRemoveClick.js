@@ -3,7 +3,7 @@ import { options, pagination, container } from './tui-pagination';
 
 const imageForEmpty = document.querySelector('.js-back');
 const textForEmpty = document.querySelector('.js-text');
-import refs from './refs';
+import { refs } from './refs';
 const SHOP_LIST_KEY = 'books';
 
 refs.shoppingListWrapper.addEventListener('click', onRemoveClick);

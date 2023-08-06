@@ -1,4 +1,4 @@
-export default refs = {
+const refs = {
   //   books-content-by-category.js, render-book-info.js
   contentWrapper: document.querySelector('.js-content-wrapper'),
   backdropLoader: document.querySelector('.loader-backdrop'),
@@ -7,3 +7,4 @@ export default refs = {
 };
 
 // console.log(refs.shoppingListWrapper);
+export { refs };

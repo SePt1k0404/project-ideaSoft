@@ -8,7 +8,7 @@ import barnes1x from '../images/trading-platforms/bookshop.png';
 import barnes2x from '../images/trading-platforms/bookshop@2x.png';
 import sprite from '../images/sprite.svg';
 import defaultImg from '../images/book-placeholder-mobile.jpg';
-import refs from './refs';
+import { refs } from './refs';
 // import { container, options, pagination } from './tui-pagination';
 import showPageItems from './tui-pagination';
 // import { onRemoveClick } from './onRemoveClick';
