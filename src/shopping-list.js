@@ -4,13 +4,13 @@ import Notiflix from 'notiflix';
 // import './js/render-support';
 // import './js/firebase-auth';
 // import './js/modal-auth';
-import './js/onRemoveClick';
+import './js/onRemoveClick.js';
 // import './js/tui-pagination';
 // import './js/modal-team';
 // import './js/footer-toggle.js';
 // import './js/window-resize';
-import renderCards from './js/renderShoppingList';
-import refs from './js/refs';
+import renderCards from './js/renderShoppingList.js';
+import refs from './js/refs.js';
 //const booksData = null;
 // const booksData = [
 //   {
