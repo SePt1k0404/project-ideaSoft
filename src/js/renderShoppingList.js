@@ -1,5 +1,3 @@
-
-
 import renderCards from './shoppingListMarkup.js';
 import Notiflix from 'notiflix';
 
@@ -362,10 +360,9 @@ const booksData = [
   },
 ];
 
-localStorage.setItem('books', JSON.stringify(booksData));
-
 window.addEventListener('load', () => {
   try {
+    localStorage.setItem('books', JSON.stringify(booksData));
     renderCards();
   } catch (error) {
     console.log(error.message);

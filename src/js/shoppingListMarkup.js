@@ -95,7 +95,7 @@ export default function renderCards() {
     })
     .join('');
   bookListEl.innerHTML = bookListHTML;
-  // showPageItems(1);
+  showPageItems(1);
 }
 
 // export { renderCards };
