@@ -1,7 +1,5 @@
-import renderCards from './renderShoppingList';
+import renderCards from './shoppingListMarkup';
 import { options, pagination, container } from './tui-pagination';
-import Pagination from 'tui-pagination';
-import showPageItems from './tui-pagination';
 
 const imageForEmpty = document.querySelector('.js-back');
 const textForEmpty = document.querySelector('.js-text');
