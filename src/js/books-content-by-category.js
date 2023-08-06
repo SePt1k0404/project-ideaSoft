@@ -23,7 +23,7 @@ export async function loadingPopularBook() {
             ${books
               .map(
                 book => `
-              <li class="bestsellers-book-item">
+              <li class="bestsellers-book-item" data-id="${book._id}">
                 ${createBookMarkup(book)}
               </li>
             `
