@@ -29,20 +29,20 @@ export function onRemoveClick(evt) {
   const updatedDataString = JSON.stringify(newBooks);
   localStorage.setItem(SHOP_LIST_KEY, updatedDataString);
   removeBtn.innerHTML = '';
-  options.totalItems -= 1;
-  renderCards();
-  if (deletePaginationPageByWrapper.children.length > 1) {
-    let pageCurrent = pagination.getCurrentPage();
-    pagination.reset(options.totalItems);
-    pagination.movePageTo(pageCurrent);
-    // showPageItems(pageCurrent);
-  } else {
-    let pageCurrent = pagination.getCurrentPage() - 1;
-    pagination.reset(options.totalItems);
-    pagination.movePageTo(pageCurrent);
-  }
-  if (!options.totalItems) {
-    imageForEmpty.classList.remove('visually-hidden');
-    textForEmpty.classList.remove('visually-hidden');
-  }
+  // options.totalItems -= 1;
+  // renderCards();
+  // if (deletePaginationPageByWrapper.children.length > 1) {
+  //   let pageCurrent = pagination.getCurrentPage();
+  //   pagination.reset(options.totalItems);
+  //   pagination.movePageTo(pageCurrent);
+  //   // showPageItems(pageCurrent);
+  // } else {
+  //   let pageCurrent = pagination.getCurrentPage() - 1;
+  //   pagination.reset(options.totalItems);
+  //   pagination.movePageTo(pageCurrent);
+  // }
+  // if (!options.totalItems) {
+  //   imageForEmpty.classList.remove('visually-hidden');
+  //   textForEmpty.classList.remove('visually-hidden');
+  // }
 }
