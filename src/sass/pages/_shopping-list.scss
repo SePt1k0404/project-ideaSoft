@@ -1,6 +1,6 @@
 @import '../utils/main.scss';
 body {
-  background-color: $lt-bg-color;
+  background-color: --bg-color;
 }
 h3,
 p {
@@ -22,6 +22,7 @@ li {
 }
 
 .title {
+  color: --main-text-color;
   font-family: DM Sans;
   font-size: 32px;
   font-weight: 700;
@@ -68,7 +69,7 @@ li {
   padding: 14px;
   border-radius: 16px;
   border: 2px solid rgba(79, 46, 232, 0.4);
-  background: #fff;
+  background: --card-color;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
   gap: 14px;
@@ -115,7 +116,7 @@ li {
 .book-title {
   margin-bottom: 4px;
   max-width: calc(100% - 40px);
-  color: $lt-main-text-color;
+  color: --main-text-color;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12; /* 112.5% */
@@ -130,7 +131,7 @@ li {
   overflow: hidden;
   white-space: normal;
   word-wrap: break-word;
-  color: $lt-main-text-color;
+  color: --main-text-color;
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -141,7 +142,7 @@ li {
 .book-category {
   max-width: calc(100% - 40px);
   margin-bottom: 8px;
-  color: #b4afaf;
+  color: --subtitle-color;
   font-family: DM Sans;
   font-size: 12px;
   line-height: 1.16; /* 116.667% */
@@ -154,7 +155,7 @@ li {
   justify-content: space-between;
 }
 .book-author {
-  color: #b4afaf;
+  color: --subtitle-color;
   font-family: DM Sans;
   font-size: 12px;
   font-style: italic;
@@ -193,28 +194,6 @@ li {
   display: block;
   filter: grayscale(100%);
 }
-
-//--------------- changing count of cards on the page----------------
-
-// .card:nth-child(-n + 4) {
-//   display: block;
-// }
-
-// .card:nth-child(n + 5) {
-//   display: none;
-// }
-
-// @media screen and (min-width: 767px) {
-//   .card:nth-child(-n + 3) {
-//     display: block;
-//   }
-
-//   .card:nth-child(n + 4) {
-//     display: none;
-//   }
-// }
-
-//--------------- /changing count of cards on the page----------------
 
 @media screen and (min-width: 768px) {
   .body-shopping-container {
@@ -287,10 +266,7 @@ li {
   }
 
   .title {
-    color: #111;
-    font-family: DM Sans;
     font-size: 48px;
-    font-style: normal;
     font-weight: 700;
     line-height: 52px; /* 108.333% */
     letter-spacing: -1.92px;

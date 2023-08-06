@@ -1,95 +1,372 @@
 import emptyImg1x from '../images/bg-shopping-list.png';
-import emptyImg2x from '../images/bg-shopping-list@2x.png';
-import amazon1x from '../images/trading-platforms/amazon.png';
-import amazon2x from '../images/trading-platforms/amazon@2x.png';
-import apple1x from '../images/trading-platforms/apple-books.png';
-import apple2x from '../images/trading-platforms/apple-books@2x.png';
-import barnes1x from '../images/trading-platforms/bookshop.png';
-import barnes2x from '../images/trading-platforms/bookshop@2x.png';
-import sprite from '../images/sprite.svg';
-import defaultImg from '../images/book-placeholder-mobile.jpg';
-import refs from './refs';
-// import { onRemoveClick } from './onRemoveClick';
-
-export default function renderCards() {
-  const bookListEl = document.querySelector('#bookList');
-  const storedBooks = localStorage.getItem('books');
-  const books = JSON.parse(storedBooks);
-  if (!books || !books.length) {
-    bookListEl.insertAdjacentHTML(
-      'beforeend',
-      `
-        <li class="emptyBookshelf">
-        <p class="empty-message">This page is empty, add some books and proceed to order.</p>
-          <picture>
-                <source srcset="${emptyImg1x} 1x, ${emptyImg2x} 2x"
-                 type="image/png" />
-                <img src="${emptyImg1x}" alt=" Empty Bookshelf" />
-            </picture>
-        </li>
-        `
+import renderCards from './shoppingListMarkup.js';
+import Notiflix from 'notiflix';
+//const booksData = null;
+const booksData = [
+  {
+    list_name: 'Combined Print and E-Book Nonfiction',
+    _id: '642fd89ac8cf5ee957f12361',
+    title: '1WISH',
+    author: "1Barbara O'Connor",
+    description:
+      'Це дуже цікава книга Це дуже цікава книга Це дуже цікава книга Це дуже цікава книга',
+    book_image:
+      'https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg',
+    buy_links: [
+      {
+        name: 'Amazon',
+        url: 'https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20',
+      },
+      {
+        name: 'Apple Books',
+        url: 'https://goto.applebooks.apple/9781250144058?at=10lIEQ',
+      },
+      {
+        name: 'Barnes and Noble',
+        url: 'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250144058',
+      },
+      {
+        name: 'Books-A-Million',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fp%252FWISH%252FBarbara%252BO%252527Connor%252F9781250144058&url2=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fsearch%253Fquery%253DWISH%252BBarbara%252BO%252527Connor',
+      },
+      {
+        name: 'Bookshop',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fbookshop.org%2Fa%2F3546%2F9781250144058&url2=https%3A%2F%2Fbookshop.org%2Fbooks%3Faffiliate%3D3546%26keywords%3DWISH',
+      },
+      {
+        name: 'IndieBound',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.indiebound.org%2Fbook%2F9781250144058%3Faff%3DNYT&url2=https%3A%2F%2Fwww.indiebound.org%2Fsearch%2Fbook%3Fkeys%3DWISH%2BBarbara%2BO%2527Connor%26aff%3DNYT',
+      },
+    ],
+  },
+  {
+    list_name: 'Combined Print and E-Book Nonfiction',
+    _id: '642fd89ac8cf5ee957f12361',
+    title:
+      '2WISH 2 Barbaraaaaaaaa Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara',
+    author: "2Barbara O'Connor 2",
+    description: 'Це дуже цікава книга про...2',
+    book_image: '',
+    buy_links: [
+      {
+        name: 'Amazon',
+        url: 'https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20',
+      },
+      {
+        name: 'Apple Books',
+        url: 'https://goto.applebooks.apple/9781250144058?at=10lIEQ',
+      },
+      {
+        name: 'Barnes and Noble',
+        url: 'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250144058',
+      },
+      {
+        name: 'Books-A-Million',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fp%252FWISH%252FBarbara%252BO%252527Connor%252F9781250144058&url2=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fsearch%253Fquery%253DWISH%252BBarbara%252BO%252527Connor',
+      },
+      {
+        name: 'Bookshop',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fbookshop.org%2Fa%2F3546%2F9781250144058&url2=https%3A%2F%2Fbookshop.org%2Fbooks%3Faffiliate%3D3546%26keywords%3DWISH',
+      },
+      {
+        name: 'IndieBound',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.indiebound.org%2Fbook%2F9781250144058%3Faff%3DNYT&url2=https%3A%2F%2Fwww.indiebound.org%2Fsearch%2Fbook%3Fkeys%3DWISH%2BBarbara%2BO%2527Connor%26aff%3DNYT',
+      },
+    ],
+  },
+  {
+    list_name: 'Combined Print and E-Book Nonfiction',
+    _id: '642fd89ac8cf5ee957f12361',
+    title: '3WISH',
+    author: "3Barbara O'Connor",
+    description:
+      'Це дуже цікава книга Це дуже цікава книга Це дуже цікава книга Це дуже цікава книга',
+    book_image:
+      'https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg',
+    buy_links: [
+      {
+        name: 'Amazon',
+        url: 'https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20',
+      },
+      {
+        name: 'Apple Books',
+        url: 'https://goto.applebooks.apple/9781250144058?at=10lIEQ',
+      },
+      {
+        name: 'Barnes and Noble',
+        url: 'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250144058',
+      },
+      {
+        name: 'Books-A-Million',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fp%252FWISH%252FBarbara%252BO%252527Connor%252F9781250144058&url2=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fsearch%253Fquery%253DWISH%252BBarbara%252BO%252527Connor',
+      },
+      {
+        name: 'Bookshop',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fbookshop.org%2Fa%2F3546%2F9781250144058&url2=https%3A%2F%2Fbookshop.org%2Fbooks%3Faffiliate%3D3546%26keywords%3DWISH',
+      },
+      {
+        name: 'IndieBound',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.indiebound.org%2Fbook%2F9781250144058%3Faff%3DNYT&url2=https%3A%2F%2Fwww.indiebound.org%2Fsearch%2Fbook%3Fkeys%3DWISH%2BBarbara%2BO%2527Connor%26aff%3DNYT',
+      },
+    ],
+  },
+  {
+    list_name: 'Combined Print and E-Book Nonfiction',
+    _id: '642fd89ac8cf5ee957f12361',
+    title:
+      '4WISH 2 Barbaraaaaaaaa Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara',
+    author: "4Barbara O'Connor 2",
+    description: 'Це дуже цікава книга про...2',
+    book_image: '',
+    buy_links: [
+      {
+        name: 'Amazon',
+        url: 'https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20',
+      },
+      {
+        name: 'Apple Books',
+        url: 'https://goto.applebooks.apple/9781250144058?at=10lIEQ',
+      },
+      {
+        name: 'Barnes and Noble',
+        url: 'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250144058',
+      },
+      {
+        name: 'Books-A-Million',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fp%252FWISH%252FBarbara%252BO%252527Connor%252F9781250144058&url2=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fsearch%253Fquery%253DWISH%252BBarbara%252BO%252527Connor',
+      },
+      {
+        name: 'Bookshop',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fbookshop.org%2Fa%2F3546%2F9781250144058&url2=https%3A%2F%2Fbookshop.org%2Fbooks%3Faffiliate%3D3546%26keywords%3DWISH',
+      },
+      {
+        name: 'IndieBound',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.indiebound.org%2Fbook%2F9781250144058%3Faff%3DNYT&url2=https%3A%2F%2Fwww.indiebound.org%2Fsearch%2Fbook%3Fkeys%3DWISH%2BBarbara%2BO%2527Connor%26aff%3DNYT',
+      },
+    ],
+  },
+  {
+    list_name: 'Combined Print and E-Book Nonfiction',
+    _id: '642fd89ac8cf5ee957f12361',
+    title: '5WISH',
+    author: "5Barbara O'Connor",
+    description:
+      'Це дуже цікава книга Це дуже цікава книга Це дуже цікава книга Це дуже цікава книга',
+    book_image:
+      'https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg',
+    buy_links: [
+      {
+        name: 'Amazon',
+        url: 'https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20',
+      },
+      {
+        name: 'Apple Books',
+        url: 'https://goto.applebooks.apple/9781250144058?at=10lIEQ',
+      },
+      {
+        name: 'Barnes and Noble',
+        url: 'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250144058',
+      },
+      {
+        name: 'Books-A-Million',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fp%252FWISH%252FBarbara%252BO%252527Connor%252F9781250144058&url2=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fsearch%253Fquery%253DWISH%252BBarbara%252BO%252527Connor',
+      },
+      {
+        name: 'Bookshop',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fbookshop.org%2Fa%2F3546%2F9781250144058&url2=https%3A%2F%2Fbookshop.org%2Fbooks%3Faffiliate%3D3546%26keywords%3DWISH',
+      },
+      {
+        name: 'IndieBound',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.indiebound.org%2Fbook%2F9781250144058%3Faff%3DNYT&url2=https%3A%2F%2Fwww.indiebound.org%2Fsearch%2Fbook%3Fkeys%3DWISH%2BBarbara%2BO%2527Connor%26aff%3DNYT',
+      },
+    ],
+  },
+  {
+    list_name: 'Combined Print and E-Book Nonfiction',
+    _id: '642fd89ac8cf5ee957f12361',
+    title:
+      '6WISH 2 Barbaraaaaaaaa Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara',
+    author: "6Barbara O'Connor 2",
+    description: 'Це дуже цікава книга про...2',
+    book_image: '',
+    buy_links: [
+      {
+        name: 'Amazon',
+        url: 'https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20',
+      },
+      {
+        name: 'Apple Books',
+        url: 'https://goto.applebooks.apple/9781250144058?at=10lIEQ',
+      },
+      {
+        name: 'Barnes and Noble',
+        url: 'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250144058',
+      },
+      {
+        name: 'Books-A-Million',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fp%252FWISH%252FBarbara%252BO%252527Connor%252F9781250144058&url2=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fsearch%253Fquery%253DWISH%252BBarbara%252BO%252527Connor',
+      },
+      {
+        name: 'Bookshop',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fbookshop.org%2Fa%2F3546%2F9781250144058&url2=https%3A%2F%2Fbookshop.org%2Fbooks%3Faffiliate%3D3546%26keywords%3DWISH',
+      },
+      {
+        name: 'IndieBound',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.indiebound.org%2Fbook%2F9781250144058%3Faff%3DNYT&url2=https%3A%2F%2Fwww.indiebound.org%2Fsearch%2Fbook%3Fkeys%3DWISH%2BBarbara%2BO%2527Connor%26aff%3DNYT',
+      },
+    ],
+  },
+  {
+    list_name: 'Combined Print and E-Book Nonfiction',
+    _id: '642fd89ac8cf5ee957f12361',
+    title: '7WISH',
+    author: "7Barbara O'Connor",
+    description:
+      'Це дуже цікава книга Це дуже цікава книга Це дуже цікава книга Це дуже цікава книга',
+    book_image:
+      'https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg',
+    buy_links: [
+      {
+        name: 'Amazon',
+        url: 'https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20',
+      },
+      {
+        name: 'Apple Books',
+        url: 'https://goto.applebooks.apple/9781250144058?at=10lIEQ',
+      },
+      {
+        name: 'Barnes and Noble',
+        url: 'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250144058',
+      },
+      {
+        name: 'Books-A-Million',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fp%252FWISH%252FBarbara%252BO%252527Connor%252F9781250144058&url2=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fsearch%253Fquery%253DWISH%252BBarbara%252BO%252527Connor',
+      },
+      {
+        name: 'Bookshop',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fbookshop.org%2Fa%2F3546%2F9781250144058&url2=https%3A%2F%2Fbookshop.org%2Fbooks%3Faffiliate%3D3546%26keywords%3DWISH',
+      },
+      {
+        name: 'IndieBound',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.indiebound.org%2Fbook%2F9781250144058%3Faff%3DNYT&url2=https%3A%2F%2Fwww.indiebound.org%2Fsearch%2Fbook%3Fkeys%3DWISH%2BBarbara%2BO%2527Connor%26aff%3DNYT',
+      },
+    ],
+  },
+  {
+    list_name: 'Combined Print and E-Book Nonfiction',
+    _id: '642fd89ac8cf5ee957f12361',
+    title:
+      '8WISH 2 Barbaraaaaaaaa Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara',
+    author: "8Barbara O'Connor 2",
+    description: 'Це дуже цікава книга про...2',
+    book_image: '',
+    buy_links: [
+      {
+        name: 'Amazon',
+        url: 'https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20',
+      },
+      {
+        name: 'Apple Books',
+        url: 'https://goto.applebooks.apple/9781250144058?at=10lIEQ',
+      },
+      {
+        name: 'Barnes and Noble',
+        url: 'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250144058',
+      },
+      {
+        name: 'Books-A-Million',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fp%252FWISH%252FBarbara%252BO%252527Connor%252F9781250144058&url2=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fsearch%253Fquery%253DWISH%252BBarbara%252BO%252527Connor',
+      },
+      {
+        name: 'Bookshop',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fbookshop.org%2Fa%2F3546%2F9781250144058&url2=https%3A%2F%2Fbookshop.org%2Fbooks%3Faffiliate%3D3546%26keywords%3DWISH',
+      },
+      {
+        name: 'IndieBound',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.indiebound.org%2Fbook%2F9781250144058%3Faff%3DNYT&url2=https%3A%2F%2Fwww.indiebound.org%2Fsearch%2Fbook%3Fkeys%3DWISH%2BBarbara%2BO%2527Connor%26aff%3DNYT',
+      },
+    ],
+  },
+  {
+    list_name: 'Combined Print and E-Book Nonfiction',
+    _id: '642fd89ac8cf5ee957f12361',
+    title: '9WISH',
+    author: "9Barbara O'Connor",
+    description:
+      'Це дуже цікава книга Це дуже цікава книга Це дуже цікава книга Це дуже цікава книга',
+    book_image:
+      'https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg',
+    buy_links: [
+      {
+        name: 'Amazon',
+        url: 'https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20',
+      },
+      {
+        name: 'Apple Books',
+        url: 'https://goto.applebooks.apple/9781250144058?at=10lIEQ',
+      },
+      {
+        name: 'Barnes and Noble',
+        url: 'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250144058',
+      },
+      {
+        name: 'Books-A-Million',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fp%252FWISH%252FBarbara%252BO%252527Connor%252F9781250144058&url2=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fsearch%253Fquery%253DWISH%252BBarbara%252BO%252527Connor',
+      },
+      {
+        name: 'Bookshop',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fbookshop.org%2Fa%2F3546%2F9781250144058&url2=https%3A%2F%2Fbookshop.org%2Fbooks%3Faffiliate%3D3546%26keywords%3DWISH',
+      },
+      {
+        name: 'IndieBound',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.indiebound.org%2Fbook%2F9781250144058%3Faff%3DNYT&url2=https%3A%2F%2Fwww.indiebound.org%2Fsearch%2Fbook%3Fkeys%3DWISH%2BBarbara%2BO%2527Connor%26aff%3DNYT',
+      },
+    ],
+  },
+  {
+    list_name: 'Combined Print and E-Book Nonfiction',
+    _id: '642fd89ac8cf5ee957f12361',
+    title:
+      '10WISH 2 Barbaraaaaaaaa Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara Barbara',
+    author: "10Barbara O'Connor 2",
+    description: 'Це дуже цікава книга про...2',
+    book_image: '',
+    buy_links: [
+      {
+        name: 'Amazon',
+        url: 'https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20',
+      },
+      {
+        name: 'Apple Books',
+        url: 'https://goto.applebooks.apple/9781250144058?at=10lIEQ',
+      },
+      {
+        name: 'Barnes and Noble',
+        url: 'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250144058',
+      },
+      {
+        name: 'Books-A-Million',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fp%252FWISH%252FBarbara%252BO%252527Connor%252F9781250144058&url2=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fsearch%253Fquery%253DWISH%252BBarbara%252BO%252527Connor',
+      },
+      {
+        name: 'Bookshop',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fbookshop.org%2Fa%2F3546%2F9781250144058&url2=https%3A%2F%2Fbookshop.org%2Fbooks%3Faffiliate%3D3546%26keywords%3DWISH',
+      },
+      {
+        name: 'IndieBound',
+        url: 'https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.indiebound.org%2Fbook%2F9781250144058%3Faff%3DNYT&url2=https%3A%2F%2Fwww.indiebound.org%2Fsearch%2Fbook%3Fkeys%3DWISH%2BBarbara%2BO%2527Connor%26aff%3DNYT',
+      },
+    ],
+  },
+];
+window.addEventListener('load', () => {
+  try {
+    localStorage.setItem('books', JSON.stringify(booksData));
+    renderCards();
+  } catch (error) {
+    console.log(error.message);
+    Notiflix.Notify.failure(
+      'Oops! Something went wrong! Try reloading the page!'
     );
-    return;
   }
-
-  const bookListHTML = books
-    .map(book => {
-      const amazonLink = book.buy_links[0].url;
-      const appleLink = book.buy_links[1].url;
-      const barnesLink = book.buy_links[2].url;
-      let bookCover = book.book_image;
-      if (!bookCover) {
-        bookCover = defaultImg;
-      }
-      return `<li class="wrap-about-book-remove card" data-title="${book.title}" data-author="${book.author}">
-              <div class="book-card">
-                 <button type="button" class="book-delete-btn">
-                    <svg class="book-delete-icon">
-                        <use class='use-js' href="${sprite}#icon-trash"></use>
-                    </svg>
-                </button>
-                    <img src="${bookCover}" alt="${book.title}" class="book-img"> 
-                <div class="book-text-content">
-                  <h3 class="book-title">${book.title}</h3>
-                  <p class="book-category">${book.list_name}</p>
-                  <p class="book-desc">${book.description}</p>
-                  <div class="book-copyright">
-                    <p class="book-author">${book.author}</p>
-                        
-                        <ul class="buy-links">
-                        <li class="buy-li buy-amazon">
-                            <a href="${amazonLink}" class="book-buy-link amazon-icon" target="_blank">            
-                                <picture class="amazon-picture">
-                                    <source srcset="${amazon1x} 1x, ${amazon2x} 2x" type="image/png" />
-                                    <img src="${amazon1x}" alt=" Empty Bookshelf" class="amazon-book-buy-icon" />
-                                </picture> 
-                            </a>
-                        </li>
-                        <li class="buy-li">
-                            <a href="${appleLink}" class="book-buy-link" target="_blank">
-                                <picture class="picture">
-                                    <source srcset="${apple1x} 1x, ${apple2x} 2x" type="image/png" />
-                                    <img src="${apple1x}" alt=" Empty Bookshelf" class="book-buy-icon" />
-                                </picture> 
-                            </a>
-                        </li>
-                        <li class="buy-li">
-                            <a href="${barnesLink}" class="book-buy-link" target="_blank">
-                                <picture class="picture">
-                                    <source srcset="${barnes1x} 1x, ${barnes2x} 2x" type="image/png" />
-                                    <img src="${barnes1x}" alt=" Empty Bookshelf" class="book-buy-icon" />
-                                </picture> 
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                </div>
-              </div>
-              </li>
-            `;
-    })
-    .join('');
-  bookListEl.innerHTML = bookListHTML;
-}
-
-// export { renderCards };
+});
