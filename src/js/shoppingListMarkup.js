@@ -1,27 +1,19 @@
-// import emptyImg1x from '../images/bg-shopping-list.png';
-// import emptyImg2x from '../images/bg-shopping-list@2x.png';
-// import amazon1x from '../images/trading-platforms/amazon.png';
-// import amazon2x from '../images/trading-platforms/amazon@2x.png';
-// import apple1x from '../images/trading-platforms/apple-books.png';
-// import apple2x from '../images/trading-platforms/apple-books@2x.png';
-// import barnes1x from '../images/trading-platforms/bookshop.png';
-// import barnes2x from '../images/trading-platforms/bookshop@2x.png';
-// import sprite from '../images/sprite.svg';
-// import defaultImg from '../images/book-placeholder-mobile.jpg';
-
-const emptyImg1x = '#';
-const emptyImg2x = '#';
-const amazon1x = '#';
-const amazon2x = '#';
-const apple1x = '#';
-const apple2x = '#';
-const barnes1x = '#';
-const barnes2x = '#';
-const sprite = '#';
-const defaultImg = '#';
+import emptyImg1x from '../images/bg-shopping-list.png';
+import emptyImg2x from '../images/bg-shopping-list@2x.png';
+import amazon1x from '../images/trading-platforms/amazon.png';
+import amazon2x from '../images/trading-platforms/amazon@2x.png';
+import apple1x from '../images/trading-platforms/apple-books.png';
+import apple2x from '../images/trading-platforms/apple-books@2x.png';
+import barnes1x from '../images/trading-platforms/bookshop.png';
+import barnes2x from '../images/trading-platforms/bookshop@2x.png';
+import sprite from '../images/sprite.svg';
+import defaultImg from '../images/book-placeholder-mobile.jpg';
+import refs from './refs';
+// import { container, options, pagination } from './tui-pagination';
+import showPageItems from './tui-pagination';
+// import { onRemoveClick } from './onRemoveClick';
 
 export default function renderCards() {
-  const defaultMessage = 'Coming Soon';
   const bookListEl = document.querySelector('#bookList');
   const storedBooks = localStorage.getItem('books');
   const books = JSON.parse(storedBooks);
@@ -54,26 +46,20 @@ export default function renderCards() {
       if (!bookCover) {
         bookCover = defaultImg;
       }
-      return `<li class="wrap-about-book-remove" data-title="${
-        book.title || defaultMessage
-      }" data-author="${book.author || defaultMessage}">
+      return `<li class="wrap-about-book-remove list-item" data-title="${book.title}" data-author="${book.author}">
               <div class="book-card">
                  <button type="button" class="book-delete-btn">
                     <svg class="book-delete-icon">
                         <use class='use-js' href="${sprite}#icon-trash"></use>
                     </svg>
                 </button>
-                    <img src="${bookCover}" alt="${
-        book.title || defaultMessage
-      }" class="book-img"> 
+                    <img src="${bookCover}" alt="${book.title}" class="book-img"> 
                 <div class="book-text-content">
-                  <h3 class="book-title">${book.title || defaultMessage}</h3>
-                  <p class="book-category">${
-                    book.list_name || defaultMessage
-                  }</p>
-                  <p class="book-desc">${book.description || defaultMessage}</p>
+                  <h3 class="book-title">${book.title}</h3>
+                  <p class="book-category">${book.list_name}</p>
+                  <p class="book-desc">${book.description}</p>
                   <div class="book-copyright">
-                    <p class="book-author">${book.author || defaultMessage}</p>
+                    <p class="book-author">${book.author}</p>
                         
                         <ul class="buy-links">
                         <li class="buy-li buy-amazon">
@@ -109,4 +95,7 @@ export default function renderCards() {
     })
     .join('');
   bookListEl.innerHTML = bookListHTML;
+  showPageItems(1);
 }
+
+// export { renderCards };
