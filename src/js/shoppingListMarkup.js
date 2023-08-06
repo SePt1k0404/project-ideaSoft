@@ -1,13 +1,13 @@
-import emptyImg1x from './images/bg-shopping-list.png';
-import emptyImg2x from './images/bg-shopping-list@2x.png';
-import amazon1x from './images/trading-platforms/amazon.png';
-import amazon2x from './images/trading-platforms/amazon@2x.png';
-import apple1x from './images/trading-platforms/apple-books.png';
-import apple2x from './images/trading-platforms/apple-books@2x.png';
-import barnes1x from './images/trading-platforms/bookshop.png';
-import barnes2x from './images/trading-platforms/bookshop@2x.png';
-import sprite from './images/sprite.svg';
-import defaultImg from './images/book-placeholder-mobile.jpg';
+import emptyImg1x from '/src/images/bg-shopping-list.png';
+import emptyImg2x from '/src/images/bg-shopping-list@2x.png';
+import amazon1x from '/src/images/trading-platforms/amazon.png';
+import amazon2x from '/src/images/trading-platforms/amazon@2x.png';
+import apple1x from '/src/images/trading-platforms/apple-books.png';
+import apple2x from '/src/images/trading-platforms/apple-books@2x.png';
+import barnes1x from '/src/images/trading-platforms/bookshop.png';
+import barnes2x from '/src/images/trading-platforms/bookshop@2x.png';
+import sprite from '/src/images/sprite.svg';
+import defaultImg from '/src/images/book-placeholder-mobile.jpg';
 import refs from './refs';
 
 export default function renderCards() {
