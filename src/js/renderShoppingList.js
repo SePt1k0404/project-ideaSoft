@@ -8,8 +8,10 @@ import barnes1x from '../images/trading-platforms/bookshop.png';
 import barnes2x from '../images/trading-platforms/bookshop@2x.png';
 import sprite from '../images/sprite.svg';
 import defaultImg from '../images/book-placeholder-mobile.jpg';
-import refs from './refs';
-// import { onRemoveClick } from './onRemoveClick';
+
+import { container, options, pagination } from './tui-pagination';
+import showPageItems from './tui-pagination';
+import { onRemoveClick } from './onRemoveClick';
 
 export default function renderCards() {
   const bookListEl = document.querySelector('#bookList');
@@ -44,7 +46,7 @@ export default function renderCards() {
       if (!bookCover) {
         bookCover = defaultImg;
       }
-      return `<li class="wrap-about-book-remove" data-title="${book.title}" data-author="${book.author}">
+      return `<li class="wrap-about-book-remove list-item" data-title="${book.title}" data-author="${book.author}">
               <div class="book-card">
                  <button type="button" class="book-delete-btn">
                     <svg class="book-delete-icon">
@@ -93,6 +95,7 @@ export default function renderCards() {
     })
     .join('');
   bookListEl.innerHTML = bookListHTML;
+  showPageItems(1);
 }
 
 // export { renderCards };

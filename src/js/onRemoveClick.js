@@ -1,12 +1,13 @@
 import renderCards from './renderShoppingList';
-import { pagination, options } from './tui-pagination';
+import { options, pagination, container } from './tui-pagination';
+import Pagination from 'tui-pagination';
+import showPageItems from './tui-pagination';
 
 const imageForEmpty = document.querySelector('.js-back');
 const textForEmpty = document.querySelector('.js-text');
 import refs from './refs';
 const SHOP_LIST_KEY = 'books';
 
-// renderShoppingList(1);
 refs.shoppingListWrapper.addEventListener('click', onRemoveClick);
 
 export function onRemoveClick(evt) {
@@ -29,20 +30,21 @@ export function onRemoveClick(evt) {
   );
   const updatedDataString = JSON.stringify(newBooks);
   localStorage.setItem(SHOP_LIST_KEY, updatedDataString);
-  renderCards();
   removeBtn.innerHTML = '';
-  //   options.totalItems -= 1;
-  //   if (deletePaginationPageByWrapper.children.length > 1) {
-  //     let pageCurrent = pagination.getCurrentPage();
-  //     pagination.reset(options.totalItems);
-  //     pagination.movePageTo(pageCurrent);
-  //   } else {
-  //     let pageCurrent = pagination.getCurrentPage() - 1;
-  //     pagination.reset(options.totalItems);
-  //     pagination.movePageTo(pageCurrent);
-  //   }
-  //   if (!options.totalItems) {
-  //     imageForEmpty.classList.remove('visually-hidden');
-  //     textForEmpty.classList.remove('visually-hidden');
-  //   }
+  options.totalItems -= 1;
+  renderCards();
+  if (deletePaginationPageByWrapper.children.length > 1) {
+    let pageCurrent = pagination.getCurrentPage();
+    pagination.reset(options.totalItems);
+    pagination.movePageTo(pageCurrent);
+    // showPageItems(pageCurrent);
+  } else {
+    let pageCurrent = pagination.getCurrentPage() - 1;
+    pagination.reset(options.totalItems);
+    pagination.movePageTo(pageCurrent);
+  }
+  if (!options.totalItems) {
+    imageForEmpty.classList.remove('visually-hidden');
+    textForEmpty.classList.remove('visually-hidden');
+  }
 }
