@@ -19,12 +19,12 @@ const options = {
     currentPage:
       '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
     moveButton:
-      '<a href="#" class="tui-page-btn tui-{{type}}">' +
-      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '<a href="#" class="tui-page-btn tui-{{type}} tui-active"> ' +
+      '<span class="tui-ico-{{type}} tui-ico-text">{{type}}</span>' +
       '</a>',
     disabledMoveButton:
       '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
-      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '<span class="tui-ico-{{type}} tui-ico-text">{{type}}</span>' +
       '</span>',
     moreButton:
       '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
@@ -41,6 +41,7 @@ if (width >= 768) {
 if (width < 768) {
   options.itemsPerPage = 4;
   options.visiblePages = 2;
+
 }
 
 export default function showPageItems(page) {
