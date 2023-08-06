@@ -1,4 +1,3 @@
-import Notiflix from 'notiflix';
 // import './js/theme-toggle';
 // import './js/header';
 // import './js/render-support';
@@ -10,4 +9,3 @@ import './js/renderShoppingList';
 // import './js/modal-team';
 // import './js/footer-toggle.js';
 // import './js/window-resize';
-//const booksData = null;

@@ -1,18 +1,7 @@
-import emptyImg1x from '../images/bg-shopping-list.png';
-import emptyImg2x from '../images/bg-shopping-list@2x.png';
-import amazon1x from '../images/trading-platforms/amazon.png';
-import amazon2x from '../images/trading-platforms/amazon@2x.png';
-import apple1x from '../images/trading-platforms/apple-books.png';
-import apple2x from '../images/trading-platforms/apple-books@2x.png';
-import barnes1x from '../images/trading-platforms/bookshop.png';
-import barnes2x from '../images/trading-platforms/bookshop@2x.png';
-import sprite from '../images/sprite.svg';
-import defaultImg from '../images/book-placeholder-mobile.jpg';
-import refs from './refs';
 import renderCards from './shoppingListMarkup.js';
 import Notiflix from 'notiflix';
-// import { onRemoveClick } from './onRemoveClick';
 
+//const booksData = null;
 const booksData = [
   {
     list_name: 'Combined Print and E-Book Nonfiction',
