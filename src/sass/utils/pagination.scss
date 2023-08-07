@@ -1,3 +1,4 @@
+
 .tui-first{
     margin-right: 5px;
 }
@@ -39,11 +40,125 @@ background-color:black !important;
 
 
 @media screen and (min-width: 768px) {
-.tui-page-btn{
+.tui-first{
+    margin-right: 5px;
+}
 
+.tui-last{
+  margin-left: 5px;
+}
+.tui-active{
+   background-color:#EAC645!important; 
+}
+.tui-page-btn{
+font-family: DM Sans !important;
+font-size: 18px !important;
+font-style: normal !important;
+font-weight: 700 !important;
+line-height: 22px !important;  
+background-color: transparent;
+color: black !important;
+width: 38px !important;
+height: 38px !important;
+border-radius:50%;
+flex-shrink: 0;
+border: 1px solid black!important;
+}
+.tui-is-disabled{
+    background-color:black !important;
+}
+.tui-is-selected{
+     color: white !important;
+font-family: DM Sans !important;
+font-size: 18px !important;
+font-style: normal !important;
+font-weight: 700 !important;
+line-height: 22px !important;  
+
+background-color:black !important;
+
+}}
+
+
+.tui-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+}
+
+
+
+.tui-pagination .tui-prev {
+  margin-right: 14px;
+}
+
+.tui-pagination .tui-next {
+  margin-left: 14px;
+}
+
+.tui-active {
+  background-color: #eac645 !important;
+}
+.tui-page-btn {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  font-family: DM Sans !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 22px !important;
+  background-color: transparent;
+  color: black !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid black !important;
+}
+.tui-is-disabled {
+  background-color: black !important;
+}
+.tui-is-selected {
+  color: white !important;
+  font-family: DM Sans !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 22px !important;
+  background-color: black !important;
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+.tui-page-btn{
 width: 44px !important;
 height: 44px !important;
+}
+ 
+}
 
-
+@media screen and (max-width: 767px) {
+.tui-page-btn {
+   width: 38px !important;
+  height: 38px !important;
+}
+  .tui-pagination {
+  gap: 8px;
+}
+.tui-pagination .tui-prev {
+  margin-right: 2px;
+}
+.tui-pagination .tui-next {
+  margin-left: 2px;
+}
+.tui-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
 }
 }
