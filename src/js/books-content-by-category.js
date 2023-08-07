@@ -41,7 +41,7 @@ export async function loadingPopularBook() {
   renderingContainer.innerHTML = bestsellerListMarkup;
 }
 
-loadingPopularBook();
+window.addEventListener('load', loadingPopularBook);
 
 function createBookMarkup({
   _id: id,

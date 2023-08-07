@@ -22,6 +22,7 @@ export default async function getTopBooksArray() {
       'https://books-backend.p.goit.global/books/top-books'
     );
     const data = await response.json();
+    console.log(data);
     Notiflix.Loading.remove();
     return data;
   };
