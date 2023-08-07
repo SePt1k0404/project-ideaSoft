@@ -1,6 +1,6 @@
 @import '../utils/main.scss';
 body {
-  background-color: --bg-color;
+  background-color: var(--bg-color);
 }
 h3,
 p {
@@ -18,18 +18,17 @@ li {
 
 .body-shopping-container {
   width: 100%;
-  padding: 64px 20px 20px 20px;
+  padding: 40px 20px 20px 20px;
 }
 
 .title {
-  color: --main-text-color;
+  color: var(--main-text-color);
   font-family: DM Sans;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.18; /* 118.75% */
   letter-spacing: -1.28px;
   margin-top: 0;
-  padding-top: 40px;
   margin-bottom: 40px;
 }
 
@@ -41,6 +40,7 @@ li {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 40px;
 }
 
 .emptyBookshelf {
@@ -69,7 +69,7 @@ li {
   padding: 14px;
   border-radius: 16px;
   border: 2px solid rgba(79, 46, 232, 0.4);
-  background: --card-color;
+  background: var(--card-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
   gap: 14px;
@@ -116,7 +116,7 @@ li {
 .book-title {
   margin-bottom: 4px;
   max-width: calc(100% - 40px);
-  color: --main-text-color;
+  color: var(--main-text-color);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12; /* 112.5% */
@@ -131,7 +131,7 @@ li {
   overflow: hidden;
   white-space: normal;
   word-wrap: break-word;
-  color: --main-text-color;
+  color: var(--main-text-color);
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -142,7 +142,7 @@ li {
 .book-category {
   max-width: calc(100% - 40px);
   margin-bottom: 8px;
-  color: --subtitle-color;
+  color: var(--subtitle-color);
   font-family: DM Sans;
   font-size: 12px;
   line-height: 1.16; /* 116.667% */
@@ -155,7 +155,7 @@ li {
   justify-content: space-between;
 }
 .book-author {
-  color: --subtitle-color;
+  color: var(--subtitle-color);
   font-family: DM Sans;
   font-size: 12px;
   font-style: italic;
@@ -185,7 +185,7 @@ li {
   align-self: flex-end;
   width: 32px;
   height: 11px;
-  filter: grayscale(100%);
+  filter: var(--amazon-color);
 }
 
 .book-buy-icon {
@@ -197,7 +197,7 @@ li {
 
 @media screen and (min-width: 768px) {
   .body-shopping-container {
-    padding: 72px 32px 32px 32px;
+    padding: 40px 32px 32px 32px;
   }
 
   .emptyBookshelf {
@@ -262,7 +262,7 @@ li {
 
 @media screen and (min-width: 1024px) {
   .body-shopping-container {
-    padding: 72px 40px 40px 420px;
+    padding: 40px;
   }
 
   .title {
@@ -273,12 +273,12 @@ li {
   }
 
   .book-buy-icon:hover {
-    filter: grayscale(100%) drop-shadow(0 3px 0.85px rgba(0, 0, 0, 0.15));
+    filter: grayscale(100%) var(--icon-shadow);
   }
   .amazon-book-buy-icon:hover {
     // box-shadow: 0px -3px 3px 0px rgba(0, 0, 0, 0.15);
     // box-shadow: rgb(0, 0, 0, 0.15) 0px 3px 3px 0px inset;
-    filter: grayscale(100%) drop-shadow(0 3px 0.85px rgba(0, 0, 0, 0.15));
+    filter: var(--amazon-color) var(--icon-shadow);
     //filter: grayscale(100%);
   }
 }
