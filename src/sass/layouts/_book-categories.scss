@@ -253,7 +253,7 @@ body {
     gap: 25px;
   }
 
-  @media screen and (min-width: 1158px) {
+  @media screen and (min-width: 1440px) {
     margin-bottom: 32px;
   }
 }
@@ -303,9 +303,10 @@ body {
   line-height: 1.16;
   letter-spacing: -0.48px;
 
-  white-space: pre-wrap;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 180px;
 }
 
 .book-thumb {
@@ -371,4 +372,10 @@ body {
   line-height: 1.28; /* 128.571% */
   letter-spacing: -0.14px;
   text-transform: uppercase;
+}
+
+
+.see-more-btn:hover {
+    color: #fff;
+    background-color: #4f2ee8;
 }
