@@ -5,15 +5,13 @@ body {
 }
 
 .container {
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 335px;
+  max-width: 375px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .categories {
-  width: 335px;
+  max-width: 335px;
   height: 228px;
   overflow-y: scroll;
   scroll-behavior: smooth;
@@ -38,7 +36,7 @@ body {
   font-size: 16px;
   line-height: 1.13;
   color: $main-accent-color;
-  width: 335px;
+  max-width: 335px;
   height: 40px;
   margin: 0;
   position: absolute;
@@ -89,6 +87,7 @@ body {
   .container {
     width: 375px;
   }
+
   .categories-span-js:focus {
     font-size: 15px;
     line-height: 1.33;
@@ -102,6 +101,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .container {
+    max-width: none;
     width: 768px;
   }
   .categories {
@@ -140,15 +140,13 @@ body {
   .categories {
     width: 356px;
     max-height: 472px;
-    margin-top: 40px;
-    margin-right: 40px;
-    margin-bottom: 86px;
   }
 
   .title-categories {
     width: 356px;
   }
 }
+// !___________________________________________________________________
 @import '../utils/variables.scss';
 
 .bestsellers-book-item {
@@ -164,9 +162,9 @@ body {
     }
   }
 
-  @media screen and (max-width: (1158px - 1)) {
+  @media screen and (min-width: (1158px - 1)) {
     &:nth-child(n + 5) {
-      display: none;
+      display: block;
     }
   }
 }
@@ -241,11 +239,16 @@ body {
   @media screen and (min-width: 768px) {
     line-height: 1.71;
   }
+  @media screen and (min-width: 1158px) {
+    width: 996px;
+  }
 }
 
 .books-list {
   @media screen and (min-width: 768px) {
     margin-bottom: 20px;
+    display: flex;
+    gap: 25px;
   }
 
   @media screen and (min-width: 1158px) {

@@ -1,5 +1,6 @@
 const refs = {
   //   books-content-by-category.js, render-book-info.js
+  supportList: document.querySelector('.support-list'),
   body: document.querySelector('body'),
   contentWrapper: document.querySelector('.top-books-wrapper-js'),
   backdropLoader: document.querySelector('.loader-backdrop'),
