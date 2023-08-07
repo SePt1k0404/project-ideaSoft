@@ -1,4 +1,4 @@
-// import './js/theme-toggle';
+import './js/theme-toggle';
 // import './js/header';
 // import './js/render-support';
 // import './js/firebase-auth';
@@ -7,6 +7,7 @@ import './js/onRemoveClick.js';
 import './js/renderShoppingList';
 import './js/tui-pagination';
 import './js/support-list.js';
+import './js/header.js';
 // import './js/modal-team';
 // import './js/footer-toggle.js';
 // import './js/window-resize';
