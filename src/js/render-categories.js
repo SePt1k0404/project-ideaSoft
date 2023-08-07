@@ -1,15 +1,14 @@
-import ApiClientAxios from './getBookAPI';
+// import ApiClientAxios from './getBookAPI';
 import markupCategoriesList from './categories-markup';
 import { refs } from './refs';
 
 document.addEventListener('DOMContentLoaded', loadingPage);
-const responseApi = new ApiClientAxios(
-  'https://books-backend.p.goit.global/books/category-list'
-);
-
 async function loadingPage() {
   try {
-    const categories = await responseApi.getDates();
+    const responseApi = await fetch(
+      'https://books-backend.p.goit.global/books/category-list'
+    );
+    const categories = await responseApi.json();
     await markupCategoriesList(categories);
   } catch (error) {
     Swal.fire({

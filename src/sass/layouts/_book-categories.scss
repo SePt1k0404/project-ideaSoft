@@ -1,7 +1,10 @@
 @import '../utils/main';
 
-.container {
+body {
   background-color: var(--backdrop);
+}
+
+.container {
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -35,7 +38,7 @@
   width: 335px;
   height: 18px;
   margin: 0;
-  position: fixed;
+  position: absolute;
   z-index: 100;
   background-color: var(--backdrop);
 }
