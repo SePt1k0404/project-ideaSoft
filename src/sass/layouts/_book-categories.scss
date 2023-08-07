@@ -63,9 +63,19 @@ body {
   margin-bottom: 24px;
   height: 18px;
 }
-
+.categories-span-js {
+  //text-decoration: none;
+  color: var(--secondary-text-color);
+}
+.categories-span-js:focus {
+  color: $main-accent-color;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 4.3vw;
+  line-height: 1.13;
+  white-space: nowrap;
+}
 .categories-span-js:hover,
-.categories-span-js:focus,
 .categories-span-js:active {
   color: $main-accent-color;
   text-transform: uppercase;
@@ -79,8 +89,11 @@ body {
   .container {
     width: 375px;
   }
+  .categories-span-js:focus {
+    font-size: 15px;
+    line-height: 1.33;
+  }
   .categories-span-js:hover,
-  .categories-span-js:focus,
   .categories-span-js:active {
     font-size: 15px;
     line-height: 1.33;
