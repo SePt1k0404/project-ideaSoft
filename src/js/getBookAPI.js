@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Notiflix from 'notiflix';
 
 export default class ApiClientAxios {
   constructor(baseURL) {
@@ -13,12 +14,25 @@ export default class ApiClientAxios {
       throw new Error('Ups.........');
     }
   }
-
-  //  FOR EXAMPLE + YOU NEED TO ADD (TRY AND CATCH)
-  // async exampel(endpoint, params) {
-  //   const response = await axios.get(`${this.baseURL}/${endpoint}`, {
-  //     params,
-  //   });
-  //   return response.data;
-  // }
 }
+async function getTopBooksArray() {
+  Notiflix.Loading.dots();
+  const categoriesArray = async () => {
+    const response = await fetch(
+      'https://books-backend.p.goit.global/books/top-books'
+    );
+    const data = await response.json();
+    Notiflix.Loading.remove();
+    return data;
+  };
+  try {
+    return categoriesArray();
+  } catch (error) {
+    Notiflix.Loading.remove();
+    Notiflix.Notify.failure(
+      'Ups......... Something went wrong. Please try again'
+    );
+  }
+}
+
+export { getTopBooksArray };
