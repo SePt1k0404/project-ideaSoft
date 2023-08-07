@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
@@ -15,14 +15,17 @@
   <meta name="msapplication-TileColor" content="#4f2ee8" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="stylesheet" href="./sass/index.scss" />
+  <link rel="stylesheet" href="./sass/utils/pagination.scss" />
 </head>
 
 <body>
-  <div class="body-shopping-container">
-    <include src="./partials/header.html"></include>
+  <include src="./partials/header.html"></include>
+  <div class="shopping-page">
+    <include src="./partials/support.html"></include>
     <include src="./partials/pages/shopping-list/shopping.html"></include>
-    <include src="./partials/footer.html"></include>
   </div>
+  <include src="./partials/footer.html"></include>
+
 
   <!-- scroll to top btn -->
   <include src="./partials/components/scroll-to-top.html"></include>
@@ -34,6 +37,7 @@
   <include src="./partials/modals/auth.html"></include>
 
   <!-- scripts -->
+
   <script type="module" src="./shopping-list.js"></script>
 </body>
 
