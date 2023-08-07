@@ -21,6 +21,8 @@ html[data-theme='light'] {
   --btn-grad: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
   //backdrop
   --backdrop: #f6f6f6;
+  // card color
+  --card-color: #fff;
 }
 //!dark-theme//
 
@@ -36,6 +38,8 @@ html[data-theme='dark'] {
   --btn-grad: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
   //backdrop
   --backdrop: #202024;
+  // card color
+  --card-color: #111;
 }
 
 //transition

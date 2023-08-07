@@ -1,6 +1,6 @@
+import emptyImg1x from '../images/bg-shopping-list.png';
 import renderCards from './shoppingListMarkup.js';
 import Notiflix from 'notiflix';
-
 //const booksData = null;
 const booksData = [
   {
@@ -359,7 +359,6 @@ const booksData = [
     ],
   },
 ];
-
 window.addEventListener('load', () => {
   try {
     localStorage.setItem('books', JSON.stringify(booksData));
