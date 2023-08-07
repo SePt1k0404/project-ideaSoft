@@ -1,3 +1,138 @@
+@import '../utils/main';
+
+.container {
+  background-color: var(--backdrop);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.categories {
+  width: 335px;
+  height: 228px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.categories::-webkit-scrollbar {
+  width: 8px;
+  height: 114px;
+  background-color: var(--backdrop);
+}
+
+.categories::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 12px;
+}
+
+.title-categories {
+  display: block;
+  font-family: 'DM Sans';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.13;
+  color: $main-accent-color;
+  width: 335px;
+  height: 18px;
+  margin: 0;
+  position: fixed;
+  z-index: 100;
+  background-color: var(--backdrop);
+}
+.categories-list {
+  list-style: none;
+  padding: 0;
+  overflow: hidden;
+  padding-top: 42px;
+  margin-top: 0;
+}
+
+.list-js {
+  display: flex;
+  font-family: 'DM Sans';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.13;
+  color: var(--secondary-text-color);
+  margin-bottom: 24px;
+  height: 18px;
+}
+
+.categories-span-js:hover,
+.categories-span-js:focus,
+.categories-span-js:active {
+  color: $main-accent-color;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 4.3vw;
+  line-height: 1.13;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    width: 375px;
+  }
+  .categories-span-js:hover,
+  .categories-span-js:focus,
+  .categories-span-js:active {
+    font-size: 15px;
+    line-height: 1.33;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+  .categories {
+    width: 337px;
+    height: 472px;
+    margin-top: 40px;
+    margin-right: 32px;
+    margin-bottom: 100px;
+  }
+
+  .categories::-webkit-scrollbar {
+    width: 8px;
+    height: 167px;
+  }
+  .title-categories {
+    font-size: 18px;
+    line-height: 1.33;
+    width: 337px;
+  }
+  .categories-list {
+    padding-top: 52px;
+  }
+  .list-js {
+    font-size: 18px;
+    line-height: 1.33;
+    margin-bottom: 32px;
+    height: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .categories {
+    width: 356px;
+    max-height: 472px;
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-bottom: 86px;
+  }
+
+  .title-categories {
+    width: 356px;
+  }
+}
 @import '../utils/variables.scss';
 
 .bestsellers-book-item {

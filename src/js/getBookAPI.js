@@ -15,7 +15,6 @@ export default class ApiClientAxios {
     }
   }
 }
-
 export default async function getTopBooksArray() {
   Notiflix.Loading.dots();
   const categoriesArray = async () => {
