@@ -7,7 +7,7 @@ const container = document.getElementById('pagination');
 
 const options = {
   // below default value of options
-  totalItems: books.length,
+  totalItems: books?.length,
   itemsPerPage: 3,
   visiblePages: 3,
   page: 1,
@@ -41,7 +41,6 @@ if (width >= 768) {
 if (width < 768) {
   options.itemsPerPage = 4;
   options.visiblePages = 2;
-
 }
 
 export default function showPageItems(page) {
