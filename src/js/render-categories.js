@@ -1,6 +1,6 @@
 import ApiClientAxios from './getBookAPI';
 import markupCategoriesList from './categories-markup';
-import { titleCategoriesEl, categoriesListEl, allTitleSpanEl } from './refs';
+import { refs } from './refs';
 
 document.addEventListener('DOMContentLoaded', loadingPage);
 const responseApi = new ApiClientAxios(
@@ -21,11 +21,11 @@ async function loadingPage() {
   }
 }
 
-categoriesListEl.addEventListener('click', onClick);
+refs.categoriesListEl.addEventListener('click', onClick);
 function onClick() {
-  titleCategoriesEl.style.color = '#11111199';
-  titleCategoriesEl.style.textTransform = 'lowercase';
-  titleCategoriesEl.style.fontWeight = 400;
-  titleCategoriesEl.style.fontSize = '16px';
-  allTitleSpanEl.style.textTransform = 'none';
+  refs.titleCategoriesEl.style.color = '#11111199';
+  refs.titleCategoriesEl.style.textTransform = 'lowercase';
+  refs.titleCategoriesEl.style.fontWeight = 400;
+  refs.titleCategoriesEl.style.fontSize = '16px';
+  refs.allTitleSpanEl.style.textTransform = 'none';
 }
