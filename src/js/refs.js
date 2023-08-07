@@ -14,13 +14,13 @@ const refs = {
   supportContainer: document.querySelector('.support-container'),
   body: document.querySelector('body'),
   contentWrapper: document.querySelector('.top-books-wrapper-js'),
+  topBooksTitle: document.querySelector('.top-books-title'),
   backdropLoader: document.querySelector('.loader-backdrop'),
   categoriesListEl: document.querySelector('.categories-list-js'),
   titleCategoriesEl: document.querySelector('.title-categories-js'),
   allTitleSpanEl: document.querySelector('.allTitleSpan'),
   //   onRemoveClick.js
   shoppingListWrapper: document.querySelector('.shopping-list-wrap'),
-  topBookEl: document.querySelector('.top-books-wrapper-js'),
 };
 
 // console.log(refs.shoppingListWrapper);
