@@ -13,12 +13,4 @@ export default class ApiClientAxios {
       throw new Error('Ups.........');
     }
   }
-
-  //  FOR EXAMPLE + YOU NEED TO ADD (TRY AND CATCH)
-  // async exampel(endpoint, params) {
-  //   const response = await axios.get(`${this.baseURL}/${endpoint}`, {
-  //     params,
-  //   });
-  //   return response.data;
-  // }
 }
