@@ -8,6 +8,7 @@ async function loadingPage() {
     const responseApi = await fetch(
       'https://books-backend.p.goit.global/books/category-list'
     );
+    console.log(responseApi);
     const categories = await responseApi.json();
     await markupCategoriesList(categories);
   } catch (error) {

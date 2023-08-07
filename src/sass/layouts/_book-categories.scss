@@ -60,9 +60,19 @@ body {
   margin-bottom: 24px;
   height: 18px;
 }
-
+.categories-span-js {
+  //text-decoration: none;
+  color: var(--secondary-text-color);
+}
+.categories-span-js:focus {
+  color: $main-accent-color;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 4.3vw;
+  line-height: 1.13;
+  white-space: nowrap;
+}
 .categories-span-js:hover,
-.categories-span-js:focus,
 .categories-span-js:active {
   color: $main-accent-color;
   text-transform: uppercase;
@@ -76,8 +86,11 @@ body {
   .container {
     width: 375px;
   }
+  .categories-span-js:focus {
+    font-size: 15px;
+    line-height: 1.33;
+  }
   .categories-span-js:hover,
-  .categories-span-js:focus,
   .categories-span-js:active {
     font-size: 15px;
     line-height: 1.33;
@@ -234,7 +247,6 @@ body {
 .books-list {
   display: flex;
   gap: 24px;
-  
 
   @media screen and (min-width: 768px) {
     margin-bottom: 20px;
@@ -275,9 +287,8 @@ body {
 
   max-width: 180px;
   margin-bottom: 4px;
-  
 
-  white-space:nowrap;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -288,23 +299,20 @@ body {
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
-  line-height: 1.16; 
+  line-height: 1.16;
   letter-spacing: -0.48px;
 
-  
   white-space: pre-wrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
- 
 }
 
 .book-thumb {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-    border-radius: 8px;
-    margin-bottom: 14px;
+  border-radius: 8px;
+  margin-bottom: 14px;
 }
 
 // .book-image-overlay {
@@ -323,7 +331,6 @@ body {
 //     background-color: var(--secondary-accent-color);
 
 //     transform: translateY(100%);
-
 
 //     .book-link:hover &,
 //     .book-link:focus & {
@@ -349,17 +356,17 @@ body {
   margin-left: auto;
 
   padding: 14px 28px;
-align-items: flex-start;
+  align-items: flex-start;
 
   border-radius: 40px;
-border: 2px solid #4F2EE8;
+  border: 2px solid #4f2ee8;
 
-color: var(--main-text-color);
-font-family: DM Sans;
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: 1.28; /* 128.571% */
-letter-spacing: -0.14px;
-text-transform: uppercase;
+  color: var(--main-text-color);
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.28; /* 128.571% */
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
 }
