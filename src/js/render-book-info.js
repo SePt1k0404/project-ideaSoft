@@ -26,10 +26,12 @@ async function onBookInfoClick(evt) {
     const infoMarkup = markupCardBookInfo(data, searchBook(data));
     const instance = basicLightbox.create(infoMarkup, {
       onShow: () => {
+        refs.body.style.paddingRight = '20px';
         disableBodyScroll(document.body);
         window.addEventListener('keydown', onEscButtonClick);
       },
       onClose: () => {
+        refs.body.style.paddingRight = '0';
         enableBodyScroll(document.body);
         window.removeEventListener('keydown', onEscButtonClick);
       },
