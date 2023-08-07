@@ -1,4 +1,4 @@
-import getTopBooksArray from './getBookAPI';
+import getTopBooksArray from './getBookAPI.js';
 
 const renderingContainer = document.querySelector('.top-books-wrapper-js');
 
