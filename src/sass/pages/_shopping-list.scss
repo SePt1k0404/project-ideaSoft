@@ -1,4 +1,7 @@
 @import '../utils/main.scss';
+body {
+  background-color: --bg-color;
+}
 h3,
 p {
   margin: 0;
@@ -15,20 +18,58 @@ li {
 
 .body-shopping-container {
   width: 100%;
-  padding: 20px;
+  padding: 64px 20px 20px 20px;
 }
+
+.title {
+  color: --main-text-color;
+  font-family: DM Sans;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.18; /* 118.75% */
+  letter-spacing: -1.28px;
+  margin-top: 0;
+  padding-top: 40px;
+  margin-bottom: 40px;
+}
+
+.title-accent {
+  color: $accent-text-color;
+}
+
 .book-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
+.emptyBookshelf {
+  text-align: center;
+  width: 265px;
+  margin-top: 60px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.empty-message {
+  white-space: pre-wrap;
+  text-align: center;
+
+  color: rgba(0, 0, 0, 0.6);
+  font-family: DM Sans;
+  font-size: 14px;
+  line-height: 1.28; /* 128.571% */
+  letter-spacing: -0.28px;
+}
+
 .book-card {
   position: relative;
   width: 100%;
   height: 170px;
   padding: 14px;
-  border: 1px solid #ccc;
   border-radius: 16px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  background: --card-color;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
   gap: 14px;
@@ -75,6 +116,12 @@ li {
 .book-title {
   margin-bottom: 4px;
   max-width: calc(100% - 40px);
+  color: --main-text-color;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.12; /* 112.5% */
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
 }
 
 .book-desc {
@@ -84,9 +131,22 @@ li {
   overflow: hidden;
   white-space: normal;
   word-wrap: break-word;
+  color: --main-text-color;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28; /* 128.571% */
+  letter-spacing: -0.56px;
 }
 .book-category {
+  max-width: calc(100% - 40px);
   margin-bottom: 8px;
+  color: --subtitle-color;
+  font-family: DM Sans;
+  font-size: 12px;
+  line-height: 1.16; /* 116.667% */
+  letter-spacing: 0.36px;
 }
 
 .book-copyright {
@@ -94,18 +154,21 @@ li {
   display: flex;
   justify-content: space-between;
 }
-// .book-author {
-// //   margin-top: auto;
-// }
+.book-author {
+  color: --subtitle-color;
+  font-family: DM Sans;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px; /* 116.667% */
+  letter-spacing: -0.48px;
+}
 .buy-links {
   height: 16px;
   display: flex;
   gap: 8px;
   justify-content: center;
 }
-// .buy-li {
-//   height: 16px;
-// }
 
 .buy-amazon {
   align-content: flex-end;
@@ -132,12 +195,90 @@ li {
   filter: grayscale(100%);
 }
 
-// @media screen and (min-width: 375px) {
-//   //   .body-shopping-container {
+@media screen and (min-width: 768px) {
+  .body-shopping-container {
+    padding: 72px 32px 32px 32px;
+  }
 
-//   //   }
+  .emptyBookshelf {
+    margin-top: 80px;
+    width: 349px;
+  }
 
-//   //   .book-card {
-//   //      width: 335px;
-//   //   }
-// }
+  .empty-message {
+    font-size: 18px;
+    line-height: 1.33; /* 133.333% */
+    letter-spacing: -0.36px;
+  }
+
+  .book-card {
+    padding: 24px;
+    height: 213px;
+    gap: 24px;
+  }
+
+  .book-delete-btn {
+    top: 24px;
+    right: 24px;
+    padding: 8px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .book-delete-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .book-img {
+    width: 116px;
+    height: 165px;
+    border-radius: 8px;
+  }
+
+  .buy-links {
+    height: 30px;
+    gap: 16px;
+  }
+
+  .buy-amazon {
+    align-content: center;
+  }
+
+  .amazon-icon {
+    height: 15px;
+  }
+
+  .amazon-book-buy-icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  .book-buy-icon {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .body-shopping-container {
+    padding: 72px 40px 40px 420px;
+  }
+
+  .title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 52px; /* 108.333% */
+    letter-spacing: -1.92px;
+  }
+
+  .book-buy-icon:hover {
+    filter: grayscale(100%) drop-shadow(0 3px 0.85px rgba(0, 0, 0, 0.15));
+  }
+  .amazon-book-buy-icon:hover {
+    // box-shadow: 0px -3px 3px 0px rgba(0, 0, 0, 0.15);
+    // box-shadow: rgb(0, 0, 0, 0.15) 0px 3px 3px 0px inset;
+    filter: grayscale(100%) drop-shadow(0 3px 0.85px rgba(0, 0, 0, 0.15));
+    //filter: grayscale(100%);
+  }
+}
