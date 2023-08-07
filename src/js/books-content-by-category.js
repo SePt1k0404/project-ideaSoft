@@ -55,13 +55,15 @@ function createBookMarkup({
       <div class="book-thumb">
         <img class="book-image" src="${image}" loading="lazy" data_id=${id} alt="${description}"/>
         <div class="book-image-overlay" data_id=${id} aria-label="${title}">
-          <p class="book-image-overlay-text">Quick view</p>
+          
         </div>
       </div>
       <div class="book-item-meta">
-        <h3 class="book-title">${title}</h3>
-        <p class="book-author">${author}</p>
+        <h3 class="book-title-meta">${title}</h3>
+        <p class="book-author-meta">${author}</p>
       </div>
     </a>
   `;
 }
+
+/* <p class="book-image-overlay-text">Quick view</p>;  */
