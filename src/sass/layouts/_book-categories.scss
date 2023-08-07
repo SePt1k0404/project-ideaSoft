@@ -149,7 +149,7 @@ body {
 }
 // !___________________________________________________________________
 
-.bestsellers-book-item {
+.top-book-item {
   @media screen and (max-width: (768px - 1)) {
     &:nth-child(n + 2) {
       display: none;
@@ -209,6 +209,7 @@ body {
 }
 
 .top-books-title-span {
+  
   color: $accent-text-color;
 }
 
@@ -353,7 +354,7 @@ body {
 //     }
 // }
 
-.see-more-btn {
+.top-book-button {
   margin-left: auto;
 
   padding: 14px 28px;
