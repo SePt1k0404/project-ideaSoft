@@ -1,5 +1,3 @@
-
-<<<<<<< HEAD
 export default class ApiClientAxios {
   constructor(baseURL) {
     this.baseURL = baseURL;
@@ -14,5 +12,3 @@ export default class ApiClientAxios {
     }
   }
 }
-=======
->>>>>>> 6ad3eaf5a7c3430589c3c2fbd11dad7ddaf3e2d7
