@@ -20,6 +20,12 @@ img {
   height: auto;
 }
 
-a {
+a{
+   color: currentColor;
   text-decoration: none;
 }
+
+button {
+  cursor: pointer;
+}
+

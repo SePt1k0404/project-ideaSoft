@@ -41,19 +41,20 @@ export async function loadingPopularBook() {
   renderingContainer.innerHTML = bestsellerListMarkup;
 }
 
+import defaultImg from '../images/book-placeholder-mobile.jpg';
+const comingSoon = 'Coming soon';
 window.addEventListener('load', loadingPopularBook);
 
-function createBookMarkup({
-  _id: id,
-  title,
-  author,
-  description,
-  book_image: image,
-}) {
+function createBookMarkup({ _id: id, title, author, description, book_image }) {
+  if (!book_image) {
+    book_image = defaultImg;
+  }
   return `
     <a class="book-link" href="" aria-label="Book thumbnail">
       <div class="book-thumb">
-        <img class="book-image" src="${image}" loading="lazy" data_id=${id} alt="${description}"/>
+        <img class="book-image" src="${book_image}" loading="lazy" data_id=${id} alt="${
+    description || comingSoon
+  } width="335" height="485"/>
         <div class="book-image-overlay" data_id=${id} aria-label="${title}">
           
         </div>
