@@ -36,7 +36,7 @@ body {
   font-size: 16px;
   line-height: 1.13;
   color: $main-accent-color;
-  max-width: 335px;
+  max-width: 325px;
   height: 40px;
   margin: 0;
   position: absolute;
@@ -87,7 +87,9 @@ body {
   .container {
     width: 375px;
   }
-
+  .title-categories {
+    width: 325px;
+  }
   .categories-span-js:focus {
     font-size: 15px;
     line-height: 1.33;
