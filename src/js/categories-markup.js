@@ -1,4 +1,4 @@
-import { categoriesListEl } from './refs';
+import refs from './refs';
 export default function markupCategoriesList(lists) {
   const markup = lists
     .map(({ list_name }) => {
@@ -6,5 +6,5 @@ export default function markupCategoriesList(lists) {
         </li>`;
     })
     .join('');
-  categoriesListEl.innerHTML = markup;
+  refs.categoriesListEl.innerHTML = markup;
 }
