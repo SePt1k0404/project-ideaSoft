@@ -1,8 +1,12 @@
 import refs from './refs';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import { writeUsersData, getUserData } from './firebase-auth';
+import { signUp, signIn } from './firebase-auth';
 
 let authMode = 'SignUp';
 let formData = {};
+
 
 refs.signUpRef.addEventListener('click', onSignUp);
 refs.signInRef.addEventListener('click', onSignIn);
@@ -30,22 +34,39 @@ refs.authForm.addEventListener('submit', handleSubmit);
 function handleSubmit(evt) {
   const authData = [...refs.authForm.elements];
   evt.preventDefault();
+  console.log(authMode);
   if (!authData.some(elem => elem === '' || !elem) && authMode === 'Signup') {
     Notify.failure('Please fill in all the fields!');
+    console.log('error');
     return;
-  } else if (authMode === 'Signup') {
+  }
+   if (authMode === 'SignUp') {
     formData = {
       name: name.value,
       email: email.value,
       password: password.value,
     };
-  } else {
+  } else if(authMode === 'SignIn') {
     formData = {
       email: email.value,
       password: password.value,
     };
-  }
-
+  };
   evt.currentTarget.reset();
-  console.log(formData);
+  try {
+    if(authMode === 'SignUp'){
+      signUp(formData.email, formData.password);
+  } else if(authMode === 'SignIn'){
+      signIn(formData.email, formData.password);
+    }}
+   catch (error) {
+    // if(error.code.match(/password/)){
+    //   Notify.failure("Enter correct password!")
+    // }
+    // else if(error.code.match(/found/)){
+    //   Notify.failure('User not found!')
+    // }
+      Notify.failure(`${error}`);
+  }
 }
+
