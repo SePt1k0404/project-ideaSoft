@@ -1,4 +1,4 @@
-import getTopBooksArray from './getBookAPI';
+import { getTopBooksArray } from './getBookAPI';
 
 const renderingContainer = document.querySelector('.top-books-wrapper-js');
 
@@ -41,7 +41,7 @@ export async function loadingPopularBook() {
   renderingContainer.innerHTML = bestsellerListMarkup;
 }
 
-loadingPopularBook();
+window.addEventListener('load', loadingPopularBook);
 
 function createBookMarkup({
   _id: id,
