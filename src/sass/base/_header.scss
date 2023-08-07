@@ -44,8 +44,8 @@
 
   padding: 18px 20px;
   border-radius: 0px 0px 8px 8px;
-  border: 1.5px solid #111;
-  background: #fff;
+  border: 1.5px solid var(--main-text-color);
+  background: var(--card-color);
 }
 
 .header__logo-list {
@@ -63,6 +63,7 @@
 .header__logo-name {
   height: 13px;
   cursor: pointer;
+  filter: var(--amazon-color);
 }
 
 .header__switcher-burger-close {
@@ -139,7 +140,7 @@
 .header__burger {
   height: 28px;
   cursor: pointer;
-  stroke: #111111;
+  filter: var(--amazon-color);
 }
 
 .header__burger:focus,
@@ -152,7 +153,7 @@
 .header__modal-close {
   height: 28px;
   cursor: pointer;
-  stroke: #111111;
+  filter: var(--amazon-color);
 }
 
 .header__modal-close:focus,
@@ -165,8 +166,7 @@
 .header__nav {
   display: none;
 }
-
-.header__nav ul {
+he .header__nav ul {
   list-style: none;
 }
 
@@ -176,10 +176,11 @@
 
 .header__nav a {
   text-decoration: none;
-  color: #333;
+  color: var(--header-color-text);
 }
 
 .header__nav a:hover {
+  color: var(--card-color);
   text-decoration: none;
 }
 
