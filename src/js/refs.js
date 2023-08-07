@@ -1,5 +1,15 @@
 const refs = {
   //   books-content-by-category.js, render-book-info.js
+  switcherHtml: document.querySelector('html'),
+  themeSwitcher: document.querySelector('.header__wrapper-switcher'),
+  burgerMenu: document.querySelector('.header__burger'),
+  headerNav: document.querySelector('.header__nav'),
+  modal: document.querySelector('.header__modal'),
+  modalClose: document.querySelector('.header__modal-close'),
+  switcherBgLight: document.querySelector('.header__theme-light-switch'),
+  switcherBgDark: document.querySelector('.header__theme-dark-switch'),
+  switcherThemeButton: document.querySelector('.header__theme-round-button'),
+  switcherThemeButton: document.querySelector('.header__theme-round-button'),
   supportList: document.querySelector('.support-list'),
   supportContainer: document.querySelector('.support-container'),
   body: document.querySelector('body'),
