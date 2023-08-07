@@ -1,4 +1,4 @@
-import refs from './refs';
+import { refs } from './refs';
 export default function markupCategoriesList(lists) {
   const markup = lists
     .map(({ list_name }) => {
