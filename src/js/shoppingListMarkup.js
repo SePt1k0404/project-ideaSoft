@@ -1,5 +1,3 @@
-// import { renderCards } from './renderShoppingList';
-
 import emptyImg1x from '../images/bg-shopping-list.png';
 import emptyImg2x from '../images/bg-shopping-list@2x.png';
 import amazon1x from '../images/trading-platforms/amazon.png';
@@ -99,3 +97,5 @@ export default function renderCards() {
   bookListEl.innerHTML = bookListHTML;
   showPageItems(1);
 }
+
+// export { renderCards };
