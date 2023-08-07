@@ -6,6 +6,7 @@
 import './js/onRemoveClick.js';
 import './js/renderShoppingList';
 import './js/tui-pagination';
+import './js/support-list.js';
 // import './js/modal-team';
 // import './js/footer-toggle.js';
 // import './js/window-resize';
