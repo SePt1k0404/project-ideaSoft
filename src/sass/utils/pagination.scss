@@ -36,6 +36,12 @@
   flex-shrink: 0;
   border: 1px solid var(--main-text-color) !important;
 }
+.tui-page-btn:hover,
+.tui-page-btn:focus {
+  color: var(--card-color) !important;
+  background-color: var(--main-text-color) !important;
+}
+
 .tui-is-disabled {
   background-color: $black !important;
 }
