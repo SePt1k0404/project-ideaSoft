@@ -3,7 +3,7 @@ import './js/window-resize.js';
 import './js/header.js';
 import './js/render-support.js';
 import './js/renderBestsellers.js';
-import './js/render-book-info.js';
+// import './js/render-book-info.js';
 import './js/theme-toggle.js';
 import './js/modal-auth.js';
 import './js/firebase-auth.js';
