@@ -1,4 +1,5 @@
 @import '../utils/main';
+@import '../utils/variables.scss';
 
 body {
   background-color: var(--backdrop);
@@ -149,7 +150,6 @@ body {
   }
 }
 // !___________________________________________________________________
-@import '../utils/variables.scss';
 
 .bestsellers-book-item {
   @media screen and (max-width: (768px - 1)) {
