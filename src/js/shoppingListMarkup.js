@@ -10,7 +10,7 @@ import sprite from '../images/sprite.svg';
 import defaultImg from '../images/book-placeholder-mobile.jpg';
 import { refs } from './refs';
 // import { container, options, pagination } from './tui-pagination';
-import showPageItems from './tui-pagination';
+// import showPageItems from './tui-pagination';
 // import { onRemoveClick } from './onRemoveClick';
 
 export default function renderCards() {
@@ -95,7 +95,7 @@ export default function renderCards() {
     })
     .join('');
   bookListEl.innerHTML = bookListHTML;
-  showPageItems(1);
+  // showPageItems(1);
 }
 
 // export { renderCards };
