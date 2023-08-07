@@ -15,7 +15,7 @@ export default class ApiClientAxios {
     }
   }
 }
-export default async function getTopBooksArray() {
+async function getTopBooksArray() {
   Notiflix.Loading.dots();
   const categoriesArray = async () => {
     const response = await fetch(
@@ -29,6 +29,10 @@ export default async function getTopBooksArray() {
     return categoriesArray();
   } catch (error) {
     Notiflix.Loading.remove();
-    Notiflix.Notify.failure('Ups......... Something went wrong. Please try again');
+    Notiflix.Notify.failure(
+      'Ups......... Something went wrong. Please try again'
+    );
   }
 }
+
+export { getTopBooksArray };
