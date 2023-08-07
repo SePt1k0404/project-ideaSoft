@@ -168,7 +168,6 @@ body {
     }
   }
 }
-
 .content {
   background-color: var(--bg-color);
 }
@@ -245,22 +244,31 @@ body {
   }
 }
 
-.books-list {
-  @media screen and (min-width: 768px) {
-    margin-bottom: 20px;
-    display: flex;
-    gap: 25px;
-  }
 
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 32px;
-  }
+.books-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 8px;
+
+    @media screen and (min-width: (768px)) {
+        flex-flow: row wrap;
+        row-gap: 40px;
+        column-gap: 25px;
+        margin-bottom: 20px
+    }
+
+    @media screen and (min-width: (1440px)) {
+        column-gap: 24px;
+        margin-bottom: 32px
+    }
 }
+
 
 .book-image {
   object-fit: fill;
-  // width: 335px;
-
+ 
   max-width: 335px;
   height: 485px;
 
@@ -317,42 +325,13 @@ body {
   margin-bottom: 14px;
 }
 
-// .book-image-overlay {
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
+.book-image-overlay {
+    // запутался, сделать заново, чтобы выходило не на весь монитор
+}
 
-//     width: 100%;
-//     height: 25%;
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     background-color: var(--secondary-accent-color);
-
-//     transform: translateY(100%);
-
-//     .book-link:hover &,
-//     .book-link:focus & {
-//         transform: translateY(0);
-//     }
-// }
-
-// .book-image-overlay-text {
-//     text-transform: uppercase;
-//     color: var(--main-text-color);
-//     font-size: 18px;
-//     font-weight: 500;
-
-//     opacity: 0;
-
-//     .book-link:hover &,
-//     .book-link:focus & {
-//         opacity: 1;
-//     }
-// }
+.book-image-overlay-text {
+      // запутался, сделать заново, чтобы выходило не на весь монитор
+}
 
 .top-book-button {
   margin-left: auto;
@@ -371,6 +350,16 @@ body {
   line-height: 1.28; /* 128.571% */
   letter-spacing: -0.14px;
   text-transform: uppercase;
+
+  margin-bottom: 8px;
+
+    @media screen and (min-width: (768px)) {
+        margin-bottom: 20px
+    }
+
+    @media screen and (min-width: (1440px)) {
+        margin-bottom: 32px
+    }
 }
 
 

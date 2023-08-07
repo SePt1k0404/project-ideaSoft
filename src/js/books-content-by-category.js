@@ -44,4 +44,5 @@ async function handlerShowMoreBtn(e) {
 
   refs.topBooksTitle.innerHTML = createTopBooksTitleMarkup(nameCategory);
   refs.contentWrapper.innerHTML = createCategoryBooksMarkup(booksCategory);
+  refs.header.scrollIntoView({ behavior: 'smooth' });
 }

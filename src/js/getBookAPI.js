@@ -17,7 +17,7 @@ export default class ApiClientAxios {
 }
 
 export async function getTopBooks() {
-  Notiflix.Loading.dots();
+  Notiflix.Loading.dots('Loading...');
   const topBooks = async () => {
     const response = await fetch(
       'https://books-backend.p.goit.global/books/top-books'
@@ -37,7 +37,7 @@ export async function getTopBooks() {
 }
 
 export async function booksOnCategory(nameCategory) {
-  Notiflix.Loading.dots();
+  Notiflix.Loading.dots('Loading...');
   const categories = async () => {
     const response = await fetch(
       `https://books-backend.p.goit.global/books/category?category=${nameCategory}`
@@ -47,7 +47,6 @@ export async function booksOnCategory(nameCategory) {
     return data;
   };
   try {
-    Notiflix.Loading.remove();
     return categories();
   } catch (error) {
     Notiflix.Loading.remove();
