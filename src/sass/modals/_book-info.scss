@@ -5,9 +5,9 @@
   padding-right: 24px;
   padding-bottom: 40px;
   max-width: 335px;
-  background-color: $white;
+  background-color: var(--backdrop);
   border-radius: 18px;
-  border: 2px solid $black-accent-color;
+  border: 2px solid var(--main-text-color);
   max-height: 85vh;
   overflow-y: scroll;
   margin-top: 60px;
@@ -54,6 +54,7 @@
   font-size: 16px;
   line-height: 1.12;
   letter-spacing: -0.04em;
+  color: var(--main-text-color);
   @media screen and (min-width: 768px) {
     font-size: 24px;
     line-height: 1.17;
@@ -79,7 +80,9 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
+  white-space: pre-wrap;
   letter-spacing: -0.04em;
+  color: var(--main-text-color);
   @media screen and (min-width: 768px) {
     margin-bottom: 20px;
   }
@@ -109,6 +112,9 @@
   filter: grayscale(1);
   transition: filter $transition;
 }
+.amazon-logo {
+  filter: var(--amazon-color);
+}
 .btn-book-info {
   display: block;
   margin-left: auto;
@@ -121,7 +127,7 @@
   line-height: 1.19;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: inherit;
+  color: var(--main-text-color);
   background-color: transparent;
   border: 2px solid $main-accent-color;
   border-radius: 40px;
@@ -164,6 +170,7 @@
   line-height: 1.2;
   text-align: center;
   letter-spacing: -0.04em;
+  white-space: pre-wrap;
   color: var(--congrats-text-color);
   @media screen and (min-width: 768px) {
     font-size: 12px;
@@ -189,7 +196,7 @@
   }
 }
 .info-modal-close-icon {
-  stroke: $black-accent-color;
+  stroke: var(--main-text-color);
   transition: stroke $transition;
   width: 24px;
   height: 24px;

@@ -1,4 +1,5 @@
 @import '../utils/main';
+@import '../utils/variables.scss';
 
 body {
   background-color: var(--backdrop);
@@ -42,7 +43,27 @@ body {
   position: absolute;
   z-index: 100;
   background-color: var(--backdrop);
+  transition: color $transition;
 }
+.categories-title-after-focus {
+  color: var(--secondary-text-color);
+  text-transform: lowercase;
+  font-weight: 400;
+  font-size: 16px;
+}
+.categories-title-span-after-focus {
+  text-transform: none;
+}
+
+.categories-title-after-focus:hover,
+.categories-title-after-focus:active {
+  color: $main-accent-color;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.13;
+  white-space: nowrap;
+}
+
 .categories-list {
   list-style: none;
   padding: 0;
@@ -64,8 +85,18 @@ body {
 .categories-span-js {
   //text-decoration: none;
   color: var(--secondary-text-color);
+  transition: color $transition;
 }
-.categories-span-js:focus {
+// .categories-span-js:focus {
+//   color: $main-accent-color;
+//   text-transform: uppercase;
+//   font-weight: 700;
+//   font-size: 4.3vw;
+//   line-height: 1.13;
+//   white-space: nowrap;
+// }
+
+.categories-span-js-focus {
   color: $main-accent-color;
   text-transform: uppercase;
   font-weight: 700;
@@ -73,6 +104,7 @@ body {
   line-height: 1.13;
   white-space: nowrap;
 }
+
 .categories-span-js:hover,
 .categories-span-js:active {
   color: $main-accent-color;
@@ -85,12 +117,12 @@ body {
 
 @media screen and (min-width: 375px) {
   .container {
-    width: 375px;
+    max-width: 375px;
   }
   .title-categories {
     width: 325px;
   }
-  .categories-span-js:focus {
+  .categories-span-js-focus {
     font-size: 15px;
     line-height: 1.33;
   }
@@ -149,9 +181,8 @@ body {
   }
 }
 // !___________________________________________________________________
-@import '../utils/variables.scss';
 
-.bestsellers-book-item {
+.top-book-item {
   @media screen and (max-width: (768px - 1)) {
     &:nth-child(n + 2) {
       display: none;
@@ -170,7 +201,6 @@ body {
     }
   }
 }
-
 .content {
   background-color: var(--bg-color);
 }
@@ -247,20 +277,27 @@ body {
 }
 
 .books-list {
-  @media screen and (min-width: 768px) {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: (768px)) {
+    flex-flow: row wrap;
+    row-gap: 40px;
+    column-gap: 25px;
     margin-bottom: 20px;
-    display: flex;
-    gap: 25px;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: (1440px)) {
+    column-gap: 24px;
     margin-bottom: 32px;
   }
 }
 
 .book-image {
   object-fit: fill;
-  // width: 335px;
 
   max-width: 335px;
   height: 485px;
@@ -318,44 +355,15 @@ body {
   margin-bottom: 14px;
 }
 
-// .book-image-overlay {
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
+.book-image-overlay {
+  // запутался, сделать заново, чтобы выходило не на весь монитор
+}
 
-//     width: 100%;
-//     height: 25%;
+.book-image-overlay-text {
+  // запутался, сделать заново, чтобы выходило не на весь монитор
+}
 
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     background-color: var(--secondary-accent-color);
-
-//     transform: translateY(100%);
-
-//     .book-link:hover &,
-//     .book-link:focus & {
-//         transform: translateY(0);
-//     }
-// }
-
-// .book-image-overlay-text {
-//     text-transform: uppercase;
-//     color: var(--main-text-color);
-//     font-size: 18px;
-//     font-weight: 500;
-
-//     opacity: 0;
-
-//     .book-link:hover &,
-//     .book-link:focus & {
-//         opacity: 1;
-//     }
-// }
-
-.see-more-btn {
+.top-book-button {
   margin-left: auto;
 
   padding: 14px 28px;
@@ -365,6 +373,7 @@ body {
   border: 2px solid #4f2ee8;
 
   color: var(--main-text-color);
+  background-color: var(--backdrop);
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -372,10 +381,19 @@ body {
   line-height: 1.28; /* 128.571% */
   letter-spacing: -0.14px;
   text-transform: uppercase;
+
+  margin-bottom: 8px;
+
+  @media screen and (min-width: (768px)) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: (1440px)) {
+    margin-bottom: 32px;
+  }
 }
 
-
 .see-more-btn:hover {
-    color: #fff;
-    background-color: #4f2ee8;
+  color: #fff;
+  background-color: #4f2ee8;
 }

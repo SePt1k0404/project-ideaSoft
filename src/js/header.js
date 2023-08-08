@@ -7,10 +7,10 @@ const enableBodyScroll = bodyScrollLock.enableBodyScroll;
 // Function to toggle the dark theme
 function toggleTheme() {
   document.body.classList.toggle('dark-theme');
-  refs.switcherBgLight.classList.toggle('ligth-switcher');
+  refs.switcherBgLight.classList.toggle('light-switcher');
   refs.switcherBgDark.classList.toggle('dark-switcher');
   refs.switcherThemeButton.classList.toggle('bias-btn');
-  if (refs.switcherBgLight.classList.contains('ligth-switcher')) {
+  if (refs.switcherBgLight.classList.contains('light-switcher')) {
     localStorage.setItem(THEME_KEY, 'dark');
     refs.switcherHtml.dataset.theme = 'dark';
   } else {

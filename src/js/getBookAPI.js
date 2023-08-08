@@ -15,9 +15,10 @@ export default class ApiClientAxios {
     }
   }
 }
-async function getTopBooksArray() {
-  Notiflix.Loading.dots();
-  const categoriesArray = async () => {
+
+export async function getTopBooks() {
+  Notiflix.Loading.dots('Loading...');
+  const topBooks = async () => {
     const response = await fetch(
       'https://books-backend.p.goit.global/books/top-books'
     );
@@ -26,7 +27,7 @@ async function getTopBooksArray() {
     return data;
   };
   try {
-    return categoriesArray();
+    return topBooks();
   } catch (error) {
     Notiflix.Loading.remove();
     Notiflix.Notify.failure(
@@ -35,4 +36,22 @@ async function getTopBooksArray() {
   }
 }
 
-export { getTopBooksArray };
+export async function booksOnCategory(nameCategory) {
+  Notiflix.Loading.dots('Loading...');
+  const categories = async () => {
+    const response = await fetch(
+      `https://books-backend.p.goit.global/books/category?category=${nameCategory}`
+    );
+    const data = await response.json();
+    Notiflix.Loading.remove();
+    return data;
+  };
+  try {
+    return categories();
+  } catch (error) {
+    Notiflix.Loading.remove();
+    Notiflix.Notify.failure(
+      'Ups......... Something went wrong. Please try again'
+    );
+  }
+}

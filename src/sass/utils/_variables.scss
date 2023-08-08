@@ -11,6 +11,7 @@ $black-accent-color: #111111;
 
 html[data-theme='light'] {
   //text
+  --header-color-text: #aaa;
   --main-text-color: #111111;
   --secondary-text-color: #11111199;
   --subtitle-color: #b4afaf;
@@ -34,6 +35,7 @@ html[data-theme='light'] {
 
 html[data-theme='dark'] {
   //text
+  --header-color-text: #fff;
   --main-text-color: #ffffff;
   --secondary-text-color: #ffffff99;
   --subtitle-color: #b4afaf;

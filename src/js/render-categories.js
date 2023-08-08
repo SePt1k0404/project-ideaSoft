@@ -1,8 +1,17 @@
 // import ApiClientAxios from './getBookAPI';
 import markupCategoriesList from './categories-markup';
 import { refs } from './refs';
+import {
+  createCategoryBooksMarkup,
+  createTopBooksTitleMarkup,
+} from './createMarkUpTop';
+import { booksOnCategory } from './getBookAPI';
+import Notiflix from 'notiflix';
+
+let booksCategory = [];
 
 document.addEventListener('DOMContentLoaded', loadingPage);
+refs.categorySpan.addEventListener('click', handlerShowCategory);
 async function loadingPage() {
   try {
     const responseApi = await fetch(
@@ -21,10 +30,33 @@ async function loadingPage() {
 }
 
 refs.categoriesListEl.addEventListener('click', onClick);
-function onClick() {
-  refs.titleCategoriesEl.style.color = '#11111199';
-  refs.titleCategoriesEl.style.textTransform = 'lowercase';
-  refs.titleCategoriesEl.style.fontWeight = 400;
-  refs.titleCategoriesEl.style.fontSize = '16px';
-  refs.allTitleSpanEl.style.textTransform = 'none';
+function onClick(evt) {
+  if (!evt.target.classList.contains('categories-span-js')) {
+    return;
+  }
+  const categoriesLiEl = Object.values(refs.categoriesListEl.children);
+  categoriesLiEl.forEach(el =>
+    el.children[0].children[0].classList.remove('categories-span-js-focus')
+  );
+  refs.titleCategoriesEl.classList.add('categories-title-after-focus');
+  refs.allTitleSpanEl.classList.add('categories-title-span-after-focus');
+  evt.target.classList.add('categories-span-js-focus');
+}
+
+async function handlerShowCategory(e) {
+  if (!e.target.classList.contains('categories-span-js')) {
+    return;
+  }
+  const nameCategory = e.target.dataset.name;
+
+  try {
+    booksCategory = await booksOnCategory(nameCategory);
+  } catch (error) {
+    Notiflix.Notify.failure(
+      'Ups......... Something went wrong. Please try again'
+    );
+  }
+
+  refs.topBooksTitle.innerHTML = createTopBooksTitleMarkup(nameCategory);
+  refs.contentWrapper.innerHTML = createCategoryBooksMarkup(booksCategory);
 }
