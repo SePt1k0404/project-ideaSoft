@@ -1,8 +1,8 @@
-import refs from './refs';
+import {refs} from './refs';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
-import { writeUsersData, getUserData } from './firebase-auth';
-import { signUp, signIn } from './firebase-auth';
+// import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+// import { writeUsersData, getUserData } from './firebase-auth';
+import { signUp, signIn, onLogOut } from './firebase-auth';
 
 let authMode = 'SignUp';
 let formData = {};
@@ -53,20 +53,21 @@ function handleSubmit(evt) {
     };
   };
   evt.currentTarget.reset();
-  try {
     if(authMode === 'SignUp'){
-      signUp(formData.email, formData.password);
+      signUp(formData.email, formData.password, formData.name);
   } else if(authMode === 'SignIn'){
       signIn(formData.email, formData.password);
-    }}
-   catch (error) {
-    // if(error.code.match(/password/)){
-    //   Notify.failure("Enter correct password!")
-    // }
-    // else if(error.code.match(/found/)){
-    //   Notify.failure('User not found!')
-    // }
-      Notify.failure(`${error}`);
-  }
+    }
+  //  catch (error) {
+  //   // if(error.code.match(/password/)){
+  //   //   Notify.failure("Enter correct password!")
+  //   // }
+  //   // else if(error.code.match(/found/)){
+  //   //   Notify.failure('User not found!')
+  //   // }
+  //     Notify.failure(`${error}`);
+  // }
 }
+
+refs.logOut.addEventListener('click', onLogOut)
 

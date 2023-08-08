@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+// import { getAnalytics } from "firebase/analytics";
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged} from "firebase/auth";
 import {getDatabase, ref, onValue, set} from "firebase/database";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
@@ -18,13 +18,14 @@ const firebaseConfig = {
   
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  // const analytics = getAnalytics(app);
   const auth = getAuth(app);
+  let userAuthTracking = {};
 
 
-  export async function signUp(email, password) {
+  export async function signUp(email, password, name, shoppingList={foo: 2}) {
     const userCreds = await createUserWithEmailAndPassword(auth, email, password)
-    .then(creds => writeUsersData(creds.user.uid, email, password))
+    .then(creds => writeUsersData(creds.user.uid, email, name, shoppingList))
     .catch(err => {
         Notify.failure(`${err}`)
     })
@@ -34,19 +35,28 @@ const firebaseConfig = {
     const loginUser = await signInWithEmailAndPassword(auth, email, password)
     .then(creds => {
       getUserData(creds.user.uid);
-      console.log(creds);
     })
     .catch(err => {
+          if(err.code.match(/password/)){
+      Notify.failure("Enter correct password!")
+      }
+      else if(err.code.match(/found/)){
+      Notify.failure('User not found!')
+      }
+       else {
         Notify.failure(`${err}`)
+        console.log(err.code);
+       }
     })
   }
 
-  export function writeUsersData(userID, name, email) {
+  export function writeUsersData(userID, email, name, shoppingList={foo: 2}) {
     const db = getDatabase();
     const reference = ref(db, `users/${userID}`);
     const addData = set(reference, {
       userName: name, 
       email: email,
+      shoppingList: shoppingList,
     })
     console.log(reference);
   }
@@ -60,3 +70,18 @@ const firebaseConfig = {
     }) 
   }
   
+  export function onLogOut(evt){
+    evt.preventDefault();
+    const logOut = auth.signOut();
+    console.log("logOut");
+  }
+
+  onAuthStateChanged(auth, user => {
+    console.log(user);
+  });
+
+// const authCheck = onAuthStateChanged(auth, user => {
+//   return user
+// });
+
+

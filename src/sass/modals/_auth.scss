@@ -25,28 +25,28 @@
   padding: 40px 20px;
   border-radius: 18px;
   &-dark {
-    background-color: $dt-bg-color;
+    background-color: var(--modal-outline);
     border: 2px solid $black-accent-color;
     & input {
       background-color: inherit;
       border: 2px solid;
-      border-color: $lt-bg-color;
-      color: $lt-bg-color;
+      border-color: var(--modal-outline);
+      color: var(--modal-outline);
       &::placeholder {
-        color: $lt-bg-color;
+        color: var(--modal-outline);
       }
     }
     & .email-wrap-icon,
     .password-wrap-icon {
-      stroke: $lt-bg-color;
+      stroke: var(--modal-outline);
 
     }
     & .auth-button {
-      background-color: $lt-bg-color;
-      color: $dt-bg-color;
+      background-color: var(--modal-outline);
+      color: var(--modal-outline);
       transition: background-color $transition;
       &:hover {
-        color: $lt-bg-color;
+        color: var(--modal-outline);
       }
     }
     & .auth-ref {
@@ -54,28 +54,28 @@
     }
   }
   &-light {
-    background-color: $lt-bg-color;
-    border: 2px solid $lt-bg-color;
+    background-color: var(--bg-color);
+    border: 2px solid var(--card-color);
     & input {
       background-color: inherit;
-      border: 2px solid $black-accent-color;
-      color: $black-accent-color;
+      border: 2px solid var(--modal-outline);
+      color: var(--modal-outline);
       &::placeholder {
-        color: $black-accent-color;
+        color: var(--modal-outline);
       }
     }
     & .email-wrap-icon,
     .password-wrap-icon {
-      fill: $lt-bg-color;
-      stroke: $black-accent-color;
+      fill: var(--bg-color);
+      stroke: var(--modal-outline);
 
     }
     & .auth-button {
-      background-color: $black-accent-color;
-      color: #F3F3F3;
+      background-color: var(--modal-outline);
+      color: var(--bg-color);
     }
     & .auth-ref {
-      color: rgba(17, 17, 17, 0.50);
+      color: var(--sign-refs);
     }
   }
   & .close-btn {
@@ -87,10 +87,10 @@
     transition: stroke $transition;
     cursor: pointer;
     &-dark {
-      stroke: $lt-bg-color;  
+      stroke: var(--modal-outline);  
     }
     &-light {
-      stroke: $black-accent-color;
+      stroke: var(--modal-outline);
     }
     &:hover {
       stroke: $main-accent-color;
@@ -173,10 +173,10 @@
     left: calc(50% - 579px / 2);  
     padding: 80px 40px;
     &-dark {
-      border: 2px solid $lt-bg-color;
+      border: 2px solid var(--modal-outline);
     }
     &-light {
-      border: 2px solid $black-accent-color;
+      border: 2px solid var(--modal-outline);
     }
     & .close-btn {
       position: absolute;

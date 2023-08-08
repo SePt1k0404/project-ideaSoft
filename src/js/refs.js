@@ -27,6 +27,8 @@ const refs = {
   signInRef: document.querySelector('.sign-in'),
   nameInput: document.querySelector('.input-name'),
   authFormClose: document.querySelector('.close-btn'),
+  logOut: document.querySelector('.log-out'),
+
   topBookEl: document.querySelector('.top-books-wrapper-js'),
 };
 

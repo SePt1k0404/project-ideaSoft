@@ -1,0 +1,109 @@
+html[data-theme=light] {
+  --main-text-color: #111111;
+  --secondary-text-color: #11111199;
+  --subtitle-color: #b4afaf;
+  --congrats-text-color: #11111180;
+  --bg-color: #f6f6f6;
+  --btn-grad: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+  --backdrop: #f6f6f6;
+  --card-color: #fff;
+  --amazon-color: grayscale(100%);
+  --icon-shadow: drop-shadow(0 3px 0.85px rgba(0, 0, 0, 0.15));
+  --modal-outline: #111111;
+  --sign-refs: #11111180;
+}
+
+html[data-theme=dark] {
+  --main-text-color: #ffffff;
+  --secondary-text-color: #ffffff99;
+  --subtitle-color: #b4afaf;
+  --congrats-text-color: #ffffff80;
+  --bg-color: #202024;
+  --btn-grad: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+  --backdrop: #202024;
+  --card-color: #111;
+  --amazon-color: brightness(0) invert(1);
+  --icon-shadow: drop-shadow(0 3px 0.85px rgba(255, 255, 255));
+  --modal-outline: #f6f6f6;
+  --sign-refs: #F6F6F680;
+}
+
+.tui-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 40px;
+}
+
+.tui-pagination .tui-prev {
+  margin-right: 14px;
+}
+
+.tui-pagination .tui-next {
+  margin-left: 14px;
+}
+
+.tui-active {
+  background-color: #eac645 !important;
+}
+
+.tui-page-btn {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  font-family: DM Sans !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 22px !important;
+  background-color: transparent;
+  color: var(--main-text-color) !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid var(--main-text-color) !important;
+}
+
+.tui-is-disabled {
+  background-color: #000000 !important;
+}
+
+.tui-is-selected {
+  color: #ffffff !important;
+  font-family: DM Sans !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 22px !important;
+  background-color: #000000 !important;
+}
+
+@media screen and (min-width: 768px) {
+  .tui-page-btn {
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .tui-page-btn {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .tui-pagination {
+    gap: 8px;
+  }
+  .tui-pagination .tui-prev {
+    margin-right: 2px;
+  }
+  .tui-pagination .tui-next {
+    margin-left: 2px;
+  }
+  .tui-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}/*# sourceMappingURL=pagination.css.map */

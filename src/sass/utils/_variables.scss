@@ -25,6 +25,10 @@ html[data-theme='light'] {
   --card-color: #fff;
   --amazon-color: grayscale(100%);
   --icon-shadow: drop-shadow(0 3px 0.85px rgba(0, 0, 0, 0.15));
+    // modal
+  --modal-outline: #111111;
+  --sign-refs: #11111180;
+
 }
 //!dark-theme//
 
@@ -44,6 +48,9 @@ html[data-theme='dark'] {
   --card-color: #111;
   --amazon-color: brightness(0) invert(1);
   --icon-shadow: drop-shadow(0 3px 0.85px rgba(255, 255, 255));
+  // modal
+  --modal-outline: #f6f6f6;
+  --sign-refs: #F6F6F680;
 }
 
 //transition
