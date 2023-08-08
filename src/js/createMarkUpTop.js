@@ -73,7 +73,7 @@ function createTopBookMarkup({
     description || comingSoon
   } width="335" height="485"/>
         <div class="book-image-overlay" data_id=${id} aria-label="${title}">
-          
+        
         </div>
       </div>
       <div class="book-item-meta">
@@ -84,4 +84,4 @@ function createTopBookMarkup({
   `;
 }
 
-/* <p class="book-image-overlay-text">Quick view</p>;  */
+/* <p class="book-image-overlay-text">Quick view</p>; */

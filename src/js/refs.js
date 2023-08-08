@@ -19,6 +19,7 @@ const refs = {
   categoriesListEl: document.querySelector('.categories-list-js'),
   titleCategoriesEl: document.querySelector('.title-categories-js'),
   allTitleSpanEl: document.querySelector('.allTitleSpan'),
+  header: document.querySelector('header'),
   //   onRemoveClick.js
   shoppingListWrapper: document.querySelector('.shopping-list-wrap'),
   categorySpan: document.querySelector('.categories-list-js'),
