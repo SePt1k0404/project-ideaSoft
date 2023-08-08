@@ -14,7 +14,7 @@ refs.contentWrapper.addEventListener('click', onBookInfoClick);
 async function onBookInfoClick(evt) {
   try {
     evt.preventDefault();
-    const cardLink = evt.target.closest('.bestsellers-book-item');
+    const cardLink = evt.target.closest('.top-book-item');
     if (!cardLink) {
       return;
     }

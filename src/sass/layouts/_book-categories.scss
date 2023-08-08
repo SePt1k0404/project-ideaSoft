@@ -44,6 +44,9 @@ body {
   z-index: 100;
   background-color: var(--backdrop);
 }
+.categories-title-color-after-focus {
+  color: var(--secondary-text-color);
+}
 .categories-list {
   list-style: none;
   padding: 0;
@@ -210,7 +213,6 @@ body {
 }
 
 .top-books-title-span {
-  
   color: $accent-text-color;
 }
 
@@ -246,31 +248,29 @@ body {
   }
 }
 
-
 .books-list {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 8px;
 
-    @media screen and (min-width: (768px)) {
-        flex-flow: row wrap;
-        row-gap: 40px;
-        column-gap: 25px;
-        margin-bottom: 20px
-    }
+  @media screen and (min-width: (768px)) {
+    flex-flow: row wrap;
+    row-gap: 40px;
+    column-gap: 25px;
+    margin-bottom: 20px;
+  }
 
-    @media screen and (min-width: (1440px)) {
-        column-gap: 24px;
-        margin-bottom: 32px
-    }
+  @media screen and (min-width: (1440px)) {
+    column-gap: 24px;
+    margin-bottom: 32px;
+  }
 }
-
 
 .book-image {
   object-fit: fill;
- 
+
   max-width: 335px;
   height: 485px;
 
@@ -328,11 +328,11 @@ body {
 }
 
 .book-image-overlay {
-    // запутался, сделать заново, чтобы выходило не на весь монитор
+  // запутался, сделать заново, чтобы выходило не на весь монитор
 }
 
 .book-image-overlay-text {
-      // запутался, сделать заново, чтобы выходило не на весь монитор
+  // запутался, сделать заново, чтобы выходило не на весь монитор
 }
 
 .top-book-button {
@@ -345,6 +345,7 @@ body {
   border: 2px solid #4f2ee8;
 
   color: var(--main-text-color);
+  background-color: var(--backdrop);
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -355,17 +356,16 @@ body {
 
   margin-bottom: 8px;
 
-    @media screen and (min-width: (768px)) {
-        margin-bottom: 20px
-    }
+  @media screen and (min-width: (768px)) {
+    margin-bottom: 20px;
+  }
 
-    @media screen and (min-width: (1440px)) {
-        margin-bottom: 32px
-    }
+  @media screen and (min-width: (1440px)) {
+    margin-bottom: 32px;
+  }
 }
 
-
 .see-more-btn:hover {
-    color: #fff;
-    background-color: #4f2ee8;
+  color: #fff;
+  background-color: #4f2ee8;
 }

@@ -31,7 +31,7 @@ async function loadingPage() {
 
 refs.categoriesListEl.addEventListener('click', onClick);
 function onClick() {
-  refs.titleCategoriesEl.style.color = '#11111199';
+  refs.titleCategoriesEl.classList.add('categories-title-color-after-focus');
   refs.titleCategoriesEl.style.textTransform = 'lowercase';
   refs.titleCategoriesEl.style.fontWeight = 400;
   refs.titleCategoriesEl.style.fontSize = '16px';

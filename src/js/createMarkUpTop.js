@@ -45,7 +45,7 @@ export function createCategoryBooksMarkup(data) {
         ${data
           .map(element => {
             return `
-            <li class="top-book-item">
+            <li class="top-book-item" data-id="${element._id}">
               ${createTopBookMarkup(element)}
             </li>
           `;
