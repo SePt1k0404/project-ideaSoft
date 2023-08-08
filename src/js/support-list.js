@@ -17,6 +17,7 @@ function onPageLoad() {
   const width = window.innerWidth;
   const currentPage = window.location.pathname;
   const indexPages = ['/shopping-list.html'];
+  console.log(currentPage);
   if (indexPages.includes(currentPage) && width >= 1440) {
     console.log('!indexPages.includes(currentPage) && width >= 1440');
     refs.supportContainer.classList.remove('visually-hidden');
