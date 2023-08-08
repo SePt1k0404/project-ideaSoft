@@ -18,10 +18,13 @@ function onPageLoad() {
   const currentPage = window.location.pathname;
   const indexPages = ['/index.html'];
   if (!indexPages.includes(currentPage) && width >= 1440) {
+    console.log('!indexPages.includes(currentPage) && width >= 1440');
     refs.supportContainer.classList.remove('visually-hidden');
   } else if (!indexPages.includes(currentPage) && width < 1440) {
+    console.log('!indexPages.includes(currentPage) && width < 1440');
     refs.supportContainer.classList.add('visually-hidden');
   } else {
+    console.log('else');
     refs.supportContainer.classList.remove('visually-hidden');
   }
   if (width >= 768) {
