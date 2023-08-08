@@ -31,11 +31,8 @@ async function loadingPage() {
 
 refs.categoriesListEl.addEventListener('click', onClick);
 function onClick() {
-  refs.titleCategoriesEl.classList.add('categories-title-color-after-focus');
-  refs.titleCategoriesEl.style.textTransform = 'lowercase';
-  refs.titleCategoriesEl.style.fontWeight = 400;
-  refs.titleCategoriesEl.style.fontSize = '16px';
-  refs.allTitleSpanEl.style.textTransform = 'none';
+  refs.titleCategoriesEl.classList.add('categories-title-after-focus');
+  refs.allTitleSpanEl.classList.add('categories-title-span-after-focus');
 }
 
 async function handlerShowCategory(e) {
