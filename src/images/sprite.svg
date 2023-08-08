@@ -79,7 +79,7 @@
 <path d="M176.003 4.665v-3.538c-0.864-0.165-1.81-0.288-2.88-0.288-3.456 0-5.349 1.563-5.349 6.007v2.674h-3.003v3.538h3.003v17.486h4.361v-17.486h3.867v-3.538h-3.867v-2.304c0-2.386 1.070-2.674 3.867-2.551z"></path>
 </symbol>
 <symbol id="icon-arrow-narrow-right" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M5.333 16h21.333M26.666 16l-8-8M26.666 16l-8 8"></path>
+<path fill="none" stroke="#eac645" style="stroke: var(--color1, #eac645)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M5.333 16h21.333M26.666 16l-8-8M26.666 16l-8 8"></path>
 </symbol>
 <symbol id="icon-fi-ss-caret-down" viewBox="0 0 28 32">
 <path d="M5.897 12h16.513l-7.423 8.391c-0.221 0.25-0.521 0.39-0.834 0.39s-0.613-0.14-0.834-0.39l-7.423-8.391z"></path>

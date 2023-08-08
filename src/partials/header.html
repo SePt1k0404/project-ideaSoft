@@ -64,7 +64,7 @@
 </header>
 
 <!-- Modal -->
-<div class="header__modal">
+<div class="header__modal no-scroll">
   <!-- Avatar -->
   <div class="container">
     <div class="modal__avatar">
@@ -79,7 +79,7 @@
     </div>
 
     <!-- Menu modal -->
-    <ul class="header__modal-menu">
+    <ul class="header__modal-menu ">
       <li class="header__modal-item">
         <a href="./index.html" class="header__modal-menu-link">HOME</a>
       </li>
@@ -92,14 +92,17 @@
       </li>
     </ul>
 
-    <!-- Sing -->
-    <div class="header__modal-logout-block">
+        <div class="header__modal-logout-block">
       <ul class="logout__list">
         <li>
           <a href="#"><span class="header__modal-menu-logout">Log out</span></a>
         </li>
         <li>
-          <img src="./images/arrow-narrow-right.svg" alt="Logout" class="header__logout-arrow" />
+          <svg class="header__logout-arrow">
+            <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
+          </svg>
+
+          <!-- <img src="./images/arrow-narrow-right.svg" alt="Logout" class="header__logout-arrow" /> -->
         </li>
       </ul>
     </div>
