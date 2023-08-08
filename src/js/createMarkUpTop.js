@@ -14,7 +14,7 @@ export function createListBooksMarkup(topBooks) {
             ${books
               .map(
                 book => `
-              <li class="top-book-item" data-id="${book._id}">
+              <li class="top-book-item top-book-modal" data-id="${book._id}">
                 ${createTopBookMarkup(book)}
               </li>
             `
@@ -45,7 +45,7 @@ export function createCategoryBooksMarkup(data) {
         ${data
           .map(element => {
             return `
-              <li data-id="${element._id}">
+              <li class="top-book-modal" data-id="${element._id}">
               ${createTopBookMarkup(element)}
             </li>
           `;
