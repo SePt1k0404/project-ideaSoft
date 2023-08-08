@@ -1,0 +1,88 @@
+@import '../utils/variables.scss';
+
+.tui-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 40px;
+}
+
+.tui-pagination .tui-prev {
+  margin-right: 14px;
+}
+
+.tui-pagination .tui-next {
+  margin-left: 14px;
+}
+
+.tui-active {
+  background-color: $secondary-accent-color !important;
+}
+.tui-page-btn {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  font-family: DM Sans !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 22px !important;
+  background-color: transparent;
+  color: var(--main-text-color) !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid var(--main-text-color) !important;
+}
+.tui-page-btn:hover,
+.tui-page-btn:focus {
+  color: var(--card-color) !important;
+  background-color: var(--main-text-color) !important;
+}
+
+.tui-is-disabled {
+  background-color: $black !important;
+}
+.tui-is-selected {
+  color: $white !important;
+  font-family: DM Sans !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 22px !important;
+  background-color: $black !important;
+}
+
+@media screen and (min-width: 768px) {
+  .tui-page-btn {
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .tui-page-btn {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .tui-pagination .tui-prev {
+    margin-right: 2px;
+  }
+  .tui-pagination .tui-next {
+    margin-left: 2px;
+  }
+  .tui-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .tui-pagination {
+    gap: 0;
+  }
+}
