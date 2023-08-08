@@ -1,4 +1,4 @@
-const SHOP_LIST_KEY = 'shopping-list';
+const SHOP_LIST_KEY = 'books';
 export function searchBook(obj) {
   const getLocalStorage = localStorage.getItem(SHOP_LIST_KEY);
   const parseLocalStorage = getLocalStorage ? JSON.parse(getLocalStorage) : [];
