@@ -9,7 +9,7 @@ function checkTheme() {
   } else {
     const themeValue = localStorage.getItem(THEME_KEY);
     if (themeValue === 'dark') {
-      refs.switcherBgLight.classList.toggle('ligth-switcher');
+      refs.switcherBgLight.classList.toggle('light-switcher');
       refs.switcherBgDark.classList.toggle('dark-switcher');
       refs.switcherThemeButton.classList.toggle('bias-btn');
       refs.switcherHtml.dataset.theme = 'dark';

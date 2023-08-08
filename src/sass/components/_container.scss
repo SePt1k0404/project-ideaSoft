@@ -23,10 +23,12 @@
     margin-top: 40px;
     gap: 86px;
   }
+  .container-home-page {
+    display: flex;
+  }
   .container {
     width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
-    display: flex;
   }
 }

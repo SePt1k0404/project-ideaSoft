@@ -117,7 +117,7 @@ body {
 
 @media screen and (min-width: 375px) {
   .container {
-    width: 375px;
+    max-width: 375px;
   }
   .title-categories {
     width: 325px;
