@@ -43,6 +43,9 @@
   margin-left: auto;
   margin-right: auto;
 }
+.support-button-rotate {
+  transform: rotate(180deg);
+}
 .support-icons {
   display: flex;
   justify-content: center;
@@ -69,6 +72,9 @@
 }
 .support-img {
   height: 32px;
+}
+.united24-img {
+  width: 120px;
 }
 .support-number {
   color: #fff;

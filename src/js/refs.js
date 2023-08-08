@@ -1,4 +1,8 @@
 const refs = {
+  // support
+  supportBtn: document.querySelector('.support-button-js'),
+  supportList: document.querySelector('.support-list'),
+  supportContainer: document.querySelector('.support-container'),
   //   books-content-by-category.js, render-book-info.js
   switcherHtml: document.querySelector('html'),
   themeSwitcher: document.querySelector('.header__wrapper-switcher'),
@@ -10,8 +14,6 @@ const refs = {
   switcherBgDark: document.querySelector('.header__theme-dark-switch'),
   switcherThemeButton: document.querySelector('.header__theme-round-button'),
   switcherThemeButton: document.querySelector('.header__theme-round-button'),
-  supportList: document.querySelector('.support-list'),
-  supportContainer: document.querySelector('.support-container'),
   body: document.querySelector('body'),
   contentWrapper: document.querySelector('.top-books-wrapper-js'),
   topBooksTitle: document.querySelector('.top-books-title'),
