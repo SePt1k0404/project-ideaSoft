@@ -45,7 +45,7 @@ export function createCategoryBooksMarkup(data) {
         ${data
           .map(element => {
             return `
-            <li class="top-book-item" data-id="${element._id}">
+              <li data-id="${element._id}">
               ${createTopBookMarkup(element)}
             </li>
           `;
@@ -54,6 +54,8 @@ export function createCategoryBooksMarkup(data) {
       </ul>
     `;
 }
+
+/* <li class="top-book-item" data-id="${element._id}"></li>; */
 
 // Markup body UL(main markup)
 function createTopBookMarkup({
