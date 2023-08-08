@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
 import { refs } from './refs';
+
 export default class ApiClientAxios {
   constructor(baseURL) {
     this.baseURL = baseURL;
@@ -17,7 +18,6 @@ export default class ApiClientAxios {
 }
 
 export async function getTopBooks() {
-  // Notiflix.Loading.dots('Loading...');
   refs.loaderEl.classList.add('is-active');
   refs.topBooksWrapper.classList.add('visually-hidden');
   const topBooks = async () => {

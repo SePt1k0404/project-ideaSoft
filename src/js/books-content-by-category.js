@@ -54,6 +54,13 @@ async function handlerShowMoreBtn(e) {
     );
   }
 
+  const topBooksEl = Object.values(refs.contentWrapper.children[0].children);
+  topBooksEl.forEach(topBooksCategory => {
+    Object.values(topBooksCategory.children[1].children).forEach(topBookItem =>
+      topBookItem.classList.remove('top-book-item')
+    );
+  });
+
   refs.topBooksTitle.innerHTML = createTopBooksTitleMarkup(nameCategory);
   refs.contentWrapper.innerHTML = createCategoryBooksMarkup(booksCategory);
   refs.header.scrollIntoView({ behavior: 'smooth' });

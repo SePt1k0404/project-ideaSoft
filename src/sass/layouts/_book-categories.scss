@@ -393,7 +393,10 @@ body {
   }
 }
 
-.see-more-btn:hover {
+.top-book-button:is(:hover, :focus) {
   color: #fff;
   background-color: #4f2ee8;
+  transition: color $transition;
 }
+
+
