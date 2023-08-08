@@ -25,6 +25,8 @@ const refs = {
   //   onRemoveClick.js
   shoppingListWrapper: document.querySelector('.shopping-list-wrap'),
   categorySpan: document.querySelector('.categories-list-js'),
+  // pagination
+  tuiPagination: document.querySelector('.tui-pagination'),
 };
 
 // console.log(refs.shoppingListWrapper);

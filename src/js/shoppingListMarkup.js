@@ -9,12 +9,14 @@ import barnes2x from '../images/trading-platforms/bookshop@2x.png';
 import sprite from '../images/sprite.svg';
 import defaultImg from '../images/book-placeholder-mobile.jpg';
 import showPageItems from './tui-pagination';
+import { refs } from './refs';
 
 export default function renderCards() {
   const bookListEl = document.querySelector('#bookList');
   const storedBooks = localStorage.getItem('books');
   const books = JSON.parse(storedBooks);
   if (!books || !books.length) {
+    refs.tuiPagination.classList.add('visually-hidden');
     bookListEl.insertAdjacentHTML(
       'beforeend',
       `
@@ -89,6 +91,7 @@ export default function renderCards() {
     })
     .join('');
   bookListEl.innerHTML = bookListHTML;
+  refs.tuiPagination.classList.remove('visually-hidden');
   showPageItems(1);
 }
 
