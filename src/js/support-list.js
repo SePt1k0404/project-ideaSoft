@@ -16,7 +16,10 @@ function onClickSupportBtn(evt) {
 function onPageLoad() {
   const width = window.innerWidth;
   const currentPage = window.location.pathname;
-  const indexPages = ['/shopping-list.html'];
+  const indexPages = [
+    '/shopping-list.html',
+    '/project-ideaSoft/shopping-list.html',
+  ];
   console.log(currentPage);
   if (indexPages.includes(currentPage) && width >= 1440) {
     console.log('!indexPages.includes(currentPage) && width >= 1440');
