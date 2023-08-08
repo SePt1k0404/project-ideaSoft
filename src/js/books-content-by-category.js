@@ -39,8 +39,8 @@ async function handlerShowMoreBtn(e) {
       el => el.dataset.name === e.target.dataset.name
     );
     findCategoriesLi.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
+      behavior: 'auto',
+      block: 'end',
     });
     findCategoriesLi.children[0].children[0].classList.add(
       'categories-span-js-focus'
