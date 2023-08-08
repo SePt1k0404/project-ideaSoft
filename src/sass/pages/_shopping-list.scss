@@ -274,10 +274,12 @@ li {
     width: 100%;
     transition: filter $transition;
   }
-  .book-buy-icon:hover {
+  .book-buy-icon:hover,
+  .book-buy-icon:focus {
     filter: grayscale(100%) var(--icon-shadow);
   }
-  .amazon-book-buy-icon:hover {
+  .amazon-book-buy-icon:hover,
+  .amazon-book-buy-icon:focus {
     filter: var(--amazon-color) var(--icon-shadow);
   }
 }

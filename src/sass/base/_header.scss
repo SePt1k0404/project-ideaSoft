@@ -86,26 +86,22 @@
   padding: 0;
   width: 20px;
   height: 20px;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: $transition;
 }
 
 .light-switcher {
   display: none;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: $transition;
 }
 
 .dark-switcher {
   display: block;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: $transition;
 }
 
 .bias-btn {
   left: 21px;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: $transition;
 }
 
 .header_wrapper-burger-close {
@@ -119,14 +115,13 @@
   width: 28px;
   height: 28px;
   cursor: pointer;
-  stroke: #111;
-  filter: var(--amazon-color);
+  stroke: var(--main-text-color);
+  transition: stroke $transition;
 }
 
 .header__burger:focus,
 .header__burger:hover {
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  stroke: var(--accent-color);
 }
 
 .no-scroll {
@@ -138,14 +133,13 @@
   height: 28px;
   width: 28px;
   cursor: pointer;
-  stroke: #111;
-  filter: var(--amazon-color);
+  stroke: var(--main-text-color);
+  transition: stroke $transition;
 }
 
 .header__modal-close:focus,
 .header__modal-close:hover {
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  stroke: var(--accent-color);
 }
 
 .header__nav {
@@ -171,17 +165,20 @@
 
 .header__modal-bg {
   content: '';
-  position: absolute;
-  top: 24%;
-  left: -1%;
-  width: 110%;
+  // top: 24%;
+  left: -8px;
+  margin-top: 168px;
+  width: 120%;
   height: 110%;
-  background-image: url(./../images/bg-mobile-menu.png);
+  background-image: url(./../images/bg-mobile-menu@2x.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  width: 450px;
+  height: 439px;
   transform: rotate(-15deg);
   z-index: 102;
+  flex-shrink: 0;
 }
 
 .modal__avatar {
@@ -249,6 +246,8 @@
   line-height: 18px; /* 128.571% */
   letter-spacing: -0.56px;
   text-transform: uppercase;
+  transition: background-color $transition, border-radius $transition,
+    color $transition;
 }
 
 .header__modal-menu-img {
@@ -256,6 +255,7 @@
   height: 20px;
   margin-left: 4px;
   fill: #fff;
+  transition: fill $transition;
 }
 
 .header__modal-menu-link:hover .header__modal-menu-img {
@@ -266,7 +266,6 @@
 .header__modal-menu-link:focus {
   border-radius: 36px;
   color: #111;
-
   background-color: #eac645;
   font-family: DM Sans;
   font-size: 14px;
@@ -275,14 +274,12 @@
   line-height: 18px; /* 128.571% */
   letter-spacing: -0.56px;
   text-transform: uppercase;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header__modal-logout-block {
   position: absolute;
   left: 20px;
-  bottom: 20px;
+  bottom: 80px;
 
   width: 118px;
   height: 48px;
@@ -299,8 +296,6 @@
   align-items: center;
   gap: 4px;
   margin: 0;
-  padding-top: 15px;
-  padding-bottom: 15px;
   padding-left: 24px;
 }
 
@@ -310,7 +305,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 18px; /* 128.571% */
+  line-height: 1.28; /* 128.571% */
   letter-spacing: -0.56px;
 }
 
@@ -373,7 +368,7 @@
     padding-bottom: 7px;
     padding-left: 16px;
     padding-right: 16px;
-    color: var(--amazon-color);
+    color: var(--main-text-color);
     font-family: DM Sans;
     font-size: 14px;
     font-style: normal;
@@ -381,16 +376,15 @@
     line-height: 18px; /* 128.571% */
     letter-spacing: -0.56px;
     text-transform: uppercase;
+    transition: background-color $transition, border-radius $transition,
+      color $transition;
   }
 
   .header__nav-link:hover,
   .header__nav-link:focus {
     border-radius: 36px;
-    background: #eac645;
+    background-color: #eac645;
     color: var(--card-color);
-    text-decoration: none;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .header__menu-img {
@@ -398,6 +392,7 @@
     height: 20px;
     margin-left: 4px;
     fill: var(--main-text-color);
+    transition: fill $transition;
   }
   .header__nav-link:hover .header__menu-img,
   .header__nav-link:focus .header__menu-img {
@@ -408,6 +403,7 @@
     // filter: #fff;
     // fill: #4f2ee8;
     // stroke: #eac645;
+    fill: var(--card-color);
   }
 
   .header__burger {
