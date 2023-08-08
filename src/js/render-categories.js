@@ -9,7 +9,6 @@ import { booksOnCategory } from './getBookAPI';
 import Notiflix from 'notiflix';
 
 let booksCategory = [];
-let prevLiEl = null;
 
 document.addEventListener('DOMContentLoaded', loadingPage);
 refs.categorySpan.addEventListener('click', handlerShowCategory);
@@ -35,13 +34,13 @@ function onClick(evt) {
   if (!evt.target.classList.contains('categories-span-js')) {
     return;
   }
-  if (prevLiEl !== null) {
-    prevLiEl.classList.remove('categories-span-js-focus');
-  }
+  const categoriesLiEl = Object.values(refs.categoriesListEl.children);
+  categoriesLiEl.forEach(el =>
+    el.children[0].children[0].classList.remove('categories-span-js-focus')
+  );
   refs.titleCategoriesEl.classList.add('categories-title-after-focus');
   refs.allTitleSpanEl.classList.add('categories-title-span-after-focus');
   evt.target.classList.add('categories-span-js-focus');
-  prevLiEl = evt.target;
 }
 
 async function handlerShowCategory(e) {

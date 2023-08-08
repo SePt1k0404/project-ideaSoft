@@ -43,6 +43,7 @@ body {
   position: absolute;
   z-index: 100;
   background-color: var(--backdrop);
+  transition: color $transition;
 }
 .categories-title-after-focus {
   color: var(--secondary-text-color);
@@ -84,6 +85,7 @@ body {
 .categories-span-js {
   //text-decoration: none;
   color: var(--secondary-text-color);
+  transition: color $transition;
 }
 // .categories-span-js:focus {
 //   color: $main-accent-color;
