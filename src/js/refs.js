@@ -1,4 +1,6 @@
 const refs = {
+  // scroll-to-top.js
+  toTopButton: document.querySelector('.scroll-up__btn'),
   // support
   supportBtn: document.querySelector('.support-button-js'),
   supportList: document.querySelector('.support-list'),
