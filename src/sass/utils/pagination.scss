@@ -67,9 +67,6 @@
     width: 38px !important;
     height: 38px !important;
   }
-  .tui-pagination {
-    gap: 8px;
-  }
   .tui-pagination .tui-prev {
     margin-right: 2px;
   }
@@ -81,5 +78,11 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .tui-pagination {
+    gap: 0;
   }
 }
