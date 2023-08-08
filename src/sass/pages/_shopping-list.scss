@@ -274,6 +274,12 @@ li {
     width: 100%;
     transition: filter $transition;
   }
+  .book-buy-icon:hover {
+    filter: grayscale(100%) var(--icon-shadow);
+  }
+  .amazon-book-buy-icon:hover {
+    filter: var(--amazon-color) var(--icon-shadow);
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -294,12 +300,5 @@ li {
     font-weight: 700;
     line-height: 52px; /* 108.333% */
     letter-spacing: -1.92px;
-  }
-
-  .book-buy-icon:hover {
-    filter: grayscale(100%) var(--icon-shadow);
-  }
-  .amazon-book-buy-icon:hover {
-    filter: var(--amazon-color) var(--icon-shadow);
   }
 }

@@ -20,6 +20,9 @@ const refs = {
   switcherThemeButton: document.querySelector('.header__theme-round-button'),
   body: document.querySelector('body'),
   contentWrapper: document.querySelector('.top-books-wrapper-js'),
+  supportAllCategoriesWrapper: document.querySelector(
+    '.support-categories-container'
+  ),
   topBooksWrapper: document.querySelector('.top-books'),
   topBooksTitle: document.querySelector('.top-books-title'),
   backdropLoader: document.querySelector('.loader-backdrop'),
