@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
-
+import { refs } from './refs';
 export default class ApiClientAxios {
   constructor(baseURL) {
     this.baseURL = baseURL;
@@ -17,19 +17,20 @@ export default class ApiClientAxios {
 }
 
 export async function getTopBooks() {
-  Notiflix.Loading.dots('Loading...');
+  // Notiflix.Loading.dots('Loading...');
+  refs.loaderEl.classList.add('is-active');
   const topBooks = async () => {
     const response = await fetch(
       'https://books-backend.p.goit.global/books/top-books'
     );
     const data = await response.json();
-    Notiflix.Loading.remove();
+    refs.loaderEl.classList.remove('is-active');
     return data;
   };
   try {
     return topBooks();
   } catch (error) {
-    Notiflix.Loading.remove();
+    refs.loaderEl.classList.remove('is-active');
     Notiflix.Notify.failure(
       'Ups......... Something went wrong. Please try again'
     );
@@ -37,19 +38,19 @@ export async function getTopBooks() {
 }
 
 export async function booksOnCategory(nameCategory) {
-  Notiflix.Loading.dots('Loading...');
   const categories = async () => {
+    refs.loaderEl.classList.add('is-active');
     const response = await fetch(
       `https://books-backend.p.goit.global/books/category?category=${nameCategory}`
     );
     const data = await response.json();
-    Notiflix.Loading.remove();
+    refs.loaderEl.classList.remove('is-active');
     return data;
   };
   try {
     return categories();
   } catch (error) {
-    Notiflix.Loading.remove();
+    refs.loaderEl.classList.remove('is-active');
     Notiflix.Notify.failure(
       'Ups......... Something went wrong. Please try again'
     );

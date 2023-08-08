@@ -37,11 +37,20 @@
   align-items: center;
   width: 32px;
   height: 32px;
-  background-color: #fff;
+  background-color: $white;
   border-radius: 50%;
   border: none;
   margin-left: auto;
   margin-right: auto;
+  transition: background-color $transition;
+}
+.support-button:hover,
+.support-button:focus {
+  background-color: $main-accent-color;
+}
+.support-button:hover .support-icons,
+.support-button:focus .support-icons {
+  fill: $white;
 }
 .support-button-rotate {
   transform: rotate(180deg);
@@ -51,6 +60,8 @@
   justify-content: center;
   width: 22px;
   height: 22px;
+  fill: $main-accent-color;
+  transition: fill $transition;
 }
 
 .support-icons {

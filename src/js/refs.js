@@ -1,4 +1,6 @@
 const refs = {
+  //loader
+  loaderEl: document.querySelector('.loader-backdrop'),
   // scroll-to-top.js
   toTopButton: document.querySelector('.scroll-up__btn'),
   // support
