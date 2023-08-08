@@ -21,6 +21,7 @@ const refs = {
   allTitleSpanEl: document.querySelector('.allTitleSpan'),
   //   onRemoveClick.js
   shoppingListWrapper: document.querySelector('.shopping-list-wrap'),
+  categorySpan: document.querySelector('.categories-list-js'),
 };
 
 // console.log(refs.shoppingListWrapper);
