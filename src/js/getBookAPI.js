@@ -19,6 +19,7 @@ export default class ApiClientAxios {
 
 export async function getTopBooks() {
   refs.loaderEl.classList.add('is-active');
+  refs.footer.classList.add('visually-hidden');
   refs.topBooksWrapper.classList.add('visually-hidden');
   refs.supportAllCategoriesWrapper.classList.add('visually-hidden');
   const topBooks = async () => {
@@ -27,6 +28,7 @@ export async function getTopBooks() {
     );
     const data = await response.json();
     refs.loaderEl.classList.remove('is-active');
+    refs.footer.classList.remove('visually-hidden');
     refs.topBooksWrapper.classList.remove('visually-hidden');
     refs.supportAllCategoriesWrapper.classList.remove('visually-hidden');
     return data;
@@ -35,6 +37,7 @@ export async function getTopBooks() {
     return topBooks();
   } catch (error) {
     refs.loaderEl.classList.remove('is-active');
+    refs.footer.classList.remove('visually-hidden');
     refs.topBooksWrapper.classList.remove('visually-hidden');
     refs.supportAllCategoriesWrapper.classList.remove('visually-hidden');
     Notiflix.Notify.failure(
@@ -46,6 +49,7 @@ export async function getTopBooks() {
 export async function booksOnCategory(nameCategory) {
   const categories = async () => {
     refs.loaderEl.classList.add('is-active');
+    refs.footer.classList.add('visually-hidden');
     refs.topBooksWrapper.classList.add('visually-hidden');
     refs.supportAllCategoriesWrapper.classList.add('visually-hidden');
     const response = await fetch(
@@ -53,6 +57,7 @@ export async function booksOnCategory(nameCategory) {
     );
     const data = await response.json();
     refs.loaderEl.classList.remove('is-active');
+    refs.footer.classList.remove('visually-hidden');
     refs.topBooksWrapper.classList.remove('visually-hidden');
     refs.supportAllCategoriesWrapper.classList.remove('visually-hidden');
     return data;
@@ -61,6 +66,7 @@ export async function booksOnCategory(nameCategory) {
     return categories();
   } catch (error) {
     refs.loaderEl.classList.remove('is-active');
+    refs.footer.classList.remove('visually-hidden');
     refs.topBooksWrapper.classList.remove('visually-hidden');
     refs.supportAllCategoriesWrapper.classList.remove('visually-hidden');
     Notiflix.Notify.failure(

@@ -9,7 +9,7 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  background-color: #aaa;
+  background-color: var(--card-color);
   padding-top: 18px;
   padding-bottom: 18px;
 }
@@ -30,13 +30,13 @@
   transform: translate(-50%, -50%);
   text-decoration: none;
 }
-.dis{
+.dis {
   display: flex;
   justify-content: flex-end;
 }
 .footer-button {
   margin-top: 28px;
-margin-left: 100px;
+  margin-left: 100px;
   display: flex;
   padding: 8px 16px;
   align-items: flex-start;
@@ -58,9 +58,8 @@ margin-left: 100px;
   opacity: 1;
   top: -300px;
   right: -150px;
-
 }
-.footer-button:hover{
+.footer-button:hover {
   background-color: black;
   color: white;
 }
