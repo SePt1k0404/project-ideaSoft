@@ -33,7 +33,6 @@ export function onClickBtn(evt) {
   const notification = document.querySelector('.book-infoBtn-explanation');
   if (evt.target.classList.contains('book_add__to_list')) {
     addToLocalStorage(parseDiv(evt.target.closest('div').children[1]));
-    console.log(parseDiv(evt.target.closest('div').children[1]));
     auth.onAuthStateChanged(user => {
       if(user) {
         userShoppingListToDb(user.uid, parseDiv(evt.target.closest('div').children[1]));

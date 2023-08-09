@@ -34,7 +34,6 @@ export function onRemoveClick(evt) {
     ({ author, title }) =>
       author !== removeBtn.dataset.author && title !== removeBtn.dataset.title
   );
-  console.log(newBooks);
   auth.onAuthStateChanged(user => {
     if(user) {
       removeFromCart(user.uid, newBooks);

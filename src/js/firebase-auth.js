@@ -18,10 +18,7 @@ const firebaseConfig = {
   
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  // const analytics = getAnalytics(app);
   export const auth = getAuth(app);
-  // const db = getDatabase(app, "https://bookshelf-a9436-default-rtdb.firebaseio.com");
-  // console.log(db);
 
   export async function signUp(email, password, name, shoppingList=['default']) {
     const userCreds = await createUserWithEmailAndPassword(auth, email, password)
@@ -45,7 +42,6 @@ const firebaseConfig = {
       }
        else {
         Notify.failure(`${err}`)
-        console.log(err.code);
        }
     })
   }
@@ -71,12 +67,10 @@ const firebaseConfig = {
         shoppingList: data.shoppingList,
       }
       dataToAdd.shoppingList.push(obj);
-      console.log(dataToAdd.shoppingList);
       const addData = set(reference, dataToAdd);
     }, {
       onlyOnce: true
     }) 
-    console.log("added");
   }
 
   export function removeFromCart(userID, arr) {
@@ -91,12 +85,10 @@ const firebaseConfig = {
       }
       arr.unshift('default')
       dataToAdd.shoppingList = arr;
-      console.log(dataToAdd.shoppingList);
       const addData = set(reference, dataToAdd);
     }, {
       onlyOnce: true
     }) 
-    console.log("added");
   }
 
   export function removeFromDb(userID, obj) {
@@ -128,7 +120,6 @@ const firebaseConfig = {
   export function onLogOut(evt){
     evt.preventDefault();
     const logOut = auth.signOut();
-    console.log("logOut");
   }
 
   auth.onAuthStateChanged(user => {

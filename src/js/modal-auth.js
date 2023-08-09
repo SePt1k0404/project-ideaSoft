@@ -32,7 +32,6 @@ refs.authForm.addEventListener('submit', handleSubmit);
 function handleSubmit(evt) {
   const authData = [...refs.authForm.elements];
   evt.preventDefault();
-  console.log(authMode);
   if (!authData.some(elem => elem === '' || !elem) && authMode === 'Signup') {
     Notify.failure('Please fill in all the fields!');
     return;
@@ -55,16 +54,6 @@ function handleSubmit(evt) {
   } else if(authMode === 'SignIn'){
       signIn(formData.email, formData.password);
     }
-  //  catch (error) {
-  //   // if(error.code.match(/password/)){
-  //   //   Notify.failure("Enter correct password!")
-  //   // }
-  //   // else if(error.code.match(/found/)){
-  //   //   Notify.failure('User not found!')
-  //   // }
-  //     Notify.failure(`${error}`);
-  // }
 }
 
-refs.logOut.addEventListener('click', onLogOut)
 

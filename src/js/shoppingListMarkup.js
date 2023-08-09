@@ -29,7 +29,6 @@ export default function renderCards() {
         const storedBooks = localStorage.getItem('books');
         let books = JSON.parse(storedBooks);
         const data = snapshot.val();
-        console.log(data.shoppingList);
         if (!books || !books.length) {
           data.shoppingList.splice(0, 1);
           localStorage.setItem('books', JSON.stringify(data.shoppingList));
@@ -50,80 +49,11 @@ export default function renderCards() {
             );
             return;
           }
-          // const dbBookList = data.shoppingList.splice(0, 1);
-          // console.log(dbBookList);
-          // const bookListHTML = books
-          //   .map(book => {
-          //     if (book === 'default') {
-          //       book = 'default';
-          //     }
-          //     const amazonLink = book.buy_links[0].url;
-          //     const appleLink = book.buy_links[1].url;
-          //     const barnesLink = book.buy_links[2].url;
-          //     let bookCover = book.book_image;
-          //     if (!bookCover) {
-          //       bookCover = defaultImg;
-          //     }
-          //     return `<li class="wrap-about-book-remove list-item" data-title="${book.title}" data-author="${book.author}">
-          //           <div class="book-card">
-          //              <button type="button" class="book-delete-btn">
-          //                 <svg class="book-delete-icon">
-          //                     <use class='use-js' href="${sprite}#icon-trash"></use>
-          //                 </svg>
-          //             </button>
-          //                 <img src="${bookCover}" alt="${book.title}" class="book-img">
-          //             <div class="book-text-content">
-          //               <h3 class="book-title">${book.title}</h3>
-          //               <p class="book-category">${book.list_name}</p>
-          //               <p class="book-desc">${book.description}</p>
-          //               <div class="book-copyright">
-          //                 <p class="book-author">${book.author}</p>
-
-          //                     <ul class="buy-links">
-          //                     <li class="buy-li buy-amazon">
-          //                         <a href="${amazonLink}" class="book-buy-link amazon-icon" target="_blank">
-          //                             <picture class="amazon-picture">
-          //                                 <source srcset="${amazon1x} 1x, ${amazon2x} 2x" type="image/png" />
-          //                                 <img src="${amazon1x}" alt=" Empty Bookshelf" class="amazon-book-buy-icon" />
-          //                             </picture>
-          //                         </a>
-          //                     </li>
-          //                     <li class="buy-li">
-          //                         <a href="${appleLink}" class="book-buy-link" target="_blank">
-          //                             <picture class="picture">
-          //                                 <source srcset="${apple1x} 1x, ${apple2x} 2x" type="image/png" />
-          //                                 <img src="${apple1x}" alt=" Empty Bookshelf" class="book-buy-icon" />
-          //                             </picture>
-          //                         </a>
-          //                     </li>
-          //                     <li class="buy-li">
-          //                         <a href="${barnesLink}" class="book-buy-link" target="_blank">
-          //                             <picture class="picture">
-          //                                 <source srcset="${barnes1x} 1x, ${barnes2x} 2x" type="image/png" />
-          //                                 <img src="${barnes1x}" alt=" Empty Bookshelf" class="book-buy-icon" />
-          //                             </picture>
-          //                         </a>
-          //                     </li>
-          //                 </ul>
-          //             </div>
-          //             </div>
-          //           </div>
-          //           </li>
-          //         `;
-          //   })
-          //   .join('');
-          // console.log(bookListHTML);
-          // bookListEl.innerHTML = bookListHTML;
-          // refs.tuiPagination.classList.remove('visually-hidden');
-          // showPageItems(1);
         }
         const booksFromStorage = localStorage.getItem('books');
         let test = JSON.parse(booksFromStorage);
         const bookListHTML = test
           .map(book => {
-            // if(book === 'default'){
-            //   book = 'default';
-            // }
             const amazonLink = book.buy_links[0].url;
             const appleLink = book.buy_links[1].url;
             const barnesLink = book.buy_links[2].url;
