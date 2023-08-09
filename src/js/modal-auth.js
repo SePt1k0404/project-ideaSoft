@@ -1,7 +1,5 @@
 import {refs} from './refs';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-// import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
-// import { writeUsersData, getUserData } from './firebase-auth';
 import { signUp, signIn, onLogOut } from './firebase-auth';
 
 let authMode = 'SignUp';
@@ -37,7 +35,6 @@ function handleSubmit(evt) {
   console.log(authMode);
   if (!authData.some(elem => elem === '' || !elem) && authMode === 'Signup') {
     Notify.failure('Please fill in all the fields!');
-    console.log('error');
     return;
   }
    if (authMode === 'SignUp') {

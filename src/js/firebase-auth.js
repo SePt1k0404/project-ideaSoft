@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged} from "firebase/auth";
-import {getDatabase, ref, onValue, set} from "firebase/database";
+import {getDatabase, ref, onValue, set, get} from "firebase/database";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 
@@ -19,11 +19,11 @@ const firebaseConfig = {
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   // const analytics = getAnalytics(app);
-  const auth = getAuth(app);
-  let userAuthTracking = {};
+  export const auth = getAuth(app);
+  // const db = getDatabase(app, "https://bookshelf-a9436-default-rtdb.firebaseio.com");
+  // console.log(db);
 
-
-  export async function signUp(email, password, name, shoppingList={foo: 2}) {
+  export async function signUp(email, password, name, shoppingList=['default']) {
     const userCreds = await createUserWithEmailAndPassword(auth, email, password)
     .then(creds => writeUsersData(creds.user.uid, email, name, shoppingList))
     .catch(err => {
@@ -50,7 +50,7 @@ const firebaseConfig = {
     })
   }
 
-  export function writeUsersData(userID, email, name, shoppingList={foo: 2}) {
+  export function writeUsersData(userID, email, name, shoppingList) {
     const db = getDatabase();
     const reference = ref(db, `users/${userID}`);
     const addData = set(reference, {
@@ -58,7 +58,62 @@ const firebaseConfig = {
       email: email,
       shoppingList: shoppingList,
     })
-    console.log(reference);
+  }
+
+  export function userShoppingListToDb(userID, obj) {
+    const db = getDatabase();
+    const reference = ref(db, `users/${userID}`);
+    onValue(reference, (snapshot) => {
+      const data = snapshot.val();
+      let dataToAdd = {
+        userName: data.userName, 
+        email: data.email,  
+        shoppingList: data.shoppingList,
+      }
+      dataToAdd.shoppingList.push(obj);
+      console.log(dataToAdd.shoppingList);
+      const addData = set(reference, dataToAdd);
+    }, {
+      onlyOnce: true
+    }) 
+    console.log("added");
+  }
+
+  export function removeFromCart(userID, arr) {
+    const db = getDatabase();
+    const reference = ref(db, `users/${userID}`);
+    onValue(reference, (snapshot) => {
+      const data = snapshot.val();
+      let dataToAdd = {
+        userName: data.userName, 
+        email: data.email,  
+        shoppingList: data.shoppingList,
+      }
+      arr.unshift('default')
+      dataToAdd.shoppingList = arr;
+      console.log(dataToAdd.shoppingList);
+      const addData = set(reference, dataToAdd);
+    }, {
+      onlyOnce: true
+    }) 
+    console.log("added");
+  }
+
+  export function removeFromDb(userID, obj) {
+    const db = getDatabase();
+    const reference = ref(db, `users/${userID}`);
+    onValue(reference, (snapshot) => {
+      const data = snapshot.val();
+      const filterData = data.shoppingList.filter(book => book.title !== obj.title);
+      let dataToAdd = {
+        userName: data.userName, 
+        email: data.email,  
+        shoppingList: filterData,
+      }
+      const addData = set(reference, dataToAdd);
+    }, {
+      onlyOnce: true
+    })
   }
   
   export function getUserData(userID){
@@ -66,7 +121,7 @@ const firebaseConfig = {
     const reference = ref(db, `users/${userID}`);   
     onValue(reference, (snapshot) => {
       const data = snapshot.val();
-      console.log(data);
+      // userBar.textContent = data.userName;
     }) 
   }
   
@@ -76,12 +131,12 @@ const firebaseConfig = {
     console.log("logOut");
   }
 
-  onAuthStateChanged(auth, user => {
-    console.log(user);
+  auth.onAuthStateChanged(user => {
+    if(user) {
+      getUserData(user.uid)
+    }
   });
 
-// const authCheck = onAuthStateChanged(auth, user => {
-//   return user
-// });
+
 
 
