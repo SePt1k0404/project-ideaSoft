@@ -1,0 +1,39 @@
+.footer-link{
+background-color: #eac645;
+border-radius: 50%;
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.footer-link:hover{
+  border: 1.5px solid black;  
+}
+.footer-logo{
+  fill: black;  
+  width: 24px;
+  height: 24px;
+}
+.logo-link{
+    display: flex;
+    gap: 16px;
+}
+.footer {
+  height: 64px;
+  border: 1.5px solid var(--main-text-color);
+  border-radius: 8 8 0px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.footer-logo-list {
+
+justify-content: flex-end;
+  align-items: center;
+  display: flex;
+}
+
