@@ -10,7 +10,6 @@
   background-color: var(--dt-main-text-color);
   border: 1.5px solid var(--main-text-color);
   background: var(--card-color);
-  // background: var(--amazon-color);
 }
 
 .header-container {
@@ -19,11 +18,10 @@
   align-items: center;
   padding-top: 18px;
   padding-bottom: 18px;
-  // padding: 18px 20px;
 }
 
 .modal-header-container-for-position {
-  position: relative;
+  // position: relative;
 }
 
 .header__logo-list {
@@ -49,7 +47,6 @@
 .header__switcher-burger-close {
   display: flex;
   flex-wrap: wrap;
-  // margin-right: 20px;
 }
 
 .header__theme-switcher {
@@ -177,13 +174,18 @@
   );
 }
 
+.wrapper__modal-bg {
+  position: relative;
+  display: flex;
+  top: 390 px;
+  left: -10px;
+  z-index: 102;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .header__modal-bg {
   content: '';
-  // top: 24%;
-  left: -8px;
-  margin-top: 168px;
-  width: 120%;
-  height: 110%;
   background-image: url(./../images/bg-mobile-menu@2x.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -191,8 +193,6 @@
   width: 450px;
   height: 439px;
   transform: rotate(-15deg);
-  z-index: 102;
-  flex-shrink: 0;
 }
 
 .modal__avatar {
@@ -214,6 +214,7 @@
 }
 
 .modal__user-name {
+  margin-left: 9px;
   color: #fff;
   font-family: DM Sans;
   font-size: 22px;
@@ -221,6 +222,37 @@
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.44px;
+}
+
+.modal__user-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+}
+
+.modal__sign-up-btn {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  display: flex;
+  width: 184px;
+  height: 48px;
+  padding: 15px 14px;
+  justify-content: space-between;
+  background-color: #4f2ee8;
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: -0.56px;
 }
 
 .modal__item-img {
@@ -231,10 +263,14 @@
   padding: 0px;
 }
 
-.header__modal-menu {
+.modal__home-shop {
   position: relative;
+  top: 183px;
   padding-left: 99px;
   z-index: 104;
+}
+
+.header__modal-menu {
 }
 
 .header__modal-item {
@@ -293,16 +329,8 @@
 .header__modal-logout-block {
   position: absolute;
   left: 20px;
-  // bottom: 20px;
   top: 85vh;
 
-  width: 118px;
-  height: 48px;
-  cursor: pointer;
-  border-radius: 18px;
-  border: 1.5px solid #111;
-  background: #fff;
-  display: flex;
   z-index: 104;
 }
 
@@ -316,6 +344,13 @@
 }
 
 .header__modal-menu-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 118px;
+  height: 48px;
+  // cursor: pointer;
+
   color: #111;
   font-family: DM Sans;
   font-size: 14px;
@@ -323,14 +358,17 @@
   font-weight: 500;
   line-height: 1.29;
   letter-spacing: -0.56px;
+
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  background: #fff;
 }
 
 .header__logout-arrow {
   display: block;
   width: 20px;
   height: 20px;
-  color: #000;
-  fill: #000000;
+  margin-left: 4px;
 }
 
 .bg-menu {
@@ -400,7 +438,6 @@
   .header__nav-link:focus {
     border-radius: 36px;
     background-color: #eac645;
-    // color: var(--card-color);
   }
 
   .header__menu-img {
@@ -416,9 +453,6 @@
   }
   .header__menu-img:hover,
   .header__menu-img:focus {
-    // filter: #fff;
-    // fill: #4f2ee8;
-    // stroke: #eac645;
     fill: var(--card-color);
   }
 
@@ -440,11 +474,14 @@
 
   .header__avatar-list {
     display: flex;
+    width: 184px;
+    height: 45px;
     flex-wrap: wrap;
     align-items: center;
     margin: 0;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    border-radius: 36px;
+    background: #4f2ee8;
+    border-color: #4f2ee8;
   }
 
   .header__avatar__img {
@@ -472,6 +509,30 @@
   .header__avatar-caret-down {
     margin-left: 4px;
     padding-right: 2px;
+  }
+
+  .header__logo-out-btn {
+    position: absolute;
+    top: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+
+    width: 184px;
+    height: 48px;
+
+    border-radius: 18px;
+    border: 1.5px solid #111;
+    background: #fff;
+
+    color: #111;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.29;
+    letter-spacing: -0.56px;
   }
 
   .header_wrapper-burger-close {
