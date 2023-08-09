@@ -20,6 +20,10 @@
   // padding: 18px 20px;
 }
 
+.modal-header-container-for-position {
+  position: relative;
+}
+
 .header__logo-list {
   display: flex;
   flex-wrap: wrap;
@@ -279,7 +283,8 @@
 .header__modal-logout-block {
   position: absolute;
   left: 20px;
-  bottom: 80px;
+  // bottom: 20px;
+  top: 85vh;
 
   width: 118px;
   height: 48px;
