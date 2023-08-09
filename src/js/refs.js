@@ -35,6 +35,8 @@ const refs = {
   categorySpan: document.querySelector('.categories-list-js'),
   // pagination
   tuiPagination: document.querySelector('.tui-pagination'),
+  //footer
+  footer: document.querySelector('.footer'),
 };
 
 // console.log(refs.shoppingListWrapper);

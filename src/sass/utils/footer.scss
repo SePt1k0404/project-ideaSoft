@@ -1,0 +1,69 @@
+.overlay-footer {
+  display: none;
+  position: absolute;
+}
+.footer {
+  height: 64px;
+  border: 1.5px solid var(--main-text-color);
+  border-radius: 8 8 0px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-color: var(--card-color);
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+// .overlay-footer :hover {
+//   display: block;
+
+// }
+.footer-logo-list {
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+}
+
+.block-overley {
+  position: absolute;
+  top: 18px;
+  left: 150px;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+}
+.dis {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer-button {
+  color: var(--main-text-color);
+  margin-top: 28px;
+  // margin-left: 100px;
+  display: flex;
+  padding: 8px 16px;
+  align-items: flex-start;
+  gap: 10px;
+  margin-right: 100px;
+  transition: background-color $transition, border-radius $transition;
+}
+
+.footer-button span {
+  position: absolute;
+  top: -500px;
+  left: 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.footer-button:hover span {
+  opacity: 1;
+  top: -300px;
+  right: -150px;
+}
+.footer-button:hover {
+  border-radius: 36px;
+  background-color: #eac645;
+}
+.img-footer {
+  max-width: 450px;
+  height: 300px;
+}

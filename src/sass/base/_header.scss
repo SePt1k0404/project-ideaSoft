@@ -22,6 +22,10 @@
   // padding: 18px 20px;
 }
 
+.modal-header-container-for-position {
+  position: relative;
+}
+
 .header__logo-list {
   display: flex;
   flex-wrap: wrap;
@@ -289,7 +293,9 @@
 .header__modal-logout-block {
   position: absolute;
   left: 20px;
-  bottom: 80px;
+  // bottom: 20px;
+  top: 85vh;
+
   width: 118px;
   height: 48px;
   cursor: pointer;
@@ -394,7 +400,7 @@
   .header__nav-link:focus {
     border-radius: 36px;
     background-color: #eac645;
-    color: var(--card-color);
+    // color: var(--card-color);
   }
 
   .header__menu-img {
@@ -406,7 +412,7 @@
   }
   .header__nav-link:hover .header__menu-img,
   .header__nav-link:focus .header__menu-img {
-    fill: var(--card-color);
+    // fill: var(--card-color);
   }
   .header__menu-img:hover,
   .header__menu-img:focus {
