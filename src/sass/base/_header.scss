@@ -384,7 +384,7 @@
   .header__nav-link:focus {
     border-radius: 36px;
     background-color: #eac645;
-    color: var(--card-color);
+    // color: var(--card-color);
   }
 
   .header__menu-img {
@@ -396,7 +396,7 @@
   }
   .header__nav-link:hover .header__menu-img,
   .header__nav-link:focus .header__menu-img {
-    fill: var(--card-color);
+    // fill: var(--card-color);
   }
   .header__menu-img:hover,
   .header__menu-img:focus {

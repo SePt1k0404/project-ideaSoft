@@ -35,15 +35,15 @@
   justify-content: flex-end;
 }
 .footer-button {
+  color: var(--main-text-color);
   margin-top: 28px;
-  margin-left: 100px;
+  // margin-left: 100px;
   display: flex;
   padding: 8px 16px;
   align-items: flex-start;
   gap: 10px;
-  border-radius: 36px;
-  background: #eac645;
   margin-right: 100px;
+  transition: background-color $transition, border-radius $transition;
 }
 
 .footer-button span {
@@ -60,8 +60,8 @@
   right: -150px;
 }
 .footer-button:hover {
-  background-color: black;
-  color: white;
+  border-radius: 36px;
+  background-color: #eac645;
 }
 .img-footer {
   max-width: 450px;
