@@ -6,6 +6,8 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 0px 0px 8px 8px;
+  border: 1.5px solid #111;
+  background-color: var(--dt-main-text-color);
   border: 1.5px solid var(--main-text-color);
   background: var(--card-color);
   // background: var(--amazon-color);
@@ -146,6 +148,14 @@
   display: none;
 }
 
+.header__nav ul {
+  list-style: none;
+}
+
+.header__nav li {
+  margin-left: 20px;
+}
+
 .header__modal {
   display: none;
   z-index: 9999;
@@ -243,7 +253,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 18px; /* 128.571% */
+  line-height: 1.29;
   letter-spacing: -0.56px;
   text-transform: uppercase;
   transition: background-color $transition, border-radius $transition,
@@ -271,7 +281,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
-  line-height: 18px; /* 128.571% */
+  line-height: 1.29;
   letter-spacing: -0.56px;
   text-transform: uppercase;
 }
@@ -280,9 +290,9 @@
   position: absolute;
   left: 20px;
   bottom: 80px;
-
   width: 118px;
   height: 48px;
+  cursor: pointer;
   border-radius: 18px;
   border: 1.5px solid #111;
   background: #fff;
@@ -305,7 +315,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.28; /* 128.571% */
+  line-height: 1.29;
   letter-spacing: -0.56px;
 }
 
@@ -373,7 +383,7 @@
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 18px; /* 128.571% */
+    line-height: 1.29;
     letter-spacing: -0.56px;
     text-transform: uppercase;
     transition: background-color $transition, border-radius $transition,
