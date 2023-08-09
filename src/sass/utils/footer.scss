@@ -1,3 +1,9 @@
+.wrapper__logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .footer-link {
   border-radius: 50%;
   width: 40px;
@@ -26,13 +32,14 @@
   border-radius: 8 8 0px 0px;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .footer-logo-list {
-  justify-content: flex-end;
-  align-items: center;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
