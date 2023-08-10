@@ -25,7 +25,7 @@ export function markupCardBookInfo(data, flag) {
   const buttonClass = flag ? 'book_remove__from_list' : 'book_add__to_list';
   const { book_image, author, description, title, buy_links, list_name } = data;
   return `<div class="book_info_card">
-  <button class="modal-info-close" type="button" data-modal-close>
+  <button aria-label="Close" class="modal-info-close" type="button" data-modal-close>
     <svg class="info-modal-close-icon" width="24" height="24">
       <use href="${logos}#close"></use>
     </svg>
@@ -49,7 +49,7 @@ export function markupCardBookInfo(data, flag) {
       <div class="info-logo-container">
         <a href="${
           buy_links[0].url
-        }" class="book-store-link" target="_blank" rel="noreferrer noopener nofollow">
+        }" aria-label="Buy" class="book-store-link" target="_blank" rel="noreferrer noopener nofollow">
           <img
             srcset="${amazon} 1x, ${amazon_2x} 2x"
             src="${amazon}"
@@ -61,7 +61,7 @@ export function markupCardBookInfo(data, flag) {
         </a>
         <a href="${
           buy_links[1].url
-        }" class="book-store-link" target="_blank" rel="noreferrer noopener nofollow">
+        }" aria-label="Buy" class="book-store-link" target="_blank" rel="noreferrer noopener nofollow">
           <img
             srcset="${apple} 1x, ${apple_2x} 2x"
             src="${apple}"
@@ -73,7 +73,7 @@ export function markupCardBookInfo(data, flag) {
         </a>
         <a href="${
           buy_links[4].url
-        }" class="book-store-link" target="_blank" rel="noreferrer noopener nofollow">
+        }" aria-label="Buy" class="book-store-link" target="_blank" rel="noreferrer noopener nofollow">
           <img
             srcset="${bookshop} 1x, ${bookshop_2x} 2x"
             src="${bookshop}"
@@ -86,7 +86,7 @@ export function markupCardBookInfo(data, flag) {
       </div>
     </div>
     </div>
-    <button
+    <button aria-label="Remove"
       class="btn-book-info ${buttonClass}"
       type="button"
       id="addRemoveBookButton"
@@ -105,4 +105,3 @@ export function markupCardBookInfo(data, flag) {
 // ADD TO SHOPPING LIST
 // book_remove_from_list
 // book_add__to_list
-

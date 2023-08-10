@@ -21,7 +21,7 @@ export function createListBooksMarkup(topBooks) {
               )
               .join('')}
           </ul>
-          <button type="button" class="button top-book-button" data-name="${list_name}">See more</button>
+          <button aria-label="See more" type="button" class="button top-book-button" data-name="${list_name}">See more</button>
         </li>
             `
           )
@@ -69,7 +69,7 @@ function createTopBookMarkup({
     book_image = defaultImg;
   }
   return `
-    <a class="book-link" href="" aria-label="Book thumbnail">
+    <a aria-label="Open" class="book-link" href="" aria-label="Book thumbnail">
       <div class="book-thumb">
         <img class="book-image" src="${book_image}" loading="lazy" data_id=${id} alt="${
     description || comingSoon
