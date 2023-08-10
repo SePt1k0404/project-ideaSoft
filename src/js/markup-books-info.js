@@ -25,7 +25,7 @@ export function markupCardBookInfo(data, flag) {
   const buttonClass = flag ? 'book_remove__from_list' : 'book_add__to_list';
   const { book_image, author, description, title, buy_links, list_name } = data;
   return `<div class="book_info_card">
-  <button class="modal-info-close" type="button" data-modal-close>
+  <button aria-label="Close" class="modal-info-close" type="button" data-modal-close>
     <svg class="info-modal-close-icon" width="24" height="24">
       <use href="${logos}#close"></use>
     </svg>
@@ -86,7 +86,7 @@ export function markupCardBookInfo(data, flag) {
       </div>
     </div>
     </div>
-    <button
+    <button aria-label="Remove"
       class="btn-book-info ${buttonClass}"
       type="button"
       id="addRemoveBookButton"
@@ -105,4 +105,3 @@ export function markupCardBookInfo(data, flag) {
 // ADD TO SHOPPING LIST
 // book_remove_from_list
 // book_add__to_list
-
