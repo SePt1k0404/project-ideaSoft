@@ -21,7 +21,7 @@ export function createListBooksMarkup(topBooks) {
               )
               .join('')}
           </ul>
-          <button type="button" class="button top-book-button" data-name="${list_name}">See more</button>
+          <button aria-label="See more" type="button" class="button top-book-button" data-name="${list_name}">See more</button>
         </li>
             `
           )
