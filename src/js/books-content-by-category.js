@@ -10,8 +10,6 @@ import { refs } from './refs';
 let topBooks = [];
 let booksCategory = [];
 
-refs.authContainer.classList.add('visually-hidden');
-
 window.addEventListener('DOMContentLoaded', loadingTopBook);
 refs.contentWrapper.addEventListener('click', handlerShowMoreBtn);
 
