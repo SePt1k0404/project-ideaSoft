@@ -39,6 +39,7 @@ const refs = {
   signInRef: document.querySelector('.sign-in'),
   nameInput: document.querySelector('.input-name'),
   authFormClose: document.querySelector('.close-btn'),
+  authContainer: document.querySelector('.backdrop'),
 
   topBookEl: document.querySelector('.top-books-wrapper-js'),
   categorySpan: document.querySelector('.categories-list-js'),

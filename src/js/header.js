@@ -54,3 +54,5 @@ window.matchMedia('(max-width: 767px)').addEventListener('change', e => {
   if (!e.matches) return;
   refs.burgerMenu.style.display = 'block';
 });
+
+// refs.authContainer.classList.add('visually-hidden');
