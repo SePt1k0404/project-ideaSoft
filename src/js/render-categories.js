@@ -24,7 +24,8 @@ async function loadingPage() {
       icon: 'error',
       title: 'Oops...',
       text: `Something went wrong! ${error.message}! Try reloading the page!`,
-      footer: '<a href="./index.js">Do you want to try again?</a>',
+      footer:
+        '<a href="./index.js" aria-label="Home" >Do you want to try again?</a>',
     });
   }
 }
