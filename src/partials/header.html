@@ -11,29 +11,32 @@
           </svg>
         </a>
       </div>
+
       <nav class="header__nav">
         <ul class="header__nav-wrapper">
           <li class="header__nav-item">
             <a href="./index.html" class="header__nav-link" aria-label="Open">Home</a>
           </li>
           <li class="header__nav-item">
-            <a href="./shopping-list.html" class="header__nav-link" aria-label="Open">Shopping list<svg
-                class="header__menu-img">
+            
+            <a href="./shopping-list.html" class="header__nav-link" aria-label="Open">Shopping list<svg class="header__menu-img">
                 <use href="./images/sprite.svg#icon-uil-cart"></use>
               </svg>
             </a>
+            
           </li>
         </ul>
       </nav>
 
       <div class="header__wrapper-switcher">
-        <a href="#" class="header__switcher-theme" aria-label="Switch">
+        <a href="#" class="header__switcher-theme" aria-label="Open">
           <img src="./images/header/light-switch.svg" alt="Theme Switcher" class="header__theme-light-switch" />
           <img src="./images/header/dark-switch.svg" alt="Theme Switcher" class="header__theme-dark-switch" />
           <img src="./images/header/round-button.svg" alt="Theme Switcher" class="header__theme-round-button" /></a>
       </div>
 
       <div class="header__switcher-burger-close">
+
         <div class="header_wrapper-burger-close">
           <svg class="header__burger">
             <use href="./images/sprite.svg#icon-burger"></use>
@@ -44,19 +47,28 @@
         </div>
 
         <div class="header__avatar">
-          <ul class="header__avatar-list">
-            <li class="header__avatar__img">
-              <a href="#" aria-label="Open"><img src="./images/user.svg" alt="User Avatar"
-                  class="header__avatar-item" /></a>
-            </li>
-            <li class="header__avatar__user-name">
-              <a href="#" aria-label="Open"><span class="header__user-name">Stephen</span></a>
-            </li>
-            <li class="header__avatar-caret-down">
-              <a href="#" aria-label="Open">
-                <svg class="header__caret-down">
-                  <use href="./images/sprite.svg#icon-fi-ss-caret-down"></use>
-                </svg>
+  <button type="button" class="header__avatar-list" data-name="#" ="">
+    <a href="#"><img src="./images/user.svg" alt="User Avatar" class="header__avatar__img" aria-label="Open"/></a>
+    
+    <button type="button" class="wrapper__user-avatar" data-name="#">
+    <svg class="user__avatar">
+     <use href="./images/sprite.svg#icon-ri_user-fill"></use>
+     </svg>
+    </button>
+
+    <span class="header__user-name">Stephen</span>
+     <svg class="header__caret-down">
+     <use href="./images/sprite.svg#icon-fi-ss-caret-down"></use>
+     </svg>
+  </button>
+
+<button type="button" class="header__logo-out-btn" data-name="#" ="">
+    Sign up
+    <svg class="header__logout-arrow">
+      <use href="./images/sprite.svg#icon-arrow-narrow-right">
+      </use>
+    </svg>
+  </button>
               </a>
             </li>
           </ul>
@@ -66,21 +78,28 @@
 </header>
 
 <!-- Modal -->
-<div class="header__modal no-scroll">
-  <!-- Avatar -->
-  <div class="container modal-header-container-for-position">
-    <div class="modal__avatar">
-      <ul class="modal__avatar-list">
-        <li class="modal__item-img">
-          <a href="" aria-label="Open"><img src="./images/user.svg" alt="User Avatar" class="modal__avatar-img" /></a>
-        </li>
-        <li class="modal__item-name">
-          <a href="" aria-label="Open"><span class="modal__user-name">Stephen</span></a>
-        </li>
-      </ul>
-    </div>
 
+<div class="header__modal no-scroll">
+
+  <!-- Avatar -->
+
+  <div class="container modal-header-container-for-position">
+    
+    <button type="button" class="modal__user-btn" data-name="#" ="">
+    <a href="#"><img src="./images/user.svg" alt="User Avatar" class="modal__avatar-img" aria-label="Open"/></a>
+    <span class="modal__user-name">Stephen</span>
+  </button>
+
+  <button type="button" class="modal__sign-up-btn" data-name="#" ="">
+    Sign up
+    <svg class="header__logout-arrow">
+      <use href="./images/sprite.svg#icon-arrow-narrow-right">
+      </use>
+    </svg>
+  </button>
+</div>
     <!-- Menu modal -->
+<div class="modal__home-shop">
     <ul class="header__modal-menu ">
       <li class="header__modal-item">
         <a href="./index.html" class="header__modal-menu-link" aria-label="Open">HOME</a>
@@ -92,24 +111,20 @@
           </svg>
         </a>
       </li>
-    </ul>
+    </ul></div>
 
     <div class="header__modal-logout-block">
-      <ul class="logout__list">
-        <li>
-          <a href="#"><span class="header__modal-menu-logout" aria-label="Open">Log out</span></a>
-        </li>
-        <li>
-          <svg class="header__logout-arrow">
-            <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
-          </svg>
 
-          <!-- <img src="./images/arrow-narrow-right.svg" alt="Logout" class="header__logout-arrow" /> -->
-        </li>
-      </ul>
+<button type="button" class="header__modal-menu-logout" data-name="#" ="">
+  Log out
+    <svg class="header__logout-arrow">
+      <use href="./images/sprite.svg#icon-arrow-narrow-right">
+      </use>
+    </svg>
+          </button>
     </div>
-    <div class="header__modal-bg"></div>
+    <div class="wrapper__modal-bg">
+    <div class="header__modal-bg"></div></div>
   </div>
 </div>
-
 </div>
