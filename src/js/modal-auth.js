@@ -58,20 +58,17 @@ function handleSubmit(evt) {
     }
 }
 
-const modalBtn = document.querySelector('.header__avatar');
-const modalBack = document.querySelector('.backdrop');
 const bodyScrollLock = require('body-scroll-lock');
 const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 
-console.log(modalBtn);
-modalBtn.addEventListener('click', onModalOpen)
+refs.signUpBtn.addEventListener('click', onModalOpen)
 export function onModalOpen(){
   disableBodyScroll(document.body);
-  modalBack.classList.remove('visually-hidden');
+  refs.authContainer.classList.remove('visually-hidden');
   refs.authFormClose.addEventListener('click', closeModal);
 }
 export function closeModal() {
-  modalBack.classList.add('visually-hidden');
+  refs.authContainer.classList.add('visually-hidden');
   const enableBodyScroll = bodyScrollLock.enableBodyScroll;
   enableBodyScroll(document.body)
 }  
