@@ -1,6 +1,8 @@
 import {refs} from './refs';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { signUp, signIn, onLogOut } from './firebase-auth';
+import * as basicLightbox from 'basiclightbox';
+
 
 let authMode = 'SignUp';
 let formData = {};
@@ -56,4 +58,18 @@ function handleSubmit(evt) {
     }
 }
 
+const bodyScrollLock = require('body-scroll-lock');
+const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+
+refs.signUpBtn.addEventListener('click', onModalOpen)
+export function onModalOpen(){
+  disableBodyScroll(document.body);
+  refs.authContainer.classList.remove('visually-hidden');
+  refs.authFormClose.addEventListener('click', closeModal);
+}
+export function closeModal() {
+  refs.authContainer.classList.add('visually-hidden');
+  const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+  enableBodyScroll(document.body)
+}  
 

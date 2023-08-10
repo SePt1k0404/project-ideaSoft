@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged} from "firebase/auth";
 import {getDatabase, ref, onValue, set, get} from "firebase/database";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { closeModal } from "./modal-auth";
 
 
 const firebaseConfig = {
@@ -22,7 +23,10 @@ const firebaseConfig = {
 
   export async function signUp(email, password, name, shoppingList=['default']) {
     const userCreds = await createUserWithEmailAndPassword(auth, email, password)
-    .then(creds => writeUsersData(creds.user.uid, email, name, shoppingList))
+    .then(creds => {
+      writeUsersData(creds.user.uid, email, name, shoppingList)
+      closeModal()
+    })
     .catch(err => {
         Notify.failure(`${err}`)
     })
@@ -32,6 +36,7 @@ const firebaseConfig = {
     const loginUser = await signInWithEmailAndPassword(auth, email, password)
     .then(creds => {
       getUserData(creds.user.uid);
+      closeModal()
     })
     .catch(err => {
           if(err.code.match(/password/)){
@@ -125,6 +130,7 @@ const firebaseConfig = {
   auth.onAuthStateChanged(user => {
     if(user) {
       getUserData(user.uid)
+      console.log(user);
     }
   });
 
