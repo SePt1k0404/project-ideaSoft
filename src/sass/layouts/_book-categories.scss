@@ -40,10 +40,13 @@ body {
   max-width: 325px;
   height: 40px;
   margin: 0;
-  position: absolute;
-  z-index: 100;
+  // position: absolute;
+  // z-index: 100;
   background-color: var(--backdrop);
   transition: color $transition;
+
+  
+  background-color: transparent;
 }
 .categories-title-after-focus {
   color: var(--secondary-text-color);
@@ -66,9 +69,8 @@ body {
 
 .categories-list {
   list-style: none;
-  padding: 0;
+  // padding: 0;
   overflow: hidden;
-  padding-top: 42px;
   margin-top: 0;
 }
 
@@ -154,9 +156,9 @@ body {
     line-height: 1.33;
     width: 337px;
   }
-  .categories-list {
-    padding-top: 52px;
-  }
+  // .categories-list {
+  //   padding-top: 52px;
+  // }
   .list-js {
     font-size: 18px;
     line-height: 1.33;
