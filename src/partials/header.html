@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header-container">
       <div class="wrapper__logo">
-        <a href="./index.html" class="header__logo-list">
+        <a href="./index.html" class="header__logo-list" aria-label="Open">
           <svg class="header__logo">
             <use href="./images/sprite.svg#icon-logo"></use>
           </svg>
@@ -11,26 +11,32 @@
           </svg>
         </a>
       </div>
+
       <nav class="header__nav">
         <ul class="header__nav-wrapper">
           <li class="header__nav-item">
-            <a href="./index.html" class="header__nav-link">Home</a>
+            <a href="./index.html" class="header__nav-link" aria-label="Open">Home</a>
           </li>
           <li class="header__nav-item">
-            <a href="./shopping-list.html" class="header__nav-link">Shopping list<svg class="header__menu-img">
+            
+            <a href="./shopping-list.html" class="header__nav-link" aria-label="Open">Shopping list<svg class="header__menu-img">
                 <use href="./images/sprite.svg#icon-uil-cart"></use>
               </svg>
             </a>
+            
           </li>
         </ul>
       </nav>
+
       <div class="header__wrapper-switcher">
-        <a href="#" class="header__switcher-theme">
+        <a href="#" class="header__switcher-theme" aria-label="Open">
           <img src="./images/header/light-switch.svg" alt="Theme Switcher" class="header__theme-light-switch" />
           <img src="./images/header/dark-switch.svg" alt="Theme Switcher" class="header__theme-dark-switch" />
           <img src="./images/header/round-button.svg" alt="Theme Switcher" class="header__theme-round-button" /></a>
       </div>
+
       <div class="header__switcher-burger-close">
+
         <div class="header_wrapper-burger-close">
           <svg class="header__burger">
             <use href="./images/sprite.svg#icon-burger"></use>
@@ -39,14 +45,23 @@
             <use href="./images/sprite.svg#icon-x-close"></use>
           </svg>
         </div>
+
         <div class="header__avatar">
   <button type="button" class="header__avatar-list" data-name="#" ="">
-    <a href="#"><img src="./images/user.svg" alt="User Avatar" class="header__avatar__img" /></a>
+    <a href="#"><img src="./images/user.svg" alt="User Avatar" class="header__avatar__img" aria-label="Open"/></a>
+    
+    <button type="button" class="wrapper__user-avatar" data-name="#">
+    <svg class="user__avatar">
+     <use href="./images/sprite.svg#icon-ri_user-fill"></use>
+     </svg>
+    </button>
+
     <span class="header__user-name">Stephen</span>
      <svg class="header__caret-down">
-                  <use href="./images/sprite.svg#icon-fi-ss-caret-down"></use>
-                </svg>
+     <use href="./images/sprite.svg#icon-fi-ss-caret-down"></use>
+     </svg>
   </button>
+
 <button type="button" class="header__logo-out-btn" data-name="#" ="">
     Sign up
     <svg class="header__logout-arrow">
@@ -61,13 +76,17 @@
       </div>
     </div>
 </header>
+
 <!-- Modal -->
+
 <div class="header__modal no-scroll">
+
   <!-- Avatar -->
+
   <div class="container modal-header-container-for-position">
     
     <button type="button" class="modal__user-btn" data-name="#" ="">
-    <a href="#"><img src="./images/user.svg" alt="User Avatar" class="modal__avatar-img" /></a>
+    <a href="#"><img src="./images/user.svg" alt="User Avatar" class="modal__avatar-img" aria-label="Open"/></a>
     <span class="modal__user-name">Stephen</span>
   </button>
 
@@ -83,10 +102,10 @@
 <div class="modal__home-shop">
     <ul class="header__modal-menu ">
       <li class="header__modal-item">
-        <a href="./index.html" class="header__modal-menu-link">HOME</a>
+        <a href="./index.html" class="header__modal-menu-link" aria-label="Open">HOME</a>
       </li>
       <li class="header__modal-item">
-        <a href="./shopping-list.html" class="header__modal-menu-link">SHOPPING LIST
+        <a href="./shopping-list.html" class="header__modal-menu-link" aria-label="Open">SHOPPING LIST
           <svg class="header__modal-menu-img">
             <use href="./images/sprite.svg#icon-uil-cart"></use>
           </svg>

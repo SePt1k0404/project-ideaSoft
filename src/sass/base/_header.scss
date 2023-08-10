@@ -427,6 +427,26 @@
     padding-left: 12px;
     padding-right: 9px;
   }
+
+  .wrapper__user-avatar {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37px;
+    height: 37px;
+    border-color: transparent;
+    border-radius: 37px;
+    background-color: #fff;
+    z-index: 10;
+  }
+
+  .user__avatar {
+    width: 19px;
+    height: 19px;
+    // fill: #4f2ee8;
+  }
+
   .header__caret-down {
     display: flex;
     height: 26px;
