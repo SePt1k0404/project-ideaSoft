@@ -1,13 +1,5 @@
 import { THEME_KEY } from './theme-toggle';
 import { refs } from './refs';
-
-import { onLogOut } from './firebase-auth';
-import { auth, getUserData } from './firebase-auth';
-
-refs.headerLogout.addEventListener('click', singInOut);
-
-// --------------------------------------------------------------------
-
 const bodyScrollLock = require('body-scroll-lock');
 const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 const enableBodyScroll = bodyScrollLock.enableBodyScroll;

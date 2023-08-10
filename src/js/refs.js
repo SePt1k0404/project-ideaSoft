@@ -1,6 +1,4 @@
 const refs = {
-  //sing in
-  headerLogout: document.querySelector('header__logo-out-btn'),
   //loader
   loaderEl: document.querySelector('.loader-backdrop'),
   // scroll-to-top.js
