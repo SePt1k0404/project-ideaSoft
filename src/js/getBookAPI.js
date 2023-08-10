@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
+import { refs } from './refs';
 
 export default class ApiClientAxios {
   constructor(baseURL) {
@@ -17,19 +18,28 @@ export default class ApiClientAxios {
 }
 
 export async function getTopBooks() {
-  Notiflix.Loading.dots('Loading...');
+  refs.loaderEl.classList.add('is-active');
+  refs.footer.classList.add('visually-hidden');
+  refs.topBooksWrapper.classList.add('visually-hidden');
+  refs.supportAllCategoriesWrapper.classList.add('visually-hidden');
   const topBooks = async () => {
     const response = await fetch(
       'https://books-backend.p.goit.global/books/top-books'
     );
     const data = await response.json();
-    Notiflix.Loading.remove();
+    refs.loaderEl.classList.remove('is-active');
+    refs.footer.classList.remove('visually-hidden');
+    refs.topBooksWrapper.classList.remove('visually-hidden');
+    refs.supportAllCategoriesWrapper.classList.remove('visually-hidden');
     return data;
   };
   try {
     return topBooks();
   } catch (error) {
-    Notiflix.Loading.remove();
+    refs.loaderEl.classList.remove('is-active');
+    refs.footer.classList.remove('visually-hidden');
+    refs.topBooksWrapper.classList.remove('visually-hidden');
+    refs.supportAllCategoriesWrapper.classList.remove('visually-hidden');
     Notiflix.Notify.failure(
       'Ups......... Something went wrong. Please try again'
     );
@@ -37,19 +47,28 @@ export async function getTopBooks() {
 }
 
 export async function booksOnCategory(nameCategory) {
-  Notiflix.Loading.dots('Loading...');
   const categories = async () => {
+    refs.loaderEl.classList.add('is-active');
+    refs.footer.classList.add('visually-hidden');
+    refs.topBooksWrapper.classList.add('visually-hidden');
+    refs.supportAllCategoriesWrapper.classList.add('visually-hidden');
     const response = await fetch(
       `https://books-backend.p.goit.global/books/category?category=${nameCategory}`
     );
     const data = await response.json();
-    Notiflix.Loading.remove();
+    refs.loaderEl.classList.remove('is-active');
+    refs.footer.classList.remove('visually-hidden');
+    refs.topBooksWrapper.classList.remove('visually-hidden');
+    refs.supportAllCategoriesWrapper.classList.remove('visually-hidden');
     return data;
   };
   try {
     return categories();
   } catch (error) {
-    Notiflix.Loading.remove();
+    refs.loaderEl.classList.remove('is-active');
+    refs.footer.classList.remove('visually-hidden');
+    refs.topBooksWrapper.classList.remove('visually-hidden');
+    refs.supportAllCategoriesWrapper.classList.remove('visually-hidden');
     Notiflix.Notify.failure(
       'Ups......... Something went wrong. Please try again'
     );

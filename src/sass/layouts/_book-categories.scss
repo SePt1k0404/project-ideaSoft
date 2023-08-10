@@ -36,7 +36,7 @@ body {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.13;
-  color: $main-accent-color;
+  color: var(--accent-color);
   max-width: 325px;
   height: 40px;
   margin: 0;
@@ -57,7 +57,7 @@ body {
 
 .categories-title-after-focus:hover,
 .categories-title-after-focus:active {
-  color: $main-accent-color;
+  color: var(--accent-color);
   text-transform: uppercase;
   font-weight: 700;
   line-height: 1.13;
@@ -97,7 +97,7 @@ body {
 // }
 
 .categories-span-js-focus {
-  color: $main-accent-color;
+  color: var(--accent-color);
   text-transform: uppercase;
   font-weight: 700;
   font-size: 4.3vw;
@@ -107,7 +107,7 @@ body {
 
 .categories-span-js:hover,
 .categories-span-js:active {
-  color: $main-accent-color;
+  color: var(--accent-color);
   text-transform: uppercase;
   font-weight: 700;
   font-size: 4.3vw;
@@ -393,7 +393,10 @@ body {
   }
 }
 
-.see-more-btn:hover {
+.top-book-button:is(:hover, :focus) {
   color: #fff;
   background-color: #4f2ee8;
+  transition: color $transition;
 }
+
+

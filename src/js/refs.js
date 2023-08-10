@@ -1,4 +1,8 @@
 const refs = {
+  //loader
+  loaderEl: document.querySelector('.loader-backdrop'),
+  // scroll-to-top.js
+  toTopButton: document.querySelector('.scroll-up__btn'),
   // support
   supportBtn: document.querySelector('.support-button-js'),
   supportList: document.querySelector('.support-list'),
@@ -16,6 +20,10 @@ const refs = {
   switcherThemeButton: document.querySelector('.header__theme-round-button'),
   body: document.querySelector('body'),
   contentWrapper: document.querySelector('.top-books-wrapper-js'),
+  supportAllCategoriesWrapper: document.querySelector(
+    '.support-categories-container'
+  ),
+  topBooksWrapper: document.querySelector('.top-books'),
   topBooksTitle: document.querySelector('.top-books-title'),
   backdropLoader: document.querySelector('.loader-backdrop'),
   categoriesListEl: document.querySelector('.categories-list-js'),
@@ -36,6 +44,8 @@ const refs = {
   categorySpan: document.querySelector('.categories-list-js'),
   // pagination
   tuiPagination: document.querySelector('.tui-pagination'),
+  //footer
+  footer: document.querySelector('.footer'),
 };
 
 // console.log(refs.shoppingListWrapper);

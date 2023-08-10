@@ -63,7 +63,7 @@ export default function renderCards() {
             }
             return `<li class="wrap-about-book-remove list-item" data-title="${book.title}" data-author="${book.author}">
                         <div class="book-card">
-                           <button type="button" class="book-delete-btn">
+                           <button type="button" aria-label="Remove" class="book-delete-btn">
                               <svg class="book-delete-icon">
                                   <use class='use-js' href="${sprite}#icon-trash"></use>
                               </svg>
@@ -78,7 +78,7 @@ export default function renderCards() {
 
                                   <ul class="buy-links">
                                   <li class="buy-li buy-amazon">
-                                      <a href="${amazonLink}" class="book-buy-link amazon-icon" target="_blank">
+                                      <a href="${amazonLink}" aria-label="Buy" class="book-buy-link amazon-icon" target="_blank">
                                           <picture class="amazon-picture">
                                               <source srcset="${amazon1x} 1x, ${amazon2x} 2x" type="image/png" />
                                               <img src="${amazon1x}" alt=" Empty Bookshelf" class="amazon-book-buy-icon" />
@@ -86,7 +86,7 @@ export default function renderCards() {
                                       </a>
                                   </li>
                                   <li class="buy-li">
-                                      <a href="${appleLink}" class="book-buy-link" target="_blank">
+                                      <a href="${appleLink}" aria-label="Buy" class="book-buy-link" target="_blank">
                                           <picture class="picture">
                                               <source srcset="${apple1x} 1x, ${apple2x} 2x" type="image/png" />
                                               <img src="${apple1x}" alt=" Empty Bookshelf" class="book-buy-icon" />
@@ -94,7 +94,7 @@ export default function renderCards() {
                                       </a>
                                   </li>
                                   <li class="buy-li">
-                                      <a href="${barnesLink}" class="book-buy-link" target="_blank">
+                                      <a href="${barnesLink}" aria-label="Buy" class="book-buy-link" target="_blank">
                                           <picture class="picture">
                                               <source srcset="${barnes1x} 1x, ${barnes2x} 2x" type="image/png" />
                                               <img src="${barnes1x}" alt=" Empty Bookshelf" class="book-buy-icon" />
