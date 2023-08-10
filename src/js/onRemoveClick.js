@@ -1,9 +1,17 @@
 import renderCards from './shoppingListMarkup';
 import { options, pagination, container } from './tui-pagination';
+import {
+  auth,
+  userShoppingListToDb,
+  removeFromCart,
+  getUserData,
+} from './firebase-auth';
+import { getDatabase, ref, onValue, set } from 'firebase/database';
 
 const imageForEmpty = document.querySelector('.js-back');
 const textForEmpty = document.querySelector('.js-text');
 import { refs } from './refs';
+import { onValue } from 'firebase/database';
 const SHOP_LIST_KEY = 'books';
 
 refs.shoppingListWrapper.addEventListener('click', onRemoveClick);
@@ -26,6 +34,11 @@ export function onRemoveClick(evt) {
     ({ author, title }) =>
       author !== removeBtn.dataset.author && title !== removeBtn.dataset.title
   );
+  auth.onAuthStateChanged(user => {
+    if(user) {
+      removeFromCart(user.uid, newBooks);
+    }
+  });
   const updatedDataString = JSON.stringify(newBooks);
   localStorage.setItem(SHOP_LIST_KEY, updatedDataString);
   removeBtn.innerHTML = '';

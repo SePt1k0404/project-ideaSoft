@@ -32,6 +32,15 @@ const refs = {
   header: document.querySelector('header'),
   //   onRemoveClick.js
   shoppingListWrapper: document.querySelector('.shopping-list-wrap'),
+  // modal-auth.js
+  authForm: document.querySelector('.auth-form'),
+  authSubmitBtn: document.querySelector('.auth-button'),
+  signUpRef: document.querySelector('.sign-up'),
+  signInRef: document.querySelector('.sign-in'),
+  nameInput: document.querySelector('.input-name'),
+  authFormClose: document.querySelector('.close-btn'),
+
+  topBookEl: document.querySelector('.top-books-wrapper-js'),
   categorySpan: document.querySelector('.categories-list-js'),
   // pagination
   tuiPagination: document.querySelector('.tui-pagination'),
