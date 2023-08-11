@@ -1,5 +1,7 @@
 import { THEME_KEY } from './theme-toggle';
 import { refs } from './refs';
+import { auth, onLogOut, getUserData } from './firebase-auth';
+import { onModalOpen } from './modal-auth';
 const bodyScrollLock = require('body-scroll-lock');
 const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 const enableBodyScroll = bodyScrollLock.enableBodyScroll;
@@ -55,4 +57,45 @@ window.matchMedia('(max-width: 767px)').addEventListener('change', e => {
   refs.burgerMenu.style.display = 'block';
 });
 
-// refs.authContainer.classList.add('visually-hidden');
+refs.logOutHeader.addEventListener('click', onLogOut);
+refs.signHeader.addEventListener('click', onModalOpen);
+
+auth.onAuthStateChanged(user => {
+  if (user) {
+    console.log(user);
+    refs.signHeader.classList.add('visually-hidden');
+    refs.signUserHeader.classList.remove('visually-hidden');
+    refs.logOutHeader.classList.remove('visually-hidden');
+    refs.shoppingList.classList.remove('visually-hidden');
+    refs.logOutModal.classList.remove('visually-hidden');
+    refs.signUserModal.classList.remove('visually-hidden');
+    refs.shoppingListModal.classList.remove('visually-hidden');
+    refs.signModal.classList.add('visually-hidden');
+    getUserData(user.uid)
+  } else {
+    refs.signHeader.classList.remove('visually-hidden');
+    refs.signUserHeader.classList.add('visually-hidden');
+    refs.logOutHeader.classList.add('visually-hidden');
+    refs.shoppingList.classList.add('visually-hidden');
+    refs.logOutModal.classList.add('visually-hidden');
+    refs.signUserModal.classList.add('visually-hidden');
+    refs.shoppingListModal.classList.add('visually-hidden');
+    refs.signModal.classList.remove('visually-hidden');
+  }
+});
+
+refs.signUserHeader.addEventListener('click', dropdown);
+
+let logoutButtonVisible = true;
+
+function dropdown(evt) {
+  if (logoutButtonVisible) {
+    refs.buttonLink.classList.add('button-link-dropdown');
+    refs.buttonLink.classList.remove('button-link');
+    logoutButtonVisible = false;
+  } else {
+    refs.buttonLink.classList.remove('button-link-dropdown');
+    refs.buttonLink.classList.add('button-link');
+    logoutButtonVisible = true;
+  }
+}

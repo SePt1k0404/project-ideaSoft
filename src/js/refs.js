@@ -14,7 +14,7 @@ const refs = {
   headerNav: document.querySelector('.header__nav'),
   modal: document.querySelector('.header__modal'),
   modalClose: document.querySelector('.header__modal-close'),
-  signUpBtn: document.querySelector('.header__logo-out-btn'),
+  // signUpBtn: document.querySelector('.header__logo-out-btn'),
   switcherBgLight: document.querySelector('.header__theme-light-switch'),
   switcherBgDark: document.querySelector('.header__theme-dark-switch'),
   switcherThemeButton: document.querySelector('.header__theme-round-button'),
@@ -41,7 +41,20 @@ const refs = {
   nameInput: document.querySelector('.input-name'),
   authFormClose: document.querySelector('.close-btn'),
   authContainer: document.querySelector('.backdrop'),
+  // -----------------------------------------------------------
+  signModal: document.querySelector('.modal__sign-up-btn'),
+  signUserModal: document.querySelector('.modal__user-btn'),
+  signHeader: document.querySelector('.header__logo-in-btn'),
+  signUserHeader: document.querySelector('.header__avatar-list'),
+  logOutModal: document.querySelector('.header__modal-menu-logout'),
+  logOutHeader: document.querySelector('.header__logo-out-btn'),
+  shoppingList: document.querySelector('.shopping-list-js'),
+  shoppingListModal: document.querySelector('.shopping-list-modal-js'),
+  buttonLink: document.querySelector('.header__logo-out-btn'),
+  userButton: document.querySelector('header__avatar'),
+  userName: document.querySelector('.header__user-name'),
 
+  // -----------------------------------------------------------
   topBookEl: document.querySelector('.top-books-wrapper-js'),
   categorySpan: document.querySelector('.categories-list-js'),
   // pagination
@@ -50,5 +63,4 @@ const refs = {
   footer: document.querySelector('.footer'),
 };
 
-// console.log(refs.shoppingListWrapper);
 export { refs };
