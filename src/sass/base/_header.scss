@@ -175,6 +175,7 @@
   margin-bottom: 126px;
 }
 .header__avatar {
+  position: relative;
   display: none;
 }
 .modal__avatar-list {
@@ -203,7 +204,7 @@
 }
 .modal__sign-up-btn {
   position: absolute;
-  top: 40px;
+  top: 20px;
   left: 20px;
   display: flex;
   width: 184px;
@@ -413,6 +414,7 @@
     padding: 0;
   }
   .header__avatar-list {
+    z-index: 10;
     display: flex;
     flex-wrap: wrap;
     width: 184px;
@@ -482,7 +484,7 @@
   }
   .header__logo-in-btn {
     position: absolute;
-    top: 140px;
+    // top: 140px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -505,8 +507,6 @@
     letter-spacing: -0.56px;
   }
   .header__logo-out-btn {
-    position: absolute;
-    top: 80px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -527,6 +527,35 @@
     font-weight: 500;
     line-height: 1.29;
     letter-spacing: -0.56px;
+  }
+
+  .button-link {
+    position: relative;
+    // top: 80px;
+    top: -64px;
+    right: 184px;
+    opacity: 0;
+    transform: translateY(0);
+    // visibility: hidden;
+    transition: opacity $transition, transform $transition;
+  }
+
+  .button-link-dropdown {
+    position: relative;
+    // top: 80px;
+    top: -10px;
+    right: 184px;
+    opacity: 1;
+    transform: translateY(0);
+    // visibility: hidden;
+    transition: opacity $transition, transform $transition;
+  }
+
+  .header__avatar-list:hover .button-link,
+  .header__avatar-list:focus .button-link {
+    opacity: 1;
+    transform: translateY(48px);
+    // visibility: visible;
   }
 
   .header_wrapper-burger-close {

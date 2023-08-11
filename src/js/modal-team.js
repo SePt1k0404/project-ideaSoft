@@ -85,35 +85,35 @@ export function closeModal() {
 
 const authorizedInterface = document.getElementById('authorized-interface');
 
-function showAuthorizedInterface() {
-  authorizedInterface.classList.remove('visually-hidden');
-}
+// function showAuthorizedInterface() {
+//   authorizedInterface.classList.remove('visually-hidden');
+// }
 
-refs.signUserHeader.addEventListener('click', caretOut);
+// refs.signUserHeader.addEventListener('click', caretOut);
 
-window.addEventListener('load', () => {
-  const authState = localStorage.getItem('authState');
-  if (authState === 'loggedIn') {
-    showAuthorizedInterface();
-    caretOut();
-  }
+// window.addEventListener('load', () => {
+//   const authState = localStorage.getItem('authState');
+//   if (authState === 'loggedIn') {
+//     showAuthorizedInterface();
+//     caretOut();
+//   }
 
-  window.addEventListener('storage', event => {
-    if (event.key === 'authEvent' && event.newValue === 'userLoggedIn') {
-      caretOut();
-    }
-  });
-});
+//   window.addEventListener('storage', event => {
+//     if (event.key === 'authEvent' && event.newValue === 'userLoggedIn') {
+//       caretOut();
+//     }
+//   });
+// });
 
-refs.logOutHeader.classList.add('visually-hidden');
-refs.signUserHeader.classList.add('visually-hidden');
-refs.signUserModal.classList.add('visually-hidden');
+// refs.logOutHeader.classList.add('visually-hidden');
+// refs.signUserHeader.classList.add('visually-hidden');
+// refs.signUserModal.classList.add('visually-hidden');
 
-export function caretOut() {
-  function caretOutOpen() {
-    refs.logOutHeader.classList.remove('visually-hidden');
-    refs.signUserHeader.classList.remove('visually-hidden');
-    refs.signUserModal.classList.remove('visually-hidden');
-  }
-  caretOutOpen();
-}
+// export function caretOut() {
+//   function caretOutOpen() {
+//     refs.logOutHeader.classList.remove('visually-hidden');
+//     refs.signUserHeader.classList.remove('visually-hidden');
+//     refs.signUserModal.classList.remove('visually-hidden');
+//   }
+//   caretOutOpen();
+// }

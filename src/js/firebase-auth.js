@@ -123,8 +123,9 @@ const firebaseConfig = {
   }
   
   export function onLogOut(evt){
-    evt.preventDefault();
+    // evt.preventDefault();
     const logOut = auth.signOut();
+    console.log("logout");
   }
 
   auth.onAuthStateChanged(user => {

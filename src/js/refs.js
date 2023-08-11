@@ -14,7 +14,7 @@ const refs = {
   headerNav: document.querySelector('.header__nav'),
   modal: document.querySelector('.header__modal'),
   modalClose: document.querySelector('.header__modal-close'),
-  signUpBtn: document.querySelector('.header__logo-out-btn'),
+  // signUpBtn: document.querySelector('.header__logo-out-btn'),
   switcherBgLight: document.querySelector('.header__theme-light-switch'),
   switcherBgDark: document.querySelector('.header__theme-dark-switch'),
   switcherThemeButton: document.querySelector('.header__theme-round-button'),
@@ -48,6 +48,9 @@ const refs = {
   signUserHeader: document.querySelector('.header__avatar-list'),
   logOutModal: document.querySelector('.header__modal-menu-logout'),
   logOutHeader: document.querySelector('.header__logo-out-btn'),
+  shoppingList: document.querySelector('.shopping-list-js'),
+  shoppingListModal: document.querySelector('.shopping-list-modal-js'),
+  buttonLink: document.querySelector('.button-link'),
   // logOutCaret: document.querySelector('.header__caret-down'),
 
   // -----------------------------------------------------------
