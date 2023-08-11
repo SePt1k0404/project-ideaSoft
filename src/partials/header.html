@@ -47,23 +47,35 @@
         </div>
 
         <div class="header__avatar">
-  <button type="button" class="header__avatar-list" data-name="#" ="">
-    <a href="#"><img src="./images/user.svg" alt="User Avatar" class="header__avatar__img" aria-label="Open"/></a>
-    
-    <button type="button" class="wrapper__user-avatar" data-name="#">
-    <svg class="user__avatar">
+  <button type="button" class="header__avatar-list" data-name="#">
+    <span class="wrapper__avatar-img">
+      <a href="#"><img src="./images/user.svg" alt="User Avatar" class="header__avatar__img" aria-label="Open"/></a>
+    </span>
+      <!-- <span>
+      <svg class="user__avatar">
      <use href="./images/sprite.svg#icon-ri_user-fill"></use>
      </svg>
-    </button>
+    </span> -->
+      <span class="header__user-name">
+      Stephen
+    </span>
 
-    <span class="header__user-name">Stephen</span>
+    <span class="btn__caret-down">
      <svg class="header__caret-down">
      <use href="./images/sprite.svg#icon-fi-ss-caret-down"></use>
      </svg>
+  </span>
   </button>
 
-<button type="button" class="header__logo-out-btn" data-name="#" ="">
+<button type="button" class="header__logo-in-btn" data-name="#" >
     Sign up
+    <svg class="header__logout-arrow">
+      <use href="./images/sprite.svg#icon-arrow-narrow-right">
+      </use>
+    </svg>
+  </button>
+  <button type="button" class="header__logo-out-btn" data-name="#" >
+    Log out
     <svg class="header__logout-arrow">
       <use href="./images/sprite.svg#icon-arrow-narrow-right">
       </use>

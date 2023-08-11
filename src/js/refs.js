@@ -41,7 +41,16 @@ const refs = {
   nameInput: document.querySelector('.input-name'),
   authFormClose: document.querySelector('.close-btn'),
   authContainer: document.querySelector('.backdrop'),
+  // -----------------------------------------------------------
+  signModal: document.querySelector('.modal__sign-up-btn'),
+  signUserModal: document.querySelector('.modal__user-btn'),
+  signHeader: document.querySelector('.header__logo-in-btn'),
+  signUserHeader: document.querySelector('.header__avatar-list'),
+  logOutModal: document.querySelector('.header__modal-menu-logout'),
+  logOutHeader: document.querySelector('.header__logo-out-btn'),
+  // logOutCaret: document.querySelector('.header__caret-down'),
 
+  // -----------------------------------------------------------
   topBookEl: document.querySelector('.top-books-wrapper-js'),
   categorySpan: document.querySelector('.categories-list-js'),
   // pagination
