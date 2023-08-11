@@ -53,6 +53,7 @@ const refs = {
   buttonLink: document.querySelector('.header__logo-out-btn'),
   userButton: document.querySelector('header__avatar'),
   userName: document.querySelector('.header__user-name'),
+  modalUserName: document.querySelector('.modal__user-name'),
 
   // -----------------------------------------------------------
   topBookEl: document.querySelector('.top-books-wrapper-js'),
