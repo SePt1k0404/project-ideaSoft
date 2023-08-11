@@ -4,6 +4,7 @@ import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sig
 import {getDatabase, ref, onValue, set, get} from "firebase/database";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { closeModal } from "./modal-auth";
+import { refs } from "./refs";
 
 
 const firebaseConfig = {
@@ -118,7 +119,7 @@ const firebaseConfig = {
     const reference = ref(db, `users/${userID}`);   
     onValue(reference, (snapshot) => {
       const data = snapshot.val();
-      // userBar.textContent = data.userName;
+      refs.userName.textContent = data.userName;
     }) 
   }
   

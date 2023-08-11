@@ -532,23 +532,23 @@
   .button-link {
     position: relative;
     top: 0px;
-    right: 0px;
+    // right: 0px;
     // z-index: -1;
     opacity: 0;
     // transform: translateY(0);
     // visibility: hidden;
-    // transition: opacity $transition, transform $transition;
+    transition: opacity $transition;
   }
 
   .button-link-dropdown {
     position: relative;
-    // top: -48px;
+    top: 0px;
     // right: 0px;
     // z-index: 3;
     opacity: 1;
     // transform: translateY(0);
     // visibility: hidden;
-    // transition: opacity $transition, transform $transition;
+    transition: opacity $transition;
   }
 
   .header__avatar-list:hover .button-link,

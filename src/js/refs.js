@@ -52,6 +52,7 @@ const refs = {
   shoppingListModal: document.querySelector('.shopping-list-modal-js'),
   buttonLink: document.querySelector('.header__logo-out-btn'),
   userButton: document.querySelector('header__avatar'),
+  userName: document.querySelector('.header__user-name'),
 
   // -----------------------------------------------------------
   topBookEl: document.querySelector('.top-books-wrapper-js'),

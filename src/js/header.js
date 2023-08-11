@@ -1,6 +1,6 @@
 import { THEME_KEY } from './theme-toggle';
 import { refs } from './refs';
-import { auth, onLogOut } from './firebase-auth';
+import { auth, onLogOut, getUserData } from './firebase-auth';
 import { onModalOpen } from './modal-auth';
 const bodyScrollLock = require('body-scroll-lock');
 const disableBodyScroll = bodyScrollLock.disableBodyScroll;
@@ -71,6 +71,7 @@ auth.onAuthStateChanged(user => {
     refs.signUserModal.classList.remove('visually-hidden');
     refs.shoppingListModal.classList.remove('visually-hidden');
     refs.signModal.classList.add('visually-hidden');
+    getUserData(user.uid)
   } else {
     refs.signHeader.classList.remove('visually-hidden');
     refs.signUserHeader.classList.add('visually-hidden');
@@ -90,6 +91,7 @@ let logoutButtonVisible = true;
 function dropdown(evt) {
   if (logoutButtonVisible) {
     refs.buttonLink.classList.add('button-link-dropdown');
+    refs.buttonLink.classList.remove('button-link');
     logoutButtonVisible = false;
   } else {
     refs.buttonLink.classList.remove('button-link-dropdown');
