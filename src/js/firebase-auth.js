@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged} from "firebase/auth";
 import {getDatabase, ref, onValue, set, get} from "firebase/database";
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { closeModal } from "./modal-auth";
 import { refs } from "./refs";
 
@@ -29,7 +29,7 @@ const firebaseConfig = {
       closeModal()
     })
     .catch(err => {
-        Notify.failure(`${err}`)
+        console.log('');
     })
   }
 
@@ -41,13 +41,13 @@ const firebaseConfig = {
     })
     .catch(err => {
           if(err.code.match(/password/)){
-      Notify.failure("Enter correct password!")
+      // Notify.failure("Enter correct password!")
       }
       else if(err.code.match(/found/)){
-      Notify.failure('User not found!')
+      // Notify.failure('User not found!')
       }
        else {
-        Notify.failure(`${err}`)
+        console.log("");
        }
     })
   }
@@ -120,6 +120,16 @@ const firebaseConfig = {
     onValue(reference, (snapshot) => {
       const data = snapshot.val();
       refs.userName.textContent = data.userName;
+      refs.modalUserName.textContent = data.userName;
+    }) 
+  }
+
+  export function getUserDataModal(userID){
+    const db = getDatabase();
+    const reference = ref(db, `users/${userID}`);   
+    onValue(reference, (snapshot) => {
+      const data = snapshot.val();
+      refs.modalUserName.textContent = data.userName;
     }) 
   }
   
