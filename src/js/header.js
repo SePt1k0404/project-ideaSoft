@@ -57,10 +57,6 @@ window.matchMedia('(max-width: 767px)').addEventListener('change', e => {
   refs.burgerMenu.style.display = 'block';
 });
 
-// refs.logOutHeader.classList.add('visually-hidden');
-// refs.signUserHeader.classList.add('visually-hidden');
-// refs.signUserModal.classList.add('visually-hidden');
-
 refs.logOutHeader.addEventListener('click', onLogOut);
 refs.signHeader.addEventListener('click', onModalOpen);
 
@@ -88,17 +84,16 @@ auth.onAuthStateChanged(user => {
 });
 
 refs.signUserHeader.addEventListener('click', dropdown);
-function dropdown(evt) {
-  console.log(evt.target);
-  if(evt.target.classList.contains('header__avatar')){
-    refs.buttonLink.classList.add('button-link-dropdown');
-    console.log("added");
 
-  }
-   else {
+let logoutButtonVisible = true;
+
+function dropdown(evt) {
+  if (logoutButtonVisible) {
+    refs.buttonLink.classList.add('button-link-dropdown');
+    logoutButtonVisible = false;
+  } else {
     refs.buttonLink.classList.remove('button-link-dropdown');
-    console.log('none');
+    refs.buttonLink.classList.add('button-link');
+    logoutButtonVisible = true;
   }
 }
-
-// refs.authContainer.classList.add('visually-hidden');

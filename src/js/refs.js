@@ -50,8 +50,8 @@ const refs = {
   logOutHeader: document.querySelector('.header__logo-out-btn'),
   shoppingList: document.querySelector('.shopping-list-js'),
   shoppingListModal: document.querySelector('.shopping-list-modal-js'),
-  buttonLink: document.querySelector('.button-link'),
-  // logOutCaret: document.querySelector('.header__caret-down'),
+  buttonLink: document.querySelector('.header__logo-out-btn'),
+  userButton: document.querySelector('header__avatar'),
 
   // -----------------------------------------------------------
   topBookEl: document.querySelector('.top-books-wrapper-js'),
@@ -62,5 +62,4 @@ const refs = {
   footer: document.querySelector('.footer'),
 };
 
-// console.log(refs.shoppingListWrapper);
 export { refs };
