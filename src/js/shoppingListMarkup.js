@@ -34,19 +34,15 @@ export default function renderCards() {
           localStorage.setItem('books', JSON.stringify(data.shoppingList));
           if (data.shoppingList.length < 2) {
             refs.tuiPagination.classList.add('visually-hidden');
-            bookListEl.insertAdjacentHTML(
-              'beforeend',
-              `
+            bookListEl.innerHTML = `
               <li class="emptyBookshelf">
-              <p  class="empty-message"> This page is empty, add some books and proceed to order.</p>
+                <p class="empty-message">This page is empty, add some books and proceed to order.</p>
                 <picture>
-                      <source srcset="${emptyImg1x} 1x, ${emptyImg2x} 2x"
-                       type="image/png" />
-                      <img src="${emptyImg1x}" alt=" Empty Bookshelf" />
-                  </picture>
+                  <source srcset="${emptyImg1x} 1x, ${emptyImg2x} 2x" type="image/png" />
+                  <img src="${emptyImg1x}" alt="Empty Bookshelf" />
+                </picture>
               </li>
-              `
-            );
+            `;
             return;
           }
         }
